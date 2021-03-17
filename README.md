@@ -1,5 +1,3 @@
-# ENGG1340_Course_Project_Group_91
-
 ENGG1340_Course_Project_Group_91
 Group No.: 91
 Group members: Ting Chun Tat, Wong Chak Man
