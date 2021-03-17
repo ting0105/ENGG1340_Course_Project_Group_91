@@ -1,7 +1,7 @@
 # ENGG1340_Course_Project_Group_91
 # Group No.: 91
 # Group members: Ting Chun Tat, Wong Chak Man
-# Topic:Call of Cthulhu ( CoC )
+# Topic: Call of Cthulhu ( CoC )
 
 ## Introduction: CoC is a tabletop role playing game. Every choices the player make will affect the plot of the game. The player can achieve different endings based on the choices that he/ she made.
 
