@@ -20,4 +20,4 @@ list of features:
 2. Combat system. Some monsters may come out and the player may have to fight them to advance the plot.
 3. Different ending base on the choices of player, the player's choices will affect the plot of the game.
 4. Inventory system. The player can pick up items in theie gameplay and store them in his/ her inventory and use them later.(element 2)
-5. Save and load function. Save and load function are proveided if the player want to achieve diffent endings.
+5. Save and load function. Save and load function are proveided if the player want to achieve different endings.
