@@ -11,4 +11,4 @@ save_load.o: save_load.cpp main.h
 	g++ -c -pedantic-errors -std=c++11 save_load.cpp
 
 main: main.o combat.o stat_gen.o
-	g++ main.o combat.o stat_gen.o -o main
+	g++ main.o combat.o stat_gen.o save_load.o -o main
