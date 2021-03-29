@@ -13,21 +13,6 @@ void printout(string paragraph){
     }
 }
 
-void EnterLeftCell(int BrokenWall){
-    //if (BrokenWall == 0){
-
-    }
-
-
-
-
-void EnterMiddleCell(){
-
-
-
-}
-
-
 
 int main(){
     string WhatToDo= "What do you want to do next?\n";
@@ -184,5 +169,3 @@ int main(){
     }
 
 }
-  
-
