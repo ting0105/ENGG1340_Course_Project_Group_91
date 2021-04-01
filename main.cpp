@@ -1,20 +1,31 @@
 #include <iostream>
 #include <random>
 #include <string>
-#include <windows.h>
+#include <unistd.h>
+#include "main.h"
 using namespace std;
 
 void printout(string paragraph){
     int x = 0;
     while (paragraph[x] != '\0'){
         cout << paragraph[x];
-        Sleep(0);
+        usleep(8000);
         x++;
     }
 }
 
 
 int main(){
+
+    //statarray[0]=STR
+    //statarray[1]=CON
+    //statarray[2]=DEX
+    //statarray[3]=SIZ
+    //statarray[4]=INT
+    //statarray[5]=POW
+    //statarray[6]=APP
+    int statarray[7];
+    stat_gen(statarray);
     string WhatToDo= "What do you want to do next?\n";
 
 
