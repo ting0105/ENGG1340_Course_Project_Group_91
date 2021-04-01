@@ -17,4 +17,4 @@
 ### 2. Combat system. Some monsters may come out and the player may have to fight them to advance the plot. (element 3, monster's status will be deleted after it is defeated) (element 5, combat system will be stored in a seperate program)
 ### 3. Different ending base on the choices of player, the player's choices will affect the plot of the game.
 ### 4. Inventory system. The player can pick up items in theie gameplay and store them in his/ her inventory and use them later.(element 2+3)
-### 5. Save and load function. Save and load function are proveided if the player want to achieve different endings. (element 4)
+### 5. Save and load function. Save and load function are proveided so players can continue their journey from where they stopped. (element 4)
