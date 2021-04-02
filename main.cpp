@@ -320,7 +320,7 @@ int main(){
                     cout << endl;
                 }
                 else if (choice == "B"){
-                    printout("Underneath the cushion,you found the concrete wall underneath to be fragile,\nhowever it would still cost a lot to brute force through the wall, maybe you should attempt finding another way out first.\n");
+                    printout("There is a hole on the wall due to your smash before.\n");
                     LC_ObservedWall = 1;
                     cout << endl;
                 }
@@ -350,7 +350,7 @@ int main(){
                     cout << endl;
                 }
                 else if (choice == "B"){
-                    printout("Underneath the cushion,you found the concrete wall underneath to be fragile,\nhowever it would still cost a lot to brute force through the wall, maybe you should attempt finding another way out first.\n");
+                    printout("There is a hole on the wall due to your smash before.\n");
                     LC_ObservedWall = 1;
                     cout << endl;
                 }
@@ -380,7 +380,7 @@ int main(){
                     cout << endl;
                 }
                 else if (choice == "B"){
-                    printout("Underneath the cushion,you found the concrete wall underneath to be fragile,\nhowever it would still cost a lot to brute force through the wall, maybe you should attempt finding another way out first.\n");
+                    printout("There is a hole on the wall due to your smash before.\n");
                     LC_ObservedWall = 1;
                     cout << endl;
                 }
@@ -405,7 +405,7 @@ int main(){
                     cout << endl;
                 }
                 else if (choice == "B"){
-                    printout("Underneath the cushion,you found the concrete wall underneath to be fragile,\nhowever it would still cost a lot to brute force through the wall, maybe you should attempt finding another way out first.\n");
+                    printout("There is a hole on the wall due to your smash before.\n");
                     LC_ObservedWall = 1;
                     cout << endl;
                 }
@@ -430,7 +430,7 @@ int main(){
                     cout << endl;
                 }
                 else if (choice == "B"){
-                    printout("Underneath the cushion,you found the concrete wall underneath to be fragile,\nhowever it would still cost a lot to brute force through the wall, maybe you should attempt finding another way out first.\n");
+                    printout("There is a hole on the wall due to your smash before.\n");
                     LC_ObservedWall = 1;
                     cout << endl;
                 }
@@ -460,8 +460,7 @@ int main(){
                     cout << endl;
                 }
                 else if (choice == "B"){
-                    printout("Underneath the cushion,you found the concrete wall underneath to be fragile,\nhowever it would still cost a lot to brute force through the wall, maybe you should attempt finding another way out first.\n");
-                    LC_ObservedWall = 1;
+                    printout("There is a hole on the wall due to your smash before.\n")
                     cout << endl;
                 }
                 else if (choice == "C"){
