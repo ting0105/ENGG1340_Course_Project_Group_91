@@ -5,7 +5,7 @@ using namespace std;
 
 //generate the stats and store the 8 stats into an int array
 
-void stat_gen(int arr[8])
+void stat_gen(int arr[10])
 {
   cout<<"Your total attribute points will be determined by eight 3D6 die roll, and that number multiplied by 5."<<endl;
   int totalpoint=0;
@@ -50,11 +50,16 @@ void stat_gen(int arr[8])
   int siz=0;
   int inte=0;
   int luck=0;
+  int hp=0;
+  int san=0;
+  
 
   cout<<"Now you can distribute your points."<<endl;
   cout<<"You can use command [attribute name] [value] to distribute your points."<<endl;
   cout<<"For example, the command \"STR 50\" will add 50 points to STR (strength)"<<endl;
-  cout<<"You may put minimum 15 points and maximum 90 points in each attribute."<<endl;
+  cout<<"You may put minimum 15 points and maximum 90 points in each attribute except HP and SAN."<<endl;
+  cout<<"It is because the value of HP is depended on SIZ and CON, while SAN is depended on POW."<<endl;
+  cout<<"HP = (SIZ + CON) / 10 and SAN = POW"<<endl;
   cout<<"Use the command \"reset\" if you wish to reset all attribute points."<<endl<<endl;
 
   bool finished=false;
@@ -68,8 +73,20 @@ void stat_gen(int arr[8])
     {
       if (str>=15&&str<=90&&con>=15&&con<=90&&dex>=15&&dex<=90&&siz>=15&&siz<=90&&inte>=15&&inte<=90&&pow>=15&&pow<=90&&app>=15&&app<=90&&luck>=15&&luck<=90) 
       {
+        cout<<"Your current stats :"<<endl;
+        cout<<"STR (strength)     :"<<str<<endl;
+        cout<<"CON (constitution) :"<<con<<endl;
+        cout<<"POW (power)        :"<<pow<<endl;
+        cout<<"DEX (Dexterity)    :"<<dex<<endl;
+        cout<<"APP (appearance)   :"<<app<<endl;
+        cout<<"SIZ (size)         :"<<siz<<endl;
+        cout<<"INT (intelligence) :"<<inte<<endl;
+        cout<<"LUC (luck)         :"<<luck<<endl;
+        cout<<"HP  (Hit Points)   :"<<hp<<endl;
+        cout<<"SAN (Sanity)       :"<<san<<endl;
         cout<<"You have distributed all your attribute points."<<endl;
         cout<<"use command \"confirm\" to finish character creation or use command \"reset\" to reset."<<endl;
+        
         cin>>input;
         if (input=="confirm")
         {
@@ -82,6 +99,8 @@ void stat_gen(int arr[8])
           arr[5]=siz;
           arr[6]=inte;
           arr[7]=luck;
+          arr[8]=hp;
+          arr[9]=san;
           break;
         }
         else if(input=="reset")
@@ -95,6 +114,8 @@ void stat_gen(int arr[8])
           siz=0;
           inte=0;
           luck=0;
+          hp=0;
+          san=0;
 
         }
         else
@@ -118,17 +139,22 @@ void stat_gen(int arr[8])
         siz=0;
         inte=0;
         luck=0;
+        hp=0;
+        san=0;
+        
       }
     }
-    cout<<"Your current stats: "<<endl;
-    cout<<"STR (strength):     "<<str<<endl;
-    cout<<"CON (constitution): "<<con<<endl;
-    cout<<"POW (power):        "<<pow<<endl;
-    cout<<"DEX (Dexterity):    "<<dex<<endl;
-    cout<<"APP (appearance):   "<<app<<endl;
-    cout<<"SIZ (size):         "<<siz<<endl;
-    cout<<"INT (intelligence): "<<inte<<endl;
-    cout<<"LUC (luck):         "<<luck<<endl;
+    cout<<"Your current stats :"<<endl;
+    cout<<"STR (strength)     :"<<str<<endl;
+    cout<<"CON (constitution) :"<<con<<endl;
+    cout<<"POW (power)        :"<<pow<<endl;
+    cout<<"DEX (Dexterity)    :"<<dex<<endl;
+    cout<<"APP (appearance)   :"<<app<<endl;
+    cout<<"SIZ (size)         :"<<siz<<endl;
+    cout<<"INT (intelligence) :"<<inte<<endl;
+    cout<<"LUC (luck)         :"<<luck<<endl;
+    cout<<"HP  (Hit Points)   :"<<hp<<endl;
+    cout<<"SAN (Sanity)       :"<<san<<endl;
     cout<<"Points left: "<<pointleft<<endl;
 
 //user will input command like "STR 50" to distribute points.
@@ -164,6 +190,7 @@ void stat_gen(int arr[8])
       else if (value<=pointleft)
       {
         con+=value;
+        hp=(con+siz)/10;
         pointleft-=value;
       }
       else
@@ -202,6 +229,7 @@ void stat_gen(int arr[8])
       else if (value<=pointleft)
       {
         siz+=value;
+        hp=(con+siz)/10;
         pointleft-=value;
       }
       else
@@ -240,6 +268,7 @@ void stat_gen(int arr[8])
       else if (value<=pointleft)
       {
         pow+=value;
+        san=pow;
         pointleft-=value;
       }
       else
@@ -286,6 +315,10 @@ void stat_gen(int arr[8])
       }
     }
 
+    else if (input == "HP" || input == "SAN"){
+      cout << "You can not put point on HP and SAN as they are calculated by other characteristics.";
+    }
+
     else if (input=="reset")
     {
       pointleft=totalpoint;
@@ -297,6 +330,8 @@ void stat_gen(int arr[8])
       siz=0;
       inte=0;
       luck=0;
+      hp=0;
+      san=0;
     }
     
     else
