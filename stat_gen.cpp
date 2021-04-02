@@ -3,18 +3,18 @@
 #include <random>
 using namespace std;
 
-//generate the stats and store the 7 stats into an int array
+//generate the stats and store the 8 stats into an int array
 
-void stat_gen(int arr[7])
+void stat_gen(int arr[8])
 {
-  cout<<"Your total attribute points will be determined by seven 3D6 die roll, and that number multiplied by 5."<<endl;
+  cout<<"Your total attribute points will be determined by eight 3D6 die roll, and that number multiplied by 5."<<endl;
   int totalpoint=0;
   int temp=0;
   int temptotal=0;
 
   int counter=1;
   srand((unsigned)time(NULL)) ;
-  while (counter<=7)
+  while (counter<=8)
   {
     temptotal=0;
 
@@ -49,6 +49,7 @@ void stat_gen(int arr[7])
   int app=0;
   int siz=0;
   int inte=0;
+  int luck=0;
 
   cout<<"Now you can distribute your points."<<endl;
   cout<<"You can use command [attribute name] [value] to distribute your points."<<endl;
@@ -65,7 +66,7 @@ void stat_gen(int arr[7])
     //check if character creation is finished
     if (pointleft==0)
     {
-      if (str>=15&&str<=90&&con>=15&&con<=90&&dex>=15&&dex<=90&&siz>=15&&siz<=90&&inte>=15&&inte<=90&&pow>=15&&pow<=90&&app>=15&&app<=90)
+      if (str>=15&&str<=90&&con>=15&&con<=90&&dex>=15&&dex<=90&&siz>=15&&siz<=90&&inte>=15&&inte<=90&&pow>=15&&pow<=90&&app>=15&&app<=90&&luck>=15&&luck<=90) 
       {
         cout<<"You have distributed all your attribute points."<<endl;
         cout<<"use command \"confirm\" to finish character creation or use command \"reset\" to reset."<<endl;
@@ -80,6 +81,7 @@ void stat_gen(int arr[7])
           arr[4]=app;
           arr[5]=siz;
           arr[6]=inte;
+          arr[7]=luck;
           break;
         }
         else if(input=="reset")
@@ -92,6 +94,7 @@ void stat_gen(int arr[7])
           app=0;
           siz=0;
           inte=0;
+          luck=0;
 
         }
         else
@@ -114,6 +117,7 @@ void stat_gen(int arr[7])
         app=0;
         siz=0;
         inte=0;
+        luck=0;
       }
     }
     cout<<"Your current stats: "<<endl;
@@ -124,6 +128,7 @@ void stat_gen(int arr[7])
     cout<<"APP (appearance):   "<<app<<endl;
     cout<<"SIZ (size):         "<<siz<<endl;
     cout<<"INT (intelligence): "<<inte<<endl;
+    cout<<"LUC (luck):         "<<luck<<endl;
     cout<<"Points left: "<<pointleft<<endl;
 
 //user will input command like "STR 50" to distribute points.
@@ -262,6 +267,25 @@ void stat_gen(int arr[7])
       }
     }
 
+    else if (input=="LUC"){
+      cin>>value;
+      if (cin.fail() || value<0)
+      {
+        cout<<"Invalid input, please try again."<<endl;
+        cin.clear();
+        cin.ignore(10000,'\n');
+      }
+      else if (value<=pointleft)
+      {
+        luck+=value;
+        pointleft-=value;
+      }
+      else
+      {
+        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+      }
+    }
+
     else if (input=="reset")
     {
       pointleft=totalpoint;
@@ -272,6 +296,7 @@ void stat_gen(int arr[7])
       app=0;
       siz=0;
       inte=0;
+      luck=0;
     }
     
     else
