@@ -55,7 +55,13 @@ struct player
   bool Sto_ObservedTable;
   bool Sto_ObservedStew;
   bool Sto_EatStew;
+  bool Sto_RealizeStew;
   bool Sto_ObservedStairway;
+
+  // Entrance event
+  bool Ent_Searched;
+  bool Ent_ObservedDoor;
+  
 
 
   // Second bedroom event
@@ -128,7 +134,10 @@ void savedata(player p)
   <<p.Sto_ObservedTable<<endl
   <<p.Sto_ObservedStew<<endl
   <<p.Sto_EatStew<<endl
+  <<p.Sto_RealizeStew<<endl
   <<p.Sto_ObservedStairway<<endl
+  <<p.Ent_Searched<<endl
+  <<p.Ent_ObservedDoor<<endl
   <<p.SB_GetMagnetKey<<endl;
 
   fout.close();
@@ -166,8 +175,11 @@ int main(){
     string TortureRoomDes2 = "You enter the torture room and there is no different,\na couple of torture instruments was set in the middle of room, some of them have stains and some remains on them.\nThere are three cells in the room\nThere’s also a large mirror on the other side of the room.\n";
 
     // Storage description
-    string StorageDes1 = "You finally escaped from the torture room, what waiting for you is another concealed area.\nIn this new room, you see a pile of bags of different types, color and size; a table with pots on it.\nOn the other side of the room, there is also a stairway leading upward.\n";
+    string StorageDes1 = "You finally escaped from the torture room, what waiting for you is another concealed area which looks like a storage room.\nIn this new room, you see a pile of bags of different types, color and size; a table with pots on it.\nOn the other side of the room, there is also a stairway leading upward.\n";
     string StorageDes2 = "You are now in the storage room, there is a pile of bags of different types, color and size; a table with pots on it.\nOn the other side of the room, there is also a stairway leading upward.\n";
+
+    // Entrance description
+    string EntranceDes = "At the entrance of the house, you see a stairway leadind down to the store room, a staircase leading up to the second floor of the house,\na door that seems to lead to the outside, a doorway to the living room.\n";
 
 
 
@@ -218,6 +230,7 @@ int main(){
       >>p.Sto_ObservedTable
       >>p.Sto_ObservedStew
       >>p.Sto_EatStew
+      >>p.Sto_RealizeStew
       >>p.Sto_ObservedStairway
       >>p.SB_GetMagnetKey;
 
@@ -237,6 +250,30 @@ int main(){
       }
       else if (p.position == 5){
           goto Entrance;
+      }
+      else if (p.position == 6){
+          goto LivingRoom;
+      }
+      else if (p.position == 7){
+          goto Kitchen;
+      }
+      else if (p.position == 8){
+          goto SecondFloor;
+      }
+      else if (p.position == 9){
+          goto MainBedroom;
+      }
+      else if (p.position == 10){
+          goto SecondBedroom;
+      }
+      else if (p.position == 11){
+          goto StudyRoom;
+      }
+      else if (p.position == 12){
+          goto Restroom;
+      }
+      else if (p.position == 13){
+          goto RightCell;
       }
     }
 
@@ -305,8 +342,12 @@ int main(){
     p.Sto_ObservedTable = 0;
     p.Sto_ObservedStew = 0;
     p.Sto_EatStew = 0;
+    p.Sto_RealizeStew = 0;
     p.Sto_ObservedStairway = 0;
 
+    // Entrance event
+    p.Ent_Searched = 0;
+    p.Ent_ObservedDoor = 0;
 
     // Second bedroom event
     p.SB_GetMagnetKey = 0;
@@ -325,7 +366,7 @@ int main(){
     p.position=1;
 
 
-    // Left cell
+    // 1
     LeftCell:{
 
 
@@ -461,6 +502,136 @@ int main(){
             cout << endl;
         }
     }
+    
+    // 2
+    MiddleCell:{
+        if (p.MC_FromLC == 1 && p.MC_SanRed == 0){
+            p.MC_SanRed = 1;
+            int SanRed = random()%4+1;
+            printout (MiddleCellDes1);
+            p.san -= SanRed;
+            printout ("you lost ");
+            cout << SanRed;
+            printout (" sanity, you have ");
+            cout << p.san;
+            printout (" sanity left.\n");
+            cout << endl;
+
+        }
+
+        else if (p.MC_FromTR == 1 && p.MC_SanRed == 0){
+            p.MC_SanRed = 1;
+            int SanRed = random()%2+1;
+            printout (MiddleCellDes2);
+            p.san = p.san - SanRed - 1;
+            printout ("you lost ");
+            cout << SanRed;
+            printout (" sanity, you have ");
+            cout << p.san;
+            printout (" sanity left.\n");
+            cout << endl;
+        }
+
+        else if (p.MC_SanRed == 1){
+            printout (MiddleCellDes3);
+        }
+        savedata(p);
+
+        while (1){
+                // ask for action
+                printout(WhatToDo); 
+                printout("A. Observe the corpses.\n");
+                if (p.MC_ObservedDoor == 0){
+                    printout("B. Observe the Door.\n");
+                }
+                else if (p.TR_Searched == 0 && p.MC_ObservedDoor == 1){
+                    printout("B. Leave the cell through the door.\n");
+                }
+                else if (p.TR_Searched == 1 && p.MC_ObservedDoor == 1){
+                    printout("B. Go to the torture room.\n");
+                }
+                if (p.LC_BrokenWall == 1 && p.TR_Searched == 0){
+                    printout("C. Go to the cell nearby.\n");
+                }
+                else if (p.LC_BrokenWall == 1 && p.TR_Searched == 1){
+                    printout("C. Go to the left cell.\n");
+                }
+                cout << endl;
+
+                // action
+                cin >> choice;
+                if(choice == "A"){
+                    if (p.MC_ObservedCorpses == 0){
+                        int x = random()%100+1;
+                        if (x <= p.luck){
+                            p.MC_ObservedCorpses = 1;
+                            p.MC_GetMetalKey = 1;
+                            printout("As you carefully inspected the corpses, you find noticed a shining spot, upon close inspection, you found it to be a metal key.\n");
+                        }
+                        else{
+                            p.MC_ObservedCorpses = 1;
+                            p.MC_GetMetalKey = 1;
+                            int SanRed = random ()%4+2;
+                            p.san -= SanRed;
+                            printout("As you carefully inspected the corpses, you noticed something odd, but you failed to find it, you still rummaged through the mashed remains,\nyou lost ");
+                            cout << SanRed;
+                            printout(" sanity, you have ");
+                            cout << p.san;
+                            printout(" sanity left, eventually, you found a key.\n");
+                        }  
+                    }
+                    else if (p.MC_ObservedCorpses == 1){
+                        printout("You carefully inspected the corpses, however, you didn't find anything special.\n");
+                        cout << endl;
+                    }
+                }
+                else if (choice == "B"){
+                    if (p.MC_ObservedDoor == 0){
+                        p.MC_ObservedDoor = 1;
+                        printout("As you pushed onto the door, the door slid open, someone must have forgot to lock the door.\n");
+                    }
+                    else if (p.TR_Searched == 0 && p.MC_ObservedDoor == 1){
+                        printout("You left the cell.\n");
+                        p.MC_Searched = 1;
+                        p.position = 3;
+                        cout << endl;
+                        savedata(p);
+                        goto TortureRoom;
+                    }
+                    else if (p.TR_Searched == 1 && p.MC_ObservedDoor == 1){
+                        printout("You left the cell and went to the torture room.\n");
+                        p.MC_Searched = 1;
+                        p.position = 3;
+                        cout << endl;
+                        savedata(p);
+                        goto TortureRoom;
+                    }
+                }
+                else if (choice == "C"){
+                    if (p.LC_BrokenWall == 1 && p.TR_Searched == 0){
+                        printout("You left the cell.\n");
+                        p.MC_Searched = 1;
+                        p.position = 1;
+                        cout << endl;
+                        savedata(p);
+                        goto LeftCell;
+                    }
+                    else if (p.LC_BrokenWall == 1 && p.TR_Searched == 1){
+                        printout("You left the cell and went to the left cell.\n");
+                        p.MC_Searched = 1;
+                        cout << endl;
+                        p.position=1;
+                        savedata(p);
+                        goto LeftCell;
+                        
+                    }
+                }
+                cout << endl;
+
+            }   
+        }
+
+    // 3
     TortureRoom:{
         if (p.TR_Searched == 0 && p.TR_SanRed == 0){
             p.TR_SanRed = 1;
@@ -636,135 +807,7 @@ int main(){
 
     }
 
-    MiddleCell:{
-        if (p.MC_FromLC == 1 && p.MC_SanRed == 0){
-            p.MC_SanRed = 1;
-            int SanRed = random()%4+1;
-            printout (MiddleCellDes1);
-            p.san -= SanRed;
-            printout ("you lost ");
-            cout << SanRed;
-            printout (" sanity, you have ");
-            cout << p.san;
-            printout (" sanity left.\n");
-            cout << endl;
-
-        }
-
-        else if (p.MC_FromTR == 1 && p.MC_SanRed == 0){
-            p.MC_SanRed = 1;
-            int SanRed = random()%2+1;
-            printout (MiddleCellDes2);
-            p.san = p.san - SanRed - 1;
-            printout ("you lost ");
-            cout << SanRed;
-            printout (" sanity, you have ");
-            cout << p.san;
-            printout (" sanity left.\n");
-            cout << endl;
-        }
-
-        else if (p.MC_SanRed == 1){
-            printout (MiddleCellDes3);
-        }
-        savedata(p);
-
-        while (1){
-                // ask for action
-                printout(WhatToDo); 
-                printout("A. Observe the corpses.\n");
-                if (p.MC_ObservedDoor == 0){
-                    printout("B. Observe the Door.\n");
-                }
-                else if (p.TR_Searched == 0 && p.MC_ObservedDoor == 1){
-                    printout("B. Leave the cell through the door.\n");
-                }
-                else if (p.TR_Searched == 1 && p.MC_ObservedDoor == 1){
-                    printout("B. Go to the torture room.\n");
-                }
-                if (p.LC_BrokenWall == 1 && p.TR_Searched == 0){
-                    printout("C. Go to the cell nearby.\n");
-                }
-                else if (p.LC_BrokenWall == 1 && p.TR_Searched == 1){
-                    printout("C. Go to the left cell.\n");
-                }
-                cout << endl;
-
-                // action
-                cin >> choice;
-                if(choice == "A"){
-                    if (p.MC_ObservedCorpses == 0){
-                        int x = random()%100+1;
-                        if (x <= p.luck){
-                            p.MC_ObservedCorpses = 1;
-                            p.MC_GetMetalKey = 1;
-                            printout("As you carefully inspected the corpses, you find noticed a shining spot, upon close inspection, you found it to be a metal key.\n");
-                        }
-                        else{
-                            p.MC_ObservedCorpses = 1;
-                            p.MC_GetMetalKey = 1;
-                            int SanRed = random ()%4+2;
-                            p.san -= SanRed;
-                            printout("As you carefully inspected the corpses, you noticed something odd, but you failed to find it, you still rummaged through the mashed remains,\nyou lost ");
-                            cout << SanRed;
-                            printout(" sanity, you have ");
-                            cout << p.san;
-                            printout(" sanity left, eventually, you found a key.\n");
-                        }  
-                    }
-                    else if (p.MC_ObservedCorpses == 1){
-                        printout("You carefully inspected the corpses, however, you didn't find anything special.\n");
-                        cout << endl;
-                    }
-                }
-                else if (choice == "B"){
-                    if (p.MC_ObservedDoor == 0){
-                        p.MC_ObservedDoor = 1;
-                        printout("As you pushed onto the door, the door slid open, someone must have forgot to lock the door.\n");
-                    }
-                    else if (p.TR_Searched == 0 && p.MC_ObservedDoor == 1){
-                        printout("You left the cell.\n");
-                        p.MC_Searched = 1;
-                        p.position = 3;
-                        cout << endl;
-                        savedata(p);
-                        goto TortureRoom;
-                    }
-                    else if (p.TR_Searched == 1 && p.MC_ObservedDoor == 1){
-                        printout("You left the cell and went to the torture room.\n");
-                        p.MC_Searched = 1;
-                        p.position = 3;
-                        cout << endl;
-                        savedata(p);
-                        goto TortureRoom;
-                    }
-                }
-                else if (choice == "C"){
-                    if (p.LC_BrokenWall == 1 && p.TR_Searched == 0){
-                        printout("You left the cell.\n");
-                        p.MC_Searched = 1;
-                        p.position = 1;
-                        cout << endl;
-                        savedata(p);
-                        goto LeftCell;
-                    }
-                    else if (p.LC_BrokenWall == 1 && p.TR_Searched == 1){
-                        printout("You left the cell and went to the left cell.\n");
-                        p.MC_Searched = 1;
-                        cout << endl;
-                        p.position=1;
-                        savedata(p);
-                        goto LeftCell;
-                        
-                    }
-                }
-                cout << endl;
-
-            }   
-        }
-    
-
-
+    // 4
     Storage:{
         if (p.Sto_Searched == 0){
             printout(StorageDes1);
@@ -832,6 +875,7 @@ int main(){
                     p.Sto_ObservedStew = 1;
                     printout("The mysterious stew are blood red in colour, it doesn't look good.\n");
                     if (GenRand() < p.inte){
+                        p.Sto_RealizeStew = 1;
                         int SanRed = 2 * (random()%2+1);
                         p.san -= SanRed;
                         printout("Suddently, You realize the mysterious stew are made of human parts, you lost ");
@@ -847,8 +891,18 @@ int main(){
                     printout("You found this stew tastes particularly awful,\nyou lost 1 sanity, you have ");
                     cout << p.san;
                     printout(" sanity left.\n");
+                    if (p.Sto_RealizeStew == 0){
+                        p.Sto_RealizeStew = 1;
+                        int SanRed = 2 * (random()%2+1);
+                        p.san -= SanRed;
+                        printout("Suddently, You realize the mysterious stew are made of human parts, you lost ");
+                        cout << SanRed;
+                        printout(" sanity,you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n"); 
+                    }
                 }
-                else if (p.Sto_ObservedStairway == 1 && p.Sto_EatStew == 1){
+                else if (p.Sto_ObservedStew == 1 && p.Sto_EatStew == 1){
                     printout("You found this stew tastes particularly awful.\n");
                 }
             }
@@ -880,9 +934,108 @@ int main(){
             cout << endl;
         }
     }
+
+    // 5
     Entrance:{
+        printout(EntranceDes);
+        
+        while (1){
+            // ask for action
+            printout(WhatToDo);
+            printout("A. Observe the door.\n");
+            printout("B. Move to the second floor.\n");
+            printout("C. Go to the living room.\n");
+            printout("D. Go to the storage room.\n");
+            cout << endl;
+
+            // action
+            cin >> choice;
+            if (choice == "A"){
+                if (p.Ent_ObservedDoor == 0){
+                    p.Ent_ObservedDoor = 1;
+                    p.san = p.san - 2;
+                    printout("Through the peephole, you found that outside the door is only endless mist and eternal darkness,\nas you gaze into the abyss, the abyss gaze back,\nyou lost 2 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+                else if(p.Ent_ObservedDoor == 1){
+                    printout("Because of fear, you are afraid to look through the peephole again.\n");
+                }
+            }
+            else if (choice == "B"){
+                p.Ent_Searched = 1;
+                p.position = 8;
+                printout("You left the entrance and reached second floor.\n");
+                savedata(p);
+                cout << endl;
+                goto SecondFloor;
+                
+            }
+            else if (choice == "C"){
+                p.Ent_Searched = 1;
+                p.position = 6;
+                printout("You left the entrance and entered the living room.\n");
+                savedata(p);
+                cout << endl;
+                goto LivingRoom;
+            }
+            else if (choice == "D"){
+                p.Ent_Searched = 1;
+                p.position = 4;
+                printout("You left the entrance and entered the storage room.\n");
+                savedata(p);
+                cout << endl;
+                goto Storage;
+            }
+            cout << endl;
+        }
+        
+        
+
 
     }
+
+    // 6
+    LivingRoom:{
+
+    }
+
+    // 7
+    Kitchen:{
+
+    }
+
+    // 8
+    SecondFloor:{
+
+    }
+
+    // 9
+    MainBedroom:{
+
+    }
+
+    // 10
+    SecondBedroom:{
+
+    }
+
+    // 11
+    StudyRoom:{
+
+    }
+
+    // 12
+    Restroom:{
+
+    }
+
+    // 13
+    RightCell:{
+
+    }
+
+
     END:{
 
     }
