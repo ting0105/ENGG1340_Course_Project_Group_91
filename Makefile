@@ -11,7 +11,7 @@ main: main.o combat.o stat_gen.o
 	g++ main.o combat.o stat_gen.o -o main
 
 clean:
-	rm -f main main.o stat_gen.o combat.o
+	rm -f main main.o stat_gen.o combat.o stats.txt
 
 .PHONY:
 	clean
