@@ -61,7 +61,34 @@ struct player
   // Entrance event
   bool Ent_Searched;
   bool Ent_ObservedDoor;
-  
+
+  // Living Room event
+  bool LR_Searched;
+  bool LR_SanRed;
+  bool LR_ObservedCabinet;
+  bool LR_SearchedUpperCabinet;
+  bool LR_SearchedLowerCabinet;
+  bool LR_GetCoal;
+  bool LR_GetFirstAidKit;
+  bool LR_ObservedDiningTable;
+  bool LR_GetNote;
+  bool LR_ConsumeDishes;
+  bool LR_SearchedBody;
+  bool LR_GetCopperKey;
+  bool LR_ObservedFireplace;
+  bool LR_CleanedFireplace;
+  bool LR_SetFire;
+
+  // Kitchen event
+  bool Kit_Searched;
+  bool Kit_ObservedStove;
+  bool Kit_ObservedPot;
+  bool Kit_GetKnife;
+  bool Kit_ObservedFridge;
+  bool Kit_ObservedSink;
+  bool Kit_ObservedCupboard;
+  bool Kit_GetChemicals;
+    
 
 
   // Second bedroom event
@@ -138,6 +165,29 @@ void savedata(player p)
   <<p.Sto_ObservedStairway<<endl
   <<p.Ent_Searched<<endl
   <<p.Ent_ObservedDoor<<endl
+  <<p.LR_Searched<<endl
+  <<p.LR_SanRed<<endl
+  <<p.LR_ObservedCabinet<<endl
+  <<p.LR_SearchedUpperCabinet<<endl
+  <<p.LR_SearchedLowerCabinet<<endl
+  <<p.LR_GetCoal<<endl
+  <<p.LR_GetFirstAidKit<<endl
+  <<p.LR_ObservedDiningTable<<endl
+  <<p.LR_GetNote<<endl
+  <<p.LR_ConsumeDishes<<endl
+  <<p.LR_SearchedBody<<endl
+  <<p.LR_GetCopperKey<<endl
+  <<p.LR_ObservedFireplace<<endl
+  <<p.LR_CleanedFireplace<<endl
+  <<p.LR_SetFire<<endl
+  <<p.Kit_Searched<<endl
+  <<p.Kit_ObservedStove<<endl
+  <<p.Kit_ObservedPot<<endl
+  <<p.Kit_GetKnife<<endl
+  <<p.Kit_ObservedFridge<<endl
+  <<p.Kit_ObservedSink<<endl
+  <<p.Kit_ObservedCupboard<<endl
+  <<p.Kit_GetChemicals<<endl
   <<p.SB_GetMagnetKey<<endl;
 
   fout.close();
@@ -181,7 +231,13 @@ int main(){
     // Entrance description
     string EntranceDes = "At the entrance of the house, you see a stairway leadind down to the store room, a staircase leading up to the second floor of the house,\na door that seems to lead to the outside, a doorway to the living room.\n";
 
+    // Living Room description
+    string LivingRoomDes = "When entering the living room, a horrific scene came into your eyes, next to a dining table,\nseveral dead bodies, both males and females, was sitting on chairs.\nApart from the dining table, you also see several furniture in the living room, a cabinet, a fireplace.\n";
 
+    // Kitchen description
+    string KitchenDes = "In the kitchen you found a stove, a fridge, a sink and a cupboard.\n";
+
+    
 
 
 
@@ -232,6 +288,31 @@ int main(){
       >>p.Sto_EatStew
       >>p.Sto_RealizeStew
       >>p.Sto_ObservedStairway
+      >>p.Ent_Searched
+      >>p.Ent_ObservedDoor
+      >>p.LR_Searched
+      >>p.LR_SanRed
+      >>p.LR_ObservedCabinet
+      >>p.LR_SearchedUpperCabinet
+      >>p.LR_SearchedLowerCabinet
+      >>p.LR_GetCoal
+      >>p.LR_GetFirstAidKit
+      >>p.LR_ObservedDiningTable
+      >>p.LR_GetNote
+      >>p.LR_ConsumeDishes
+      >>p.LR_SearchedBody
+      >>p.LR_GetCopperKey
+      >>p.LR_ObservedFireplace
+      >>p.LR_CleanedFireplace
+      >>p.LR_SetFire
+      >>p.Kit_Searched
+      >>p.Kit_ObservedStove
+      >>p.Kit_ObservedPot
+      >>p.Kit_GetKnife
+      >>p.Kit_ObservedFridge
+      >>p.Kit_ObservedSink
+      >>p.Kit_ObservedCupboard
+      >>p.Kit_GetChemicals
       >>p.SB_GetMagnetKey;
 
       fin.close();
@@ -279,7 +360,7 @@ int main(){
 
     else if (fin.fail())
     {
-      // stat_gen(statarray);
+       //stat_gen(statarray);
     }
 
 
@@ -348,6 +429,33 @@ int main(){
     // Entrance event
     p.Ent_Searched = 0;
     p.Ent_ObservedDoor = 0;
+
+    // Living Room event
+    p.LR_Searched = 0;
+    p.LR_SanRed = 0;
+    p.LR_ObservedCabinet = 0;
+    p.LR_SearchedUpperCabinet = 0;
+    p.LR_SearchedLowerCabinet = 0;
+    p.LR_GetCoal = 0;
+    p.LR_GetFirstAidKit = 0;
+    p.LR_ObservedDiningTable = 0;
+    p.LR_GetNote = 0;
+    p.LR_ConsumeDishes = 0;
+    p.LR_SearchedBody = 0;
+    p.LR_GetCopperKey = 0;
+    p.LR_ObservedFireplace = 0;
+    p.LR_CleanedFireplace = 0;
+    p.LR_SetFire = 0;
+
+    // Kitchen event
+    p.Kit_Searched = 0;
+    p.Kit_ObservedStove = 0;
+    p.Kit_ObservedPot = 0;
+    p.Kit_GetKnife = 0;
+    p.Kit_ObservedFridge = 0;
+    p.Kit_ObservedSink = 0;
+    p.Kit_ObservedCupboard = 0;
+    p.Kit_GetChemicals = 0;
 
     // Second bedroom event
     p.SB_GetMagnetKey = 0;
@@ -577,7 +685,7 @@ int main(){
                             cout << SanRed;
                             printout(" sanity, you have ");
                             cout << p.san;
-                            printout(" sanity left, eventually, you found a key.\n");
+                            printout(" sanity left, eventually, you found a metal key.\n");
                         }  
                     }
                     else if (p.MC_ObservedCorpses == 1){
@@ -989,19 +1097,267 @@ int main(){
             }
             cout << endl;
         }
-        
-        
-
-
     }
 
     // 6
     LivingRoom:{
+        printout(LivingRoomDes);
+        if (p.LR_SanRed == 0){
+            p.LR_SanRed = 1;
+            int SanRed = (random()%2+1)*2;
+            p.san -= SanRed;
+            printout("Because of seeing the dead bodies, you lost ");
+            cout << SanRed;
+            printout(" sanity, You have ");
+            cout << p.san;
+            printout(" sanity left.\n"); 
+        }
+        savedata(p);
 
+        while(1){
+            // ask for action
+            printout(WhatToDo);
+            if(p.LR_ObservedCabinet == 0){
+                printout("A. Observe the cabinet.\n");
+            }
+            else if (p.LR_ObservedCabinet == 1){
+                printout("A1. Search the upper compartment.\nA2. Search the lower compartment.\n");
+            }
+            if (p.LR_ObservedDiningTable == 0){
+                printout("B. Observe the dining table.\n");
+            }
+            else if (p.LR_ObservedDiningTable == 1){
+                printout("B. Consume the dishes.\n");
+            }
+            printout("C. Observe the dead bodies.\n");
+            if (p.LR_ObservedFireplace == 0){
+                printout("D. Observe the fireplace.\n");
+            }
+            else if (p.LR_ObservedFireplace == 1 && p.LR_CleanedFireplace == 0){
+                printout("D. Clean the fireplace.\n");
+            }
+            else if (p.LR_CleanedFireplace == 1 && p.LR_GetCoal == 1){
+                printout("D. Set Fire in fireplace.\n");
+            }
+
+
+            else{
+                printout("D. Observe the fireplace.\n");
+            }
+            printout("E. Go to kitchen.\n");
+            printout("F. Go to Entrance.\n");
+            cout << endl;
+
+            // ACTION
+            cin >> choice;
+            if (choice == "A"){
+                if (p.LR_ObservedCabinet == 0){
+                    p.LR_ObservedCabinet = 1;
+                    printout("The display cabinet is divided into two compartments,\nthe upper one with a glass door, filled with display dishes, the lower one with a wooden door.\n");
+                }
+            }
+            else if ( choice == "A1"){
+                if (p.LR_ObservedCabinet == 1 && p.LR_SearchedUpperCabinet == 0){
+                    p.LR_SearchedUpperCabinet = 1;
+                    printout("You rummaged through the cabinet, but you cannot find anything besides the dishes.\n");
+                }
+                else if (p.LR_SearchedUpperCabinet == 1){
+                    printout("You searched it before and you didn't find anything useful.\n");
+                }
+            }
+            else if ( choice == "A2"){
+                if(p.LR_ObservedCabinet == 1 && p.LR_GetCopperKey == 0 && p.MC_GetMetalKey == 1){
+                    printout("You attempted to open the door of the compartment, but it seemed to be locked.\nIt is obvious that the metal key you found in the middle cell isn't the correct key.\n");
+                }
+                else if(p.LR_ObservedCabinet == 1 && p.LR_GetCopperKey == 0 && p.MC_GetMetalKey == 0){
+                    printout("You attempted to open the door of the compartment, but it seemed to be locked.\n");
+                }
+                else if (p.LR_ObservedCabinet == 1 && p.LR_GetCopperKey == 1){
+                    p.LR_SearchedLowerCabinet = 1;
+                    p.LR_GetCoal = 1;
+                    p.LR_GetFirstAidKit = 1;
+                    printout("You opened the door with ease with the copper key, inside you found several bags of coal, and a first aid kit.\n");
+                }
+            }
+            else if (choice == "B"){
+                if (p.LR_ObservedDiningTable == 0){
+                    p.LR_ObservedDiningTable = 1;
+                    p.LR_GetNote = 1;
+                    printout("As you closely inspect the table, you found various kind of dishes are set on the table.\nThere also appears to be a note on the table.\n");
+                }
+                else if(p.LR_ObservedDiningTable == 1){
+                    if(p.LR_ConsumeDishes == 0){
+                        p.LR_ConsumeDishes = 1;
+                        p.san --;
+                        printout("The moment you tasted the foods, you vomited, there’s no way these are edible by humans,\nyou lost 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                    }
+                    else if(p.LR_ConsumeDishes = 1){
+                        printout("You tasted the foods before and you don't want to try it again.\n");
+                    }
+                }
+            }
+            else if (choice == "C"){
+                if (p.LR_SearchedBody == 0 && p.LR_GetCopperKey == 0){
+                    p.LR_GetCopperKey = 1;
+                    p.LR_SearchedBody = 1;
+                    printout("You carefully inspected the bodies,on a body, you found a copper key.\n");
+                }
+                else if (p.LR_SearchedBody == 1){
+                    printout("You carefully inspected the bodies again, but you didn't find anything special.\n");
+                    if (GenRand()>p.luck){
+                        p.san --;
+                        printout("when you were inspecting one of the bodies, you felt that she was looking at you, this make you feel terrified.\nYou lost 1 sanity, you have ");
+                        cout<< p.san;
+                        printout(" sanity left.\n");
+                    }
+                }
+            }
+            else if (choice == "D"){
+                if (p.LR_ObservedFireplace == 0){
+                    p.LR_ObservedFireplace = 1;
+                    printout ("The fireplace is filled with ashes and remains of coals. It would take a bit of effort to clear it but wouldn’t be too long.\n");
+                }
+                else if (p.LR_ObservedFireplace == 1 && p.LR_CleanedFireplace == 0){
+                    p.LR_CleanedFireplace = 1;
+                    printout ("The fireplace was cleaned and it is able to set fire in it now.\n");
+                }
+                else if (p.LR_CleanedFireplace == 1 && p.LR_GetCoal == 0 && p.LR_SetFire == 0){
+                    printout("You cleaned the fireplace, if you have coal, you can set fire.\n");
+                }
+                else if (p.LR_GetCoal == 1 && p.LR_CleanedFireplace == 1){
+                    p.LR_SetFire = 1;
+                    p.LR_GetCoal = 0;
+                    p.san++;
+                    printout("After you set the fire in the fireplace, warmth surrounds you, you felt much better than what you were,\nyou gained 1 sanity, you have ");
+                    cout<<p.san;
+                    printout(" sanity left.\n");
+                }
+                else if (p.LR_GetCoal == 0 && p.LR_SetFire == 1){
+                    printout("You looked at the fire in the fireplace, you felt warm.\n");
+                }
+            }
+            else if (choice == "E"){
+                p.LR_Searched = 1;
+                p.position = 7;
+                savedata(p);
+                printout("You entered the kitchen.\n");
+                cout << endl;
+                goto Kitchen;
+            }
+            else if (choice == "F"){
+                p.LR_Searched = 1;
+                p.position = 5;
+                savedata(p);
+                printout("You entered the entrance.\n");
+                cout << endl;
+                goto Entrance;
+            }
+            cout << endl;
+        }
     }
-
+    
     // 7
     Kitchen:{
+        printout(KitchenDes);
+
+        while(1){
+            // ask for action
+            printout(WhatToDo);
+            if (p.Kit_ObservedStove == 0){
+                printout("A. Observe the stove.\n");
+            }
+            else if (p.Kit_ObservedStove == 1){
+                printout("A1. Observe the pot.\nA2. Take a knife.\n");
+            }
+            printout("B. Observe the fridge.\n");
+            printout("C. Observe the sink.\n");
+            if (p.Kit_ObservedCupboard == 0){
+                printout("D. Observe the cupboard.\n");
+            }
+            else if(p.Kit_ObservedCupboard == 1 && p.Kit_GetChemicals == 0){
+                printout("D. Take the box of mysterious chemicals.\n");
+            }
+            else if(p.Kit_GetChemicals == 1 && p.Kit_ObservedCupboard == 1 ){
+                printout("D. Observe the cupboard.\n");
+            }
+            printout("E. Go to living room.\n");
+            cout << endl;
+
+            // action
+            cin >> choice;
+            if (choice == "A"){
+                if ( p.Kit_ObservedStove == 0){
+                    p.Kit_ObservedStove = 1;
+                    printout("On the stove there’s a frying pan, a pot with lid on and a few other cooking instruments.\nAlso, there are some knifes, they seems good to be a weapon.\n");
+                }
+            }
+            else if (choice == "A1"){
+                if (p.Kit_ObservedStove == 1){
+                    if(p.Kit_ObservedPot == 0){
+                        p.Kit_ObservedPot = 1;
+                        printout("You opened the pot, only to discover human remains and flesh within. You lost 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                    }
+                    else if (p.Kit_ObservedPot == 1){
+                        printout("You checked it before, it contains human remains and flesh.\n");
+                    }
+                    
+                }
+            }
+            else if (choice == "A2"){
+                if (p.Kit_ObservedStove == 1){
+                    if (p.Kit_GetKnife == 0){
+                        p.Kit_GetKnife = 1;
+                        printout ("You took a knife as a weapon.\n");
+                    }
+                    else if(p.Kit_GetKnife = 1){
+                        printout ("You already have one, you don't need two.\n");
+                    } 
+                }
+            }
+            else if (choice == "B"){
+                if (p.Kit_ObservedFridge == 0){
+                    p.Kit_ObservedFridge = 1;
+                    p.san--;
+                    printout("In the fridge, you can only find frozen human remains and a few soft drinks… You lost 1 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+                else if(p.Kit_ObservedFridge == 1){
+                    printout("You searched it before, there are some frozen human remains and a few soft drinks inside.\n");
+                }
+            }
+            else if (choice == "C"){
+                p.Kit_ObservedSink = 1;
+                printout("In the sink there’s a few dishes that are unfinished, also you couldn’t turn on the tap.\n");
+            }
+            else if (choice == "D"){
+                if (p.Kit_ObservedCupboard == 0){
+                    p.Kit_ObservedCupboard = 1;
+                    printout("In the cupboard, you found a few box of cereals and a storage box of mircotubes, inside the tubes are greenish fluid,\non the side of the boxes there’s a skull & crossbones symbol, on the cover of the box a small label wrote “αCaMKII Inducer”,\nit would not be wise to take a sip out of these tubes.\n");
+                }
+                else if (p.Kit_GetChemicals == 0 && p.Kit_ObservedCupboard == 1){
+                    p.Kit_GetChemicals = 1;
+                    printout("You took the box of mysterious chemicals.\n");
+                }
+                else{
+                    printout("You found a box of mysterious chemicals here and there is a few box of cereals.\n");
+                }
+            }
+            else if (choice == "E"){
+                p.Kit_Searched = 1;
+                p.position = 6;
+                savedata(p);
+                printout("You left the kitchen and went back to the living room.\n");
+                cout << endl;
+                goto LivingRoom;
+            }
+            cout << endl;
+
+        }
 
     }
 
