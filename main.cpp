@@ -21,6 +21,8 @@ struct player
   int hp;
   int san;
 
+  
+
   bool LC_Searched;
   bool LC_BrokenWall;
   bool LC_GetWire;
@@ -88,6 +90,22 @@ struct player
   bool Kit_ObservedSink;
   bool Kit_ObservedCupboard;
   bool Kit_GetChemicals;
+
+  // Second floor event
+  bool SF_Searched;
+  bool SF_FromFF;
+  bool SF_FromRm;
+  bool SF_PickUpThePhone;
+  bool SF_CallHelp;
+
+  // Main bedroom event
+  bool MB_Searched;
+  bool MB_ObservedCloset;
+  bool MB_ObservedBed;
+  bool MB_ObservedNightStand;
+  bool MB_GetCozyCoat;
+  bool MB_GetDiary;
+  bool MB_AddSan;
     
 
 
@@ -188,6 +206,18 @@ void savedata(player p)
   <<p.Kit_ObservedSink<<endl
   <<p.Kit_ObservedCupboard<<endl
   <<p.Kit_GetChemicals<<endl
+  <<p.SF_Searched<<endl
+  <<p.SF_FromFF<<endl
+  <<p.SF_FromRm<<endl
+  <<p.SF_PickUpThePhone<<endl
+  <<p.SF_CallHelp<<endl
+  <<p.MB_Searched<<endl
+  <<p.MB_ObservedCloset<<endl
+  <<p.MB_ObservedBed<<endl
+  <<p.MB_ObservedNightStand<<endl
+  <<p.MB_GetCozyCoat<<endl
+  <<p.MB_GetDiary<<endl
+  <<p.MB_AddSan<<endl
   <<p.SB_GetMagnetKey<<endl;
 
   fout.close();
@@ -237,10 +267,21 @@ int main(){
     // Kitchen description
     string KitchenDes = "In the kitchen you found a stove, a fridge, a sink and a cupboard.\n";
 
+    // Second floor description
+    string SecondFloorDes1 = "Stepping onto the second floor, you found nothing special, just a couple of rooms and a telephone next to the stairs,\njudging on the signs on the doors, you can tell these rooms are\nmain bedroom, second bedroom, study, restroom.\n";
+    string SecondFloorDes2 = "You left the room and you are now at the corridor of the second floor.\nThere is a telephone, main bedroom, second bedroom, study, restroom.\n";
+    string SecondFloorDes3 = "Stepping on the second floor, you are now at the corridor of the second floor.\n There is a telephone, main bedroom, second bedroom, study, restroom.\n";
+
+    // Main bedroom description
+    string MainBedroomDes = "You entered the main bed room, in this bedroom you found a closet, a bed, and a nightstand beside it.\n";
+
     
 
 
+    // start, ask for new game or load game
+    Start:{
 
+    }
 
     //load the game if a save exists
     ifstream fin;
@@ -313,6 +354,18 @@ int main(){
       >>p.Kit_ObservedSink
       >>p.Kit_ObservedCupboard
       >>p.Kit_GetChemicals
+      >>p.SF_Searched
+      >>p.SF_FromFF
+      >>p.SF_FromRm
+      >>p.SF_PickUpThePhone
+      >>p.SF_CallHelp
+      >>p.MB_Searched
+      >>p.MB_ObservedCloset
+      >>p.MB_ObservedBed
+      >>p.MB_ObservedNightStand
+      >>p.MB_GetCozyCoat
+      >>p.MB_GetDiary
+      >>p.MB_AddSan
       >>p.SB_GetMagnetKey;
 
       fin.close();
@@ -348,7 +401,7 @@ int main(){
           goto SecondBedroom;
       }
       else if (p.position == 11){
-          goto StudyRoom;
+          goto Study;
       }
       else if (p.position == 12){
           goto Restroom;
@@ -457,6 +510,20 @@ int main(){
     p.Kit_ObservedCupboard = 0;
     p.Kit_GetChemicals = 0;
 
+    //Second floor event
+    p.SF_Searched = 0;
+    p.SF_FromFF = 0;
+    p.SF_FromRm = 0;
+
+    // Main bedroom event
+    p.MB_Searched = 0;
+    p.MB_ObservedCloset = 0;
+    p.MB_ObservedBed = 0;
+    p.MB_ObservedNightStand = 0;
+    p.MB_GetCozyCoat = 0;
+    p.MB_GetDiary = 0;
+    p.MB_AddSan = 0;
+
     // Second bedroom event
     p.SB_GetMagnetKey = 0;
 
@@ -536,6 +603,7 @@ int main(){
                 else if (p.LC_ObservedDoor == 1 && p.LC_GetWire == 1 && p.LC_OpenedDoor == 0){
                     if (GenRand() > p.luck){
                         printout("As your wire hooked and fixed onto the handle outside, you gently pull the wire,\nbut the wire ruptured the moment you pulled it.\nAs the wire ruptured, it seems that you need to find another way to escape.\n");
+                        
                         p.LC_GetWire = 0;
                         cout << endl;
                     }
@@ -1073,6 +1141,7 @@ int main(){
             else if (choice == "B"){
                 p.Ent_Searched = 1;
                 p.position = 8;
+                p.SF_FromFF = 1;
                 printout("You left the entrance and reached second floor.\n");
                 savedata(p);
                 cout << endl;
@@ -1363,11 +1432,191 @@ int main(){
 
     // 8
     SecondFloor:{
+        if (p.SF_Searched == 0 && p.SF_FromFF == 1){
+            p.SF_FromFF = 0;
+            printout(SecondFloorDes1);
+        }
+        else if (p.SF_FromRm == 1 && p.SF_Searched == 1){
+            p.SF_FromRm = 0;
+            printout(SecondFloorDes2);
+        }
+        else if (p.SF_FromFF == 1 && p.SF_Searched == 1){
+            p.SF_FromFF = 0;
+            printout(SecondFloorDes3);
+        }
+        while(1){
+            // ask for action
+            printout(WhatToDo);
+            if (p.SF_PickUpThePhone == 0 ){
+                printout("A. Pick up the telephone.\n");
+            }
+            if(p.SF_PickUpThePhone == 1){
+                printout("A1. Dial a number.\n");
+            }
+            if(p.SF_PickUpThePhone == 1){
+                printout("A2. Put down the telephone.\n");
+            }
+            printout("B. Enter the main bedroom.\n");
+            printout("C. Enter the second bedroom.\n");
+            printout("D. Enter the study.\n");
+            printout("E. Enter the restroom.\n");
+            cout <<  endl;
 
+            cin >> choice;
+            if (choice == "A"){
+                if (p.SF_PickUpThePhone == 0){
+                    p.SF_PickUpThePhone = 1;
+                    printout("You picked up the phone, as expected, there’s no response…\n");
+                }
+                
+            }
+            else if(choice == "A1"){
+                if (p.SF_CallHelp == 0 && p.SF_PickUpThePhone == 1){
+                    p.SF_CallHelp = 1;
+                    printout("You dialed a number and hope the other side would pick up, but nobody came…\n");
+                }
+                else if (p.SF_CallHelp == 1 && p.SF_PickUpThePhone == 1){
+                    printout("You dialed a number again, but nobody came…\n");
+                }
+            }
+            else if(choice == "A2"){
+                if (p.SF_PickUpThePhone == 1){
+                    p.SF_PickUpThePhone = 0;
+                    printout("You put down the telephone.\n");
+                }
+            }
+            else if (choice == "B"){
+                if (p.SF_PickUpThePhone == 1){
+                    p.SF_PickUpThePhone = 0;
+                    p.SF_Searched = 1;
+                    p.position = 9;
+                    savedata(p);
+                    printout("You put down the telephone and entered the main bedroom.\n");
+                    cout << endl;
+                }
+                else if (p.SF_PickUpThePhone == 0){
+                    p.SF_Searched = 1;
+                    p.position = 9;
+                    savedata(p);
+                    printout("You entered the main bed room.\n");
+                    cout << endl;
+                }
+                goto MainBedroom;
+
+            }
+            else if (choice == "C"){
+                if (p.SF_PickUpThePhone == 1){
+                    p.SF_PickUpThePhone = 0;
+                    p.SF_Searched = 1;
+                    p.position = 10;
+                    savedata(p);
+                    printout("You put down the telephone and entered the second bedroom.\n");
+                    cout << endl;
+                }
+                else if (p.SF_PickUpThePhone == 0){
+                    p.SF_Searched = 1;
+                    p.position = 10;
+                    savedata(p);
+                    printout("You entered the seconc bedroom.\n");
+                    cout << endl;
+                }
+                goto SecondBedroom;
+
+            }
+            else if (choice == "D"){
+                if (p.SF_PickUpThePhone == 1){
+                    p.SF_PickUpThePhone = 0;
+                    p.SF_Searched = 1;
+                    p.position = 11;
+                    savedata(p);
+                    printout("You put down the telephone and entered the study.\n");
+                    cout << endl;
+                }
+                else if (p.SF_PickUpThePhone == 0){
+                    p.SF_Searched = 1;
+                    p.position = 11;
+                    savedata(p);
+                    printout("You entered the study.\n");
+                    cout << endl;
+                }
+                goto Study;
+
+            }
+            else if (choice == "E"){
+                if (p.SF_PickUpThePhone == 1){
+                    p.SF_PickUpThePhone = 0;
+                    p.SF_Searched = 1;
+                    p.position = 12;
+                    savedata(p);
+                    printout("You put down the telephone and entered the restroom.\n");
+                    cout << endl;
+                }
+                else if (p.SF_PickUpThePhone == 0){
+                    p.SF_Searched = 1;
+                    p.position = 12;
+                    savedata(p);
+                    printout("You entered the restroom.\n");
+                    cout << endl;
+                }
+                goto Restroom;
+            }
+            cout << endl;     
+        }
     }
 
     // 9
     MainBedroom:{
+        printout(MainBedroomDes);
+        while(1){
+            printout(WhatToDo);
+            printout("A. Observe the closet.\n");
+            printout("B. Observe the bed.\n");
+            printout("C. Observe the nightstand.\n");
+            printout("D. Left the main bedroom.\n");
+            cout << endl;
+
+            cin >>  choice;
+            if (choice == "A"){
+                if (p.MB_ObservedCloset == 0){
+                    p.MB_ObservedCloset = 1;
+                    p.MB_GetCozyCoat = 1;
+                    printout("In the closet there are a few smelly clothes, you found a brand-new cozy coat as well.\n");
+                }
+                else if(p.MB_ObservedCloset == 1){
+                    printout("You found a brand-new cozy coat here before, there are a few smelly clothes left.\n");
+                }
+            }
+            else if(choice == "B"){
+                if (p.MB_ObservedBed == 0){
+                    p.MB_ObservedBed = 1;
+                    printout("The bed does not have any mattress, it’s just a plank of wood.\n");
+                }
+                else if(p.MB_ObservedBed == 1){
+                    printout("You observed the bed before, it’s just a plank of wood.\n");
+                }
+            }
+            else if(choice == "C"){
+                if(p.MB_ObservedNightStand == 0){
+                    p.MB_ObservedNightStand = 1;
+                    p.MB_GetDiary = 1;
+                    printout("On the nightstand, you found a diary.\n");
+                }
+                else if(p.MB_ObservedNightStand == 1){
+                    printout("You found a diary here before and it's empty now.\n");
+                }
+
+            }
+            else if(choice == "D"){
+                p.MB_Searched = 1;
+                p.position = 8;
+                p.SF_FromRm = 1;
+                savedata(p);
+                printout("You left the main bedroom.\n");
+                cout << endl;
+                goto SecondFloor;
+            }
+            cout << endl;
+        }
 
     }
 
@@ -1377,7 +1626,7 @@ int main(){
     }
 
     // 11
-    StudyRoom:{
+    Study:{
 
     }
 
@@ -1391,9 +1640,11 @@ int main(){
 
     }
 
+    Dead:{
 
+    }
     END:{
-
+        printout("As you woke up, the first thing you saw is a plain yet unfamiliar ceiling. \n\"Where am I?\", you thought to yourself, but your brain could hardly gather enough memory to construct an answer.\nAs you stood up, you found yourself in a clean yet seemingly familiar house, a strange yet pleasant aroma filled up the house.\nYou looked to the center of the room, copious and various dishes was set on a dining table,\nsomehow a sudden feeling of disgust rushes up into your mind when you saw the chairs that scattered around the table.\nYou look to the sides of the room, at the extremity of the room, you found a door, that resembles a front door in your memory.\nAs you approach the door, a faint light shines from underneath the door.\nTrembling, you pushed the door opened.\nYour tried to keep your eyes opened, as the brightening light engulfed you.");
     }
 
 }
