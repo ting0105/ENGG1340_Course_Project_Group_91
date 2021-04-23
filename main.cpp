@@ -110,6 +110,13 @@ struct player
 
 
   // Second bedroom event
+  bool SB_Sarched;
+  bool SB_ObservedCloset;
+  bool SB_SanRed;
+  bool SB_ObservedBed;
+  bool SB_AddSan;
+  bool SB_ObservedNightStand;
+  bool SB_OpenedDrawer;
   bool SB_GetMagnetKey;
 
 };
@@ -218,6 +225,13 @@ void savedata(player p)
   <<p.MB_GetCozyCoat<<endl
   <<p.MB_GetDiary<<endl
   <<p.MB_AddSan<<endl
+  <<p.SB_Sarched<<endl
+  <<p.SB_ObservedCloset<<endl
+  <<p.SB_SanRed<<endl
+  <<p.SB_ObservedBed<<endl
+  <<p.SB_AddSan<<endl
+  <<p.SB_ObservedNightStand<<endl
+  <<p.SB_OpenedDrawer<<endl
   <<p.SB_GetMagnetKey<<endl;
 
   fout.close();
@@ -273,7 +287,10 @@ int main(){
     string SecondFloorDes3 = "Stepping on the second floor, you are now at the corridor of the second floor.\n There is a telephone, main bedroom, second bedroom, study, restroom.\n";
 
     // Main bedroom description
-    string MainBedroomDes = "You entered the main bed room, in this bedroom you found a closet, a bed, and a nightstand beside it.\n";
+    string MainBedroomDes = "You entered the main bedroom, in this bedroom you found a closet, a bed, and a nightstand beside it.\n";
+
+    // Second bedroom description
+    string SecondBedroomDes = "You entered the second bedroom, in this bedroom you found a closet, a bed, and a nightstand beside it.\n";
 
     
 
@@ -366,6 +383,13 @@ int main(){
       >>p.MB_GetCozyCoat
       >>p.MB_GetDiary
       >>p.MB_AddSan
+      >>p.SB_Sarched
+      >>p.SB_ObservedCloset
+      >>p.SB_SanRed
+      >>p.SB_ObservedBed
+      >>p.SB_AddSan
+      >>p.SB_ObservedNightStand
+      >>p.SB_OpenedDrawer
       >>p.SB_GetMagnetKey;
 
       fin.close();
@@ -525,6 +549,13 @@ int main(){
     p.MB_AddSan = 0;
 
     // Second bedroom event
+    p.SB_Sarched = 0;
+    p.SB_ObservedCloset = 0;
+    p.SB_SanRed = 0;
+    p.SB_ObservedBed = 0;
+    p.SB_AddSan = 0;
+    p.SB_ObservedNightStand = 0;
+    p.SB_OpenedDrawer = 0;
     p.SB_GetMagnetKey = 0;
 
 
@@ -1622,6 +1653,57 @@ int main(){
 
     // 10
     SecondBedroom:{
+        printout(SecondBedroomDes);
+        while(1){
+            printout(WhatToDo);
+            printout("A. Observe the closet.\n");
+            if (p.SB_ObservedBed == 0){
+                printout("B. Observe the bed.\n");
+            }
+            else if(p.SB_ObservedBed == 1){
+                printout("B. Lie on the bed.\n");
+            }
+            if (p.SB_ObservedNightStand == 0){
+                printout("C. Observe the nightstand.\n");
+            }
+            else if (p.SB_ObservedNightStand == 1){
+                printout("C. Observe the drawer.\n");
+            }
+
+            cout << endl;
+            cin << choice;
+            if (choice == "A"){
+                if (p.SB_ObservedCloset == 0){
+                    p.SB_ObservedCloset = 1;
+                    p.SB_SanRed = 1;
+                    p.san --;
+                    printout("Opening the closet, a few pieces of human body fell out, you lost 1 sanity, you have ");
+                    cout << san;
+                    printout(" sanity left.\n");
+                }
+                else if (p.SB_SanRed == 1 && p.SB_ObservedCloset == 1){
+                    printout("A few pieces of human body fell on the ground and there is nothing in the closet now.\n");
+                }
+            }
+            else if (choice == "B"){
+                if (p.SB_ObservedBed == 0){
+                    p.SB_ObservedBed = 1;
+                    printout("The bed has a mattress on it.\n");
+                }
+                else if (p.SB_ObservedBed == 1 && p.SB_AddSan == 0){
+                    p.SB_AddSan = 1;
+                    p.san ++;
+                    printout("Lying on the bed, you felt relieved from the stress. You gained 1 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+                else if (p.SB_ObservedBed == 1 && p.SB_AddSan == 1){
+                    printout ("After a short break, you realised that you should left this house as soon as possible.\n");
+                }
+            }
+
+            }
+        }
 
     }
 
