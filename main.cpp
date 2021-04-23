@@ -110,7 +110,7 @@ struct player
 
 
   // Second bedroom event
-  bool SB_Sarched;
+  bool SB_Searched;
   bool SB_ObservedCloset;
   bool SB_SanRed;
   bool SB_ObservedBed;
@@ -118,6 +118,16 @@ struct player
   bool SB_ObservedNightStand;
   bool SB_OpenedDrawer;
   bool SB_GetMagnetKey;
+
+  // Study event
+  bool Stu_Searched;
+  bool Stu_ObservedDesk;
+  bool Stu_GetMysteriousBook;
+  bool Stu_ReadTheNote;
+  bool Stu_ReadAloud;
+  bool Stu_ReadInHeart;
+  bool Stu_ObsevedBookShelves;
+  bool Stu_GetDrugGuide;
 
 };
 
@@ -225,14 +235,22 @@ void savedata(player p)
   <<p.MB_GetCozyCoat<<endl
   <<p.MB_GetDiary<<endl
   <<p.MB_AddSan<<endl
-  <<p.SB_Sarched<<endl
+  <<p.SB_Searched<<endl
   <<p.SB_ObservedCloset<<endl
   <<p.SB_SanRed<<endl
   <<p.SB_ObservedBed<<endl
   <<p.SB_AddSan<<endl
   <<p.SB_ObservedNightStand<<endl
   <<p.SB_OpenedDrawer<<endl
-  <<p.SB_GetMagnetKey<<endl;
+  <<p.SB_GetMagnetKey<<endl
+  <<p.Stu_Searched<<endl
+  <<p.Stu_ObservedDesk<<endl
+  <<p.Stu_GetMysteriousBook<<endl
+  <<p.Stu_ReadTheNote<<endl
+  <<p.Stu_ReadAloud<<endl
+  <<p.Stu_ReadInHeart<<endl
+  <<p.Stu_ObsevedBookShelves<<endl
+  <<p.Stu_GetDrugGuide<<endl;
 
   fout.close();
 
@@ -291,6 +309,9 @@ int main(){
 
     // Second bedroom description
     string SecondBedroomDes = "You entered the second bedroom, in this bedroom you found a closet, a bed, and a nightstand beside it.\n";
+
+    // Study description
+    string StudyDes = "In the study, you found a desk and some bookshelves.\n";
 
     
 
@@ -383,14 +404,22 @@ int main(){
       >>p.MB_GetCozyCoat
       >>p.MB_GetDiary
       >>p.MB_AddSan
-      >>p.SB_Sarched
+      >>p.SB_Searched
       >>p.SB_ObservedCloset
       >>p.SB_SanRed
       >>p.SB_ObservedBed
       >>p.SB_AddSan
       >>p.SB_ObservedNightStand
       >>p.SB_OpenedDrawer
-      >>p.SB_GetMagnetKey;
+      >>p.SB_GetMagnetKey
+      >>p.Stu_Searched
+      >>p.Stu_ObservedDesk
+      >>p.Stu_GetMysteriousBook
+      >>p.Stu_ReadTheNote
+      >>p.Stu_ReadAloud
+      >>p.Stu_ReadInHeart
+      >>p.Stu_ObsevedBookShelves
+      >>p.Stu_GetDrugGuide;
 
       fin.close();
 
@@ -549,7 +578,7 @@ int main(){
     p.MB_AddSan = 0;
 
     // Second bedroom event
-    p.SB_Sarched = 0;
+    p.SB_Searched = 0;
     p.SB_ObservedCloset = 0;
     p.SB_SanRed = 0;
     p.SB_ObservedBed = 0;
@@ -558,6 +587,15 @@ int main(){
     p.SB_OpenedDrawer = 0;
     p.SB_GetMagnetKey = 0;
 
+    // Study event
+    p.Stu_Searched = 0;
+    p.Stu_ObservedDesk = 0;
+    p.Stu_GetMysteriousBook = 0;
+    p.Stu_ReadTheNote = 0;
+    p.Stu_ReadAloud = 0;
+    p.Stu_ReadInHeart = 0;
+    p.Stu_ObsevedBookShelves = 0;
+    p.Stu_GetDrugGuide = 0;
 
     savedata(p);
 
@@ -1603,7 +1641,7 @@ int main(){
             printout("A. Observe the closet.\n");
             printout("B. Observe the bed.\n");
             printout("C. Observe the nightstand.\n");
-            printout("D. Left the main bedroom.\n");
+            printout("D. Leave the main bedroom.\n");
             cout << endl;
 
             cin >>  choice;
@@ -1669,16 +1707,17 @@ int main(){
             else if (p.SB_ObservedNightStand == 1){
                 printout("C. Observe the drawer.\n");
             }
+            printout("D. Leave the second bedroom.\n");
 
             cout << endl;
-            cin << choice;
+            cin >> choice;
             if (choice == "A"){
                 if (p.SB_ObservedCloset == 0){
                     p.SB_ObservedCloset = 1;
                     p.SB_SanRed = 1;
                     p.san --;
                     printout("Opening the closet, a few pieces of human body fell out, you lost 1 sanity, you have ");
-                    cout << san;
+                    cout << p.san;
                     printout(" sanity left.\n");
                 }
                 else if (p.SB_SanRed == 1 && p.SB_ObservedCloset == 1){
@@ -1701,14 +1740,113 @@ int main(){
                     printout ("After a short break, you realised that you should left this house as soon as possible.\n");
                 }
             }
+            else if (choice == "C"){
+                if (p.SB_ObservedNightStand == 0){
+                    p.SB_ObservedNightStand = 1;
+                    printout("On the nightstand you found a functional lamp. There also appear to have a drawer in the nightstand.\n");
+                }
+                else if(p.SB_ObservedNightStand == 1 && p.SB_OpenedDrawer == 0 && p.SB_GetMagnetKey == 0){
+                    p.SB_OpenedDrawer = 1;
+                    p.SB_GetMagnetKey = 1;
+                    printout("You opened the drawer, in the drawer you found a key with the name, \"Squire\". It appears to be some sort of brand.\n");
+                }
+                else if (p.SB_GetMagnetKey == 1){
+                    printout("You found a key here, and there is nothing special.\n");
+                }
 
             }
-        }
+            else if (choice == "D"){
+                p.SB_Searched = 1;
+                p.position = 8;
+                p.SF_FromRm = 1;
+                savedata(p);
+                printout("You left the second bedroom.\n");
+                cout << endl;
+                goto SecondFloor;
 
+            } 
+            cout << endl;  
+        }
     }
 
     // 11
     Study:{
+        printout(StudyDes);
+
+        while(1){
+            printout(WhatToDo);
+            if (p.Stu_ObservedDesk == 0){
+                printout ("A. Observe the desk.\n");
+            }
+            else if (p.Stu_GetMysteriousBook == 1 && p.Stu_ReadTheNote == 0){
+                printout ("A. Read the notebook.\n");
+            }
+            else if ( p.Stu_ReadTheNote == 1 && p.Stu_ReadAloud == 0 && p.Stu_ReadInHeart ==0){
+                printout ("A1. Read the note alound.\nA2. Read the note in heart.\n");
+            }
+            else if (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1){
+                printout ("A. Observe the desk.\n");
+            }
+            
+            if (p.Stu_ObsevedBookShelves == 0){
+                printout("B. Observe those bookshelves.\n");
+            }
+            else if (p.Stu_ObsevedBookShelves == 1){
+                printout("B. Observe the books.\n");
+            }
+            printout("C. Leave the study.\n");
+            cout << endl;
+
+            cin >> choice;
+            if (choice == "A"){
+                if (p.Stu_ObservedDesk ==0){
+                    p.Stu_ObservedDesk = 1;
+                    p.Stu_GetMysteriousBook = 1;
+                    printout("On the desk, you found a notebook written in an unknown language.\n");
+                }
+                else if(p.Stu_GetMysteriousBook == 1 && p.Stu_ReadTheNote == 0){
+                    p.Stu_ReadTheNote = 1;
+                    printout("It is a very very old book covered in dusts, you opened the book but find yourself unfamiliar with the language that is used to write this book.\nBut in the book, you found a piece of notes wrote in English.\n");
+                }
+                else if (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1){
+                    printout("There is nothing special in the desk.\n");
+                }
+            }
+            else if (choice == "A1"){
+                if (p.Stu_ReadTheNote == 1 && p.Stu_ReadAloud == 0 && p.Stu_ReadInHeart ==0){
+                    p.Stu_ReadAloud = 1;
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThee shalt ne’er speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                }
+            }
+            else if (choice == "A2"){
+                if (p.Stu_ReadTheNote == 1 && p.Stu_ReadAloud == 0 && p.Stu_ReadInHeart ==0){
+                    p.Stu_ReadInHeart = 1;
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThee shalt ne’er speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                }
+            }
+            else if (choice == "B"){
+                if (p.Stu_ObsevedBookShelves == 0){
+                    p.Stu_ObsevedBookShelves = 1;
+                    printout("On the shelves, there are quite a number of books that are listed.\n");
+                }
+                else if (p.Stu_ObsevedBookShelves == 1){
+                    p.Stu_GetDrugGuide = 1;
+                    printout("You carefully observed the names on the spines of the books, you found a book titled \"Usage of αCaMKII Inducer\".\n");
+                }
+                else if (p.Stu_GetDrugGuide == 1){
+                    printout("You are not interested in other books.\n");
+                }
+            }
+            else if (choice == "C"){
+                p.Stu_Searched = 1;
+                p.position = 8;
+                p.SF_FromRm = 1;
+                savedata(p);
+                printout("You left the study.\n");
+                cout << endl;
+                goto SecondFloor;
+            }
+        }
 
     }
 
@@ -1726,7 +1864,9 @@ int main(){
 
     }
     END:{
-        printout("As you woke up, the first thing you saw is a plain yet unfamiliar ceiling. \n\"Where am I?\", you thought to yourself, but your brain could hardly gather enough memory to construct an answer.\nAs you stood up, you found yourself in a clean yet seemingly familiar house, a strange yet pleasant aroma filled up the house.\nYou looked to the center of the room, copious and various dishes was set on a dining table,\nsomehow a sudden feeling of disgust rushes up into your mind when you saw the chairs that scattered around the table.\nYou look to the sides of the room, at the extremity of the room, you found a door, that resembles a front door in your memory.\nAs you approach the door, a faint light shines from underneath the door.\nTrembling, you pushed the door opened.\nYour tried to keep your eyes opened, as the brightening light engulfed you.");
+        printout("As you woke up, the first thing you saw is a plain yet unfamiliar ceiling. \n\"Where am I?\", you thought to yourself, but your brain could hardly gather enough memory to construct an answer.\nAs you stood up, you found yourself in a clean yet seemingly familiar house, a strange yet pleasant aroma filled up the house.\nYou looked to the center of the room, copious and various dishes was set on a dining table,\nsomehow a sudden feeling of disgust rushes up into your mind when you saw the chairs that scattered around the table.\nYou look to the sides of the room, at the extremity of the room, you found a door, that resembles a front door in your memory.\nAs you approach the door, a faint light shines from underneath the door.\nTrembling, you pushed the door opened.\nYour tried to keep your eyes opened, as the brightening light engulfed you.\n");
     }
+    
+    return (0);
 
 }
