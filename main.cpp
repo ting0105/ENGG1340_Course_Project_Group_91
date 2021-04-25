@@ -7,8 +7,7 @@
 #include <fstream>
 using namespace std;
 
-struct player
-{
+struct player{
   int position;
   int str;
   int con;
@@ -128,6 +127,31 @@ struct player
   bool Stu_ReadInHeart;
   bool Stu_ObsevedBookShelves;
   bool Stu_GetDrugGuide;
+
+  //Restroom event
+  bool RM_Searched;
+  bool RM_SanRed;
+  bool RM_ObservedCabinet;
+  bool RM_ObservedMirror;
+  bool RM_OpenedCabinet;
+  bool RM_GetSyringes;
+  bool RM_ObservedSink;
+  bool RM_ObservedBathtub;
+
+  // Right cell
+  bool RC_Searched;
+  bool RC_ChatWithTheOldMan;
+  bool RC_OldManDead;
+  bool RC_ObservedRoom;
+
+  // special event
+  bool S_ForgetNote;
+  bool S_ForgetMysteriousBook;
+  bool S_ForgetDiary;
+  bool S_BurnMysteriousBool;
+  bool S_BurnDiary;
+  bool S_InjectChemicals;
+  bool S_InjectCorrectly;
 
 };
 
@@ -250,11 +274,91 @@ void savedata(player p)
   <<p.Stu_ReadAloud<<endl
   <<p.Stu_ReadInHeart<<endl
   <<p.Stu_ObsevedBookShelves<<endl
-  <<p.Stu_GetDrugGuide<<endl;
+  <<p.Stu_GetDrugGuide<<endl
+  <<p.RM_Searched<<endl
+  <<p.RM_SanRed<<endl
+  <<p.RM_ObservedCabinet<<endl
+  <<p.RM_ObservedMirror<<endl
+  <<p.RM_OpenedCabinet<<endl
+  <<p.RM_GetSyringes<<endl
+  <<p.RM_ObservedSink<<endl
+  <<p.RM_ObservedBathtub<<endl
+  <<p.RC_Searched<<endl
+  <<p.RC_ChatWithTheOldMan<<endl
+  <<p.RC_OldManDead<<endl
+  <<p.RC_ObservedRoom<<endl
+  <<p.S_ForgetNote<<endl
+  <<p.S_ForgetMysteriousBook<<endl
+  <<p.S_ForgetDiary<<endl
+  <<p.S_BurnMysteriousBool<<endl
+  <<p.S_BurnDiary<<endl
+  <<p.S_InjectChemicals<<endl
+  <<p.S_InjectCorrectly<<endl;
 
   fout.close();
 
 
+}
+
+void CheckInventory(player p){
+    printout("Inventory:\n");
+    if(p.LC_GetWire == 1){
+        printout("Wire\n");
+    }
+    if (p.MC_GetMetalKey == 1){
+        printout("Metal Key\n");
+    }
+    if (p.LR_GetCoal == 1){
+        printout("Coal\n");
+    }
+    if (p.LR_GetFirstAidKit == 1){
+        printout("First Aid Kit\n");
+    }
+    if (p.LR_GetNote == 1){
+        printout("Note\n");
+    }
+    if (p.LR_GetCopperKey){
+        printout("Copper Key\n");
+    }
+    if (p.Kit_GetKnife == 1){
+        printout("Knife\n");
+    }
+    if (p.Kit_GetChemicals == 1){
+        printout("αCaMKII Inducer\n");
+    }
+    if (p.MB_GetCozyCoat == 1){
+        printout("Cozy Coat\n");
+    }
+    if (p.MB_GetDiary == 1){
+        printout("Diary\n");
+    }
+    if (p.SB_GetMagnetKey == 1){
+        printout("Magnet Key\n");
+    }
+    if (p.Stu_GetMysteriousBook == 1){
+        printout("Notebook\n");
+    }
+    if (p.Stu_GetDrugGuide == 1){
+        printout("\"Usage of αCaMKII Inducer\"\n");
+    }
+    if (p.RM_GetSyringes == 1){
+        printout("Syringes\n");
+    }
+    
+}
+
+// print the diary
+void Diary(){
+    printout("25th August 1993\nAfter weeks of investigation, we’ve successfully located the coordinates of the ruins.\nIt’s only a matter of time for us to fully unfold the truth.\n\n");
+    printout("2nd November 1993\nUnbelievable... we’ve found it, the ruin is more than two kilometers buried into the earth…\nIt is impossible for humans to build structure in such scale in this depth.\nThe ruin is old, it’s created even before the start of mankind…\n\n");
+    printout("5th November 1993\nIt has been three days into exploration,\nbut as we go further and deeper, this ruin only seems to be expanding endlessly…\nWe’ve suffered personnel losses, over the course of three days,\nseven had vanished, it’s not going to be long until people start losing their mind from stress.\n\n");
+    printout("13th November 1993\nWe’ve found something noticeable, in the center of a large hall, a coffin,\nbut the coffin seems to be locked by some mechanism, my assistant is now working.\n\n");
+    printout("20th November 1993\nI’ve been in coma for a week since we encountered that… that humanoid thing.\nIt killed half of the team within the blink of a eye…\nWe are lucky to even be here, and miraculously, it fell unconscious, for some unknown reason.\nSuffered from major loss, we are now evacuating with our captured subject.\n\n");
+    printout("5th December 1993\nIt has been two weeks after we’ve arrived back to our facility, but that thing is still unconscious…\n\n");
+    printout("7th December 1993\nThat thing woke up, but did not appears to be aggressive, we are still uncertain of its identity and awareness.\n\n");
+    printout("21st January 1994\nA researcher responsible for feeding\nand mental assessment had been discovered to be showing sympathy and is obsessed with its humanoid appearance.\nI ordered to execute him. The council did not approve this.\n\n");
+    printout("23rd January 1994\nThe subject had demonstrated emotion of concern and trepidation after the executed researcher was removed from the laboratory.\n\n");
+    printout("8th September 2008\nWe’ve discovered crucial clues that can help us identify the subject with an important artifact the expedition team found in the ruin…\nIt’s been 15 years for another icebreaking discovery…\n\n");
 }
 
 
@@ -313,13 +417,13 @@ int main(){
     // Study description
     string StudyDes = "In the study, you found a desk and some bookshelves.\n";
 
-    
-
-
-    // start, ask for new game or load game
-    Start:{
-
-    }
+    // Restroom description
+    string RestroomDes = "Upon entering the restroom, you saw a few things that’s standing out of the place, a cabinet, the sink and the bathtub.\nIn the bathtub there’s a naked female body lying in there…\n";
+ 
+    // Rightcell description
+    string RightCellDes1 = "As the door opens, you braced yourself for anything that is going to appear,\nbut to your surprise, what unfolds before you appeared to be a old man huddled in the corner of the room.\nHis lightless eyes peeked out between his arms; upon seeing you, he buried his head deep into his arms, trembling.\n";
+    string RightCellDes2 = "You entered the cell, the old man huddled in the corner of the room and trembling.\n";
+    string RightCellDes3 = "You entered the cell, what you see is the body of the old man.\n";
 
     //load the game if a save exists
     ifstream fin;
@@ -419,7 +523,27 @@ int main(){
       >>p.Stu_ReadAloud
       >>p.Stu_ReadInHeart
       >>p.Stu_ObsevedBookShelves
-      >>p.Stu_GetDrugGuide;
+      >>p.Stu_GetDrugGuide
+      >>p.RM_Searched
+      >>p.RM_SanRed
+      >>p.RM_ObservedCabinet
+      >>p.RM_ObservedMirror
+      >>p.RM_OpenedCabinet
+      >>p.RM_GetSyringes
+      >>p.RM_ObservedSink
+      >>p.RM_ObservedBathtub
+      >>p.RC_Searched
+      >>p.RC_ChatWithTheOldMan
+      >>p.RC_OldManDead
+      >>p.RC_ObservedRoom
+      >>p.S_ForgetNote
+      >>p.S_ForgetMysteriousBook
+      >>p.S_ForgetDiary
+      >>p.S_BurnMysteriousBool
+      >>p.S_BurnDiary
+      >>p.S_InjectChemicals
+      >>p.S_InjectCorrectly;
+      
 
       fin.close();
 
@@ -597,6 +721,32 @@ int main(){
     p.Stu_ObsevedBookShelves = 0;
     p.Stu_GetDrugGuide = 0;
 
+    // Restroom event
+    p.RM_Searched = 0;
+    p.RM_SanRed = 0;
+    p.RM_ObservedCabinet = 0;
+    p.RM_ObservedMirror = 0;
+    p.RM_OpenedCabinet = 0;
+    p.RM_GetSyringes = 0;
+    p.RM_ObservedSink = 0;
+    p.RM_ObservedBathtub = 0;
+
+    // Right cell event
+    p.RC_Searched = 0;
+    p.RC_ChatWithTheOldMan = 0;
+    p.RC_OldManDead = 0;
+    p.RC_ObservedRoom = 0;
+
+    // Special event
+    p.S_ForgetNote = 0;
+    p.S_ForgetMysteriousBook = 0;
+    p.S_ForgetDiary = 0;
+    p.S_BurnMysteriousBool = 0;
+    p.S_BurnDiary = 0;
+    p.S_InjectChemicals = 0;
+    p.S_InjectCorrectly = 0;
+    
+
     savedata(p);
 
 
@@ -659,6 +809,69 @@ int main(){
             else if (p.LC_BrokenWall == 1 && p.TR_Searched == 1){
                 printout("B. Go to the middle cell.\n");
             }
+            // special events
+            cout << endl;
+            printout("Special event:\n");
+            if (p.Stu_GetMysteriousBook == 1 && (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1)){
+                if(p.S_ForgetMysteriousBook == 0){
+                    printout("S1. Hastur!\nS2. Read the notebook silently in your mind.\n");
+                }
+                else if(p.S_ForgetMysteriousBook == 1)
+                printout("S2. Read the notebook that you haven't seen before.\n");
+                
+            }
+            if (p.LR_GetFirstAidKit == 1){
+                printout("S3. Heal yourself by first aid kit.\n");
+            }
+            if (p.LR_GetNote == 1){
+                if(p.S_ForgetNote == 0){
+                    printout("S4. Read the note that you found in the living room.\n");
+                }
+                else if (p.S_ForgetNote == 1){
+                    printout("S4. Read the note that you haven't seen before.\n");
+                }
+            }
+            if (p.MB_GetDiary == 1){
+                if (p.S_ForgetDiary == 0){
+                    printout("S5. Read the diary that you found in main bedroom.\n");
+                }
+                else if(p.S_ForgetDiary == 1){
+                    printout("S5. Read the diary that you haven't seen before.\n");
+                }
+            }
+            if (p.LR_SetFire == 1 && p.LR_GetNote == 1 && p.position == 6){
+                if (p.S_ForgetNote == 0){
+                    printout("S6. Burn the note that you found in the living room.\n");
+                }
+                else if (p.S_ForgetNote == 1){
+                    printout("S6. Burn the note that you haven't seen before.\n");
+                }
+            }
+            if (p.LR_SetFire == 1 && p.Stu_GetMysteriousBook == 1 && p.position == 6){
+                if (p.S_ForgetMysteriousBook == 0){
+                    printout("S7. Burn the notebook that you found in the study.\n");
+                }
+                else if (p.S_ForgetMysteriousBook == 1){
+                    printout("S7. Burn the notebook that you haven't seen before.\n");
+                }
+                
+            }
+            if (p.LR_SetFire == 1 && p.MB_GetDiary == 1 && p.position == 6){
+                if (p.S_ForgetDiary == 0){
+                    printout("S8. Burn the diary that you found in the main bedroom.\n");
+                }
+                else if (p.S_ForgetDiary == 1){
+                    printout("S8. Burn the diary that you haven't seen before.\n");
+                } 
+            }
+            if (p.MB_GetCozyCoat == 1){
+                printout("S9. Wear the cozy coat.\n");
+            }
+            if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                printout("S10. Inject the αCaMKII Inducer.\n");
+            }
+            printout("I. Check your inventory.\n");
+
             cout << endl;
 
             // action
@@ -744,6 +957,205 @@ int main(){
                     
                 } 
             }
+            else if (choice == "S1"){
+                if (p.Stu_GetMysteriousBook == 1 && (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1)){    
+                    if (p.S_ForgetMysteriousBook == 0){
+                        printout("As the word “Hastur” came out of your mouth,\na tentacle with talons penetrated the walls, it stretched its talons, and dashed toward you.\n");
+                    }
+                }
+            }
+            else if (choice == " S2"){
+                if (p.Stu_GetMysteriousBook == 1){
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                    if (p.S_ForgetMysteriousBook == 1){
+                        p.S_ForgetMysteriousBook = 0;
+                        printout("After you reading the notebook, you remembered that you found it in study.\n");
+                    }
+                }  
+            }
+            else if (choice == "S3"){
+                if (p.LR_GetFirstAidKit == 1){
+                    if (p.hp != (p.siz + p.con)/10 && p.hp >= ((p.siz + p.con)/10)-1){
+                        printout("You are quite good now, and you don't need it at this moment.\n");
+                    }
+                    else if (p.hp != (p.siz + p.con)/10 && p.hp < ((p.siz + p.con)/10)-1){
+                        p.hp = p.hp + 2;
+                        p.LR_GetFirstAidKit = 0;
+                        printout("You used the first aid kit and gained 2 hp, you have ");
+                        cout << p.hp;
+                        printout(" hp left.\n");
+                    }
+                }
+            }
+            else if (choice == "S4"){
+                if (p.LR_GetNote == 1){
+                    printout("\"Burns the books that held the truth, and vanishes the men who seek the truth, only then may the mist goes blind on you.\"\n");
+                    if (p.S_ForgetNote == 1){
+                        p.S_ForgetNote = 0;
+                        printout("After reading the note, you remembered that you found it in the living room.\n");
+                    }
+                }
+            }
+            else if (choice == "S5"){
+                if (p.MB_GetDiary == 1){
+                    if (p.S_ForgetDiary == 0){
+                        Diary();
+                    }
+                    else if(p.S_ForgetDiary == 1){
+                        p.S_ForgetDiary = 1;
+                        Diary();
+                        printout("After reading it, you remembered that you found it in the main bedroom.\n");
+                    }
+                }
+            }
+            else if (choice == "S6"){
+                if (p.LR_SetFire == 1 && p.LR_GetNote == 1 && p.position == 6){
+                    if (p.S_ForgetNote == 0){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                    else if (p.S_ForgetNote == 1){
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                }
+            }
+            else if (choice == "S7"){
+                if (p.LR_SetFire == 1 && p.Stu_GetMysteriousBook == 1 && p.position == 6){
+                    if (p.S_ForgetMysteriousBook == 0){
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        p.san = p.san + 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetMysteriousBook == 1){
+                        p.san = p.san + 1;
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }  
+                }
+            }
+            else if (choice == "S8"){
+                if (p.LR_SetFire == 1 && p.MB_GetDiary == 1 && p.position == 6){
+                    if (p.S_ForgetDiary == 0){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetDiary == 1){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    } 
+                }
+            }
+            else if (choice == "S9"){
+                if (p.MB_GetCozyCoat == 1){
+                    p.MB_GetCozyCoat = 0;
+                    p.san ++;
+                    printout("You felt surrounded by warmth… you gained 1 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+            }
+            else if (choice == "S10"){
+                if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    if (p.Stu_GetDrugGuide == 0){
+                        if (GenRand() <= p.luck){
+                            printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                        else if (GenRand() > p.luck){
+                            int SanRed = random()%10+5;
+                            p.san -= SanRed;
+                            p.str -= 5;
+                            printout ("You ignorantly injected a relatively large dose of chemical into your vein, you collapsed onto the ground as your mind fades out…\nAfter you wake up, you felt that you are weak. You lost ");
+                            cout << SanRed;
+                            printout(" sanity, you have ");
+                            cout << p.san;
+                            printout(" sanity left.\n");
+                            printout("You found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                    if (p.Stu_GetDrugGuide == 1){
+                        p.S_InjectCorrectly = 1;
+                        printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
+                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            goto END;
+                        }
+                        else{
+                            printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                }
+            }
+            
+
+
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
             cout << endl;
         }
     }
@@ -787,7 +1199,7 @@ int main(){
                 printout(WhatToDo); 
                 printout("A. Observe the corpses.\n");
                 if (p.MC_ObservedDoor == 0){
-                    printout("B. Observe the Door.\n");
+                    printout("B. Observe the door.\n");
                 }
                 else if (p.TR_Searched == 0 && p.MC_ObservedDoor == 1){
                     printout("B. Leave the cell through the door.\n");
@@ -871,6 +1283,9 @@ int main(){
                         
                     }
                 }
+                else if (choice == "I"){
+                    CheckInventory(p);
+                }
                 cout << endl;
 
             }   
@@ -897,7 +1312,7 @@ int main(){
         while (1){
             // ask for action
             printout(WhatToDo);
-            printout("A. Observe the torture instruments.\nB. Observe the Large Mirror.\n");
+            printout("A. Observe the torture instruments.\nB. Observe the large mirror.\n");
             if (p.TR_ObservedDoor == 0 && p.TR_UnlockedDoor == 0){
                 printout("C. Observe the metal door.\n");
             }
@@ -925,14 +1340,17 @@ int main(){
             else if (p.TR_ObservedRCDoor == 1 && p.TR_ObservedPadlock == 0){
                 printout("E. Observe the padlock on the door of the right cell.\n");
             }
-            else if (p.TR_ObservedPadlock == 1 && p.MC_GetMetalKey == 1 && p.SB_GetMagnetKey == 0){
+            else if (p.TR_ObservedPadlock == 1 && p.MC_GetMetalKey == 1 && p.SB_GetMagnetKey == 0 && p.TR_UnlockedRCDoor == 0){
                 printout("E. Try to open the door of the right cell by the metal key.\n");
             }
-            else if (p.TR_ObservedPadlock ==1 && p.SB_GetMagnetKey == 1){
+            else if (p.TR_ObservedPadlock ==1 && p.SB_GetMagnetKey == 1 && p.MC_GetMetalKey == 0 && p.TR_UnlockedRCDoor == 0){
                 printout("E. Try to open the door of the right cell by the magnet key.\n");
             }
-            else{
-                printout("E. Observe the door of the right cell.\n");
+            else if (p.TR_UnlockedRCDoor == 1){
+                printout("E. Enter the right cell.\n");
+            }
+            else if (p.TR_ObservedPadlock ==1 && p.SB_GetMagnetKey == 1 && p.MC_GetMetalKey == 1 & p.TR_UnlockedRCDoor == 0){
+                printout("E1. Try to open the door of the right cell by the metal key.\nE2. Try to open the door of the right cell by the magnet key.\n");
             }
             if (p.LC_OpenedDoor == 1){
                 printout("F. Enter the left cell.\n");
@@ -1021,17 +1439,37 @@ int main(){
                     p.TR_ObservedPadlock = 1;
                     printout("The padlock is cold to touch, a layer of reinforced metal enveloped the lock.\nMade of sturdy metal, the shackle is reinforced, partially covered in another layer of steel.\nOn the side of the padlock, it writes the word \"Squire\".\n");
                 }
-                else if (p.TR_ObservedPadlock == 1 && p.MC_GetMetalKey == 1 && p.SB_GetMagnetKey == 0){
-                    printout("You insert the metal key you found in the middle cell and turned; However, it seems that this isn't the correct key.\n");
+                else if (p.TR_ObservedPadlock == 1 && p.MC_GetMetalKey == 1 && p.SB_GetMagnetKey == 0 && p.TR_UnlockedRCDoor == 0){
+                    printout("You inserted the metal key you found in the middle cell and turned; However, it seems that this isn't the correct key.\n");
                 }
-                else if (p.TR_ObservedPadlock ==1 && p.SB_GetMagnetKey == 1){
+                else if (p.TR_ObservedPadlock ==1 && p.SB_GetMagnetKey == 1 && p.TR_UnlockedRCDoor == 0){
                     p.TR_UnlockedRCDoor = 1;
-                    printout("You insert the key you found in the main bedroom and turned; the padlock opened with ease.\n");
+                    printout("You inserted the key you found in the main bedroom and turned; the padlock opened with ease.\n");
+                }
+                else if (p.TR_UnlockedRCDoor == 1){
+                    p.TR_Searched = 1;
+                    savedata(p);
+                    p.position = 13;
+                    printout("You entered the right cell.\n");
+                    cout << endl;
+                    goto RightCell;
+                }
+            }
+            else if (choice == "E1"){
+                if (p.TR_ObservedPadlock ==1 && p.SB_GetMagnetKey == 1 && p.MC_GetMetalKey == 1 & p.TR_UnlockedRCDoor == 0){
+                    printout("You inserted the metal key you found in the middle cell and turned; However, it seems that this isn't the correct key.\n");
+                }
+            }
+            else if (choice == "E2"){
+                if(p.TR_ObservedPadlock ==1 && p.SB_GetMagnetKey == 1 && p.MC_GetMetalKey == 1 & p.TR_UnlockedRCDoor == 0){
+                    p.TR_UnlockedRCDoor = 1;
+                    printout("You inserted the key you found in the main bedroom and turned; the padlock opened with ease.\n");
                 }
             }
             else if (choice == "F"){
                 if (p.LC_OpenedDoor == 1){
-                    printout("You enter the left cell.\n");
+                    printout("You entered the left cell.\n");
+                    p.TR_Searched = 1;
                     cout << endl;
                     p.position=1;
                     savedata(p);
@@ -1040,9 +1478,11 @@ int main(){
                 else if (p.LC_OpenedDoor == 0){
                     p.LC_OpenedDoor = 1;
                     printout("You open the door of the left cell.\n");
-
                 }
 
+            }
+            else if (choice == "I"){
+                CheckInventory(p);
             }
             cout << endl;
 
@@ -1086,8 +1526,8 @@ int main(){
             }
             if(p.TR_UnlockedDoor == 1){
                 printout("D. Go to the torture room.\n");
-                cout << endl;
             }
+
             cout << endl;
 
             // action.
@@ -1176,6 +1616,9 @@ int main(){
                     goto TortureRoom;
                 }
             }
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
             cout << endl;
         }
     }
@@ -1232,6 +1675,9 @@ int main(){
                 savedata(p);
                 cout << endl;
                 goto Storage;
+            }
+            else if (choice == "I"){
+                CheckInventory(p);
             }
             cout << endl;
         }
@@ -1392,6 +1838,9 @@ int main(){
                 cout << endl;
                 goto Entrance;
             }
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
             cout << endl;
         }
     }
@@ -1434,6 +1883,7 @@ int main(){
             else if (choice == "A1"){
                 if (p.Kit_ObservedStove == 1){
                     if(p.Kit_ObservedPot == 0){
+                        p.san --;
                         p.Kit_ObservedPot = 1;
                         printout("You opened the pot, only to discover human remains and flesh within. You lost 1 sanity, you have ");
                         cout << p.san;
@@ -1493,6 +1943,9 @@ int main(){
                 cout << endl;
                 goto LivingRoom;
             }
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
             cout << endl;
 
         }
@@ -1529,6 +1982,7 @@ int main(){
             printout("C. Enter the second bedroom.\n");
             printout("D. Enter the study.\n");
             printout("E. Enter the restroom.\n");
+            printout("F. Go back to the first floor.\n");
             cout <<  endl;
 
             cin >> choice;
@@ -1542,10 +1996,19 @@ int main(){
             else if(choice == "A1"){
                 if (p.SF_CallHelp == 0 && p.SF_PickUpThePhone == 1){
                     p.SF_CallHelp = 1;
-                    printout("You dialed a number and hope the other side would pick up, but nobody came…\n");
+                    printout("You dialed a number hopefully and hope the other side would pick up, but nobody came…\n");
+                    if (random()%100+1 > p.pow){
+                        int SanRed = random()%2+1;
+                        p.san -= SanRed;
+                        printout("Because of this, you felt hopeless.\nYou lost ");
+                        cout << SanRed;
+                        printout(" sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                    }
                 }
                 else if (p.SF_CallHelp == 1 && p.SF_PickUpThePhone == 1){
-                    printout("You dialed a number again, but nobody came…\n");
+                    printout("You dialed a number again, as expected, nobody came…\n");
                 }
             }
             else if(choice == "A2"){
@@ -1629,6 +2092,17 @@ int main(){
                 }
                 goto Restroom;
             }
+            else if (choice == "F"){
+                p.SF_Searched = 1;
+                p.position = 5;
+                savedata(p);
+                printout("You left the second floor and went back to entrance through the stairway.\n");
+                cout << endl;
+                goto Entrance;
+            }
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
             cout << endl;     
         }
     }
@@ -1683,6 +2157,9 @@ int main(){
                 printout("You left the main bedroom.\n");
                 cout << endl;
                 goto SecondFloor;
+            }
+            else if (choice == "I"){
+                CheckInventory(p);
             }
             cout << endl;
         }
@@ -1748,7 +2225,7 @@ int main(){
                 else if(p.SB_ObservedNightStand == 1 && p.SB_OpenedDrawer == 0 && p.SB_GetMagnetKey == 0){
                     p.SB_OpenedDrawer = 1;
                     p.SB_GetMagnetKey = 1;
-                    printout("You opened the drawer, in the drawer you found a key with the name, \"Squire\". It appears to be some sort of brand.\n");
+                    printout("You opened the drawer, in the drawer you found a magnet key with the name, \"Squire\". It appears to be some sort of brand.\n");
                 }
                 else if (p.SB_GetMagnetKey == 1){
                     printout("You found a key here, and there is nothing special.\n");
@@ -1763,8 +2240,10 @@ int main(){
                 printout("You left the second bedroom.\n");
                 cout << endl;
                 goto SecondFloor;
-
-            } 
+            }
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
             cout << endl;  
         }
     }
@@ -1782,7 +2261,7 @@ int main(){
                 printout ("A. Read the notebook.\n");
             }
             else if ( p.Stu_ReadTheNote == 1 && p.Stu_ReadAloud == 0 && p.Stu_ReadInHeart ==0){
-                printout ("A1. Read the note alound.\nA2. Read the note in heart.\n");
+                printout ("A1. Read the note out softly.\nA2. Read the note silently in your mind.\n");
             }
             else if (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1){
                 printout ("A. Observe the desk.\n");
@@ -1802,11 +2281,11 @@ int main(){
                 if (p.Stu_ObservedDesk ==0){
                     p.Stu_ObservedDesk = 1;
                     p.Stu_GetMysteriousBook = 1;
-                    printout("On the desk, you found a notebook written in an unknown language.\n");
+                    printout("On the desk, you found a notebook written in an unknown language. Some force beyonded your control and made you picked up the notebook.\n");
                 }
                 else if(p.Stu_GetMysteriousBook == 1 && p.Stu_ReadTheNote == 0){
                     p.Stu_ReadTheNote = 1;
-                    printout("It is a very very old book covered in dusts, you opened the book but find yourself unfamiliar with the language that is used to write this book.\nBut in the book, you found a piece of notes wrote in English.\n");
+                    printout("It is a very very old book covered in dusts, you opened the book but find yourself unfamiliar with the language that is used to write this book.\nBut in the book, you found a piece of note wrote in English.\n");
                 }
                 else if (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1){
                     printout("There is nothing special in the desk.\n");
@@ -1815,13 +2294,13 @@ int main(){
             else if (choice == "A1"){
                 if (p.Stu_ReadTheNote == 1 && p.Stu_ReadAloud == 0 && p.Stu_ReadInHeart ==0){
                     p.Stu_ReadAloud = 1;
-                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThee shalt ne’er speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\nAs the word “Hastur” came out of your mouth,\na tentacle with talons penetrated the walls, it stretched its talons, and dashed toward you.\n");
                 }
             }
             else if (choice == "A2"){
                 if (p.Stu_ReadTheNote == 1 && p.Stu_ReadAloud == 0 && p.Stu_ReadInHeart ==0){
                     p.Stu_ReadInHeart = 1;
-                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThee shalt ne’er speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                 }
             }
             else if (choice == "B"){
@@ -1846,17 +2325,173 @@ int main(){
                 cout << endl;
                 goto SecondFloor;
             }
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
+            cout << endl;
         }
 
     }
 
     // 12
     Restroom:{
-
+        printout(RestroomDes);
+        if (p.RM_Searched == 0 && p.RM_SanRed == 0){
+            p.san -= 2;
+            p.RM_SanRed = 1;
+            printout("You lost 2 sanity, you have ");
+            cout << p.san;
+            printout(" sanity left.\n");
+            savedata(p);
+        }
+        
+        while(1){
+            printout(WhatToDo);
+            if (p.RM_ObservedCabinet == 0){
+                printout("A. Observe the cabinet.\n");
+            }
+            else if (p.RM_ObservedCabinet == 1){
+                printout("A1. Observe the mirror.\nA2. Open the cabinet.\n");
+            }
+            printout("B. Observe the sink.\n");
+            printout("C. Observe the bathtub.\n");
+            printout("D. Leave the restroom.\n");
+            
+            cout << endl;
+            cin >> choice;
+            if (choice == "A"){
+                if (p.RM_ObservedCabinet == 0){
+                    p.RM_ObservedCabinet = 1;
+                    printout("The cabinet has a pair of mirrors as its door.");
+                }
+            }
+            else if (choice == "A1"){
+                if (p.RM_ObservedCabinet == 1){
+                    p.RM_ObservedMirror = 1;
+                    printout("You see nothing important, nothing worthy. You felt worthless.\n");
+                }
+            }
+            else if (choice == "A2"){
+                if (p.RM_ObservedCabinet == 1){
+                    p.RM_OpenedCabinet = 1;
+                    p.RM_GetSyringes = 1;
+                    printout("You opened the cabinet. In the cabinet you found a few unused syringes.\n");
+                }
+                else if (p.RM_GetSyringes = 1){
+                    printout("Apart from the syringes that you took before, there is nothing useful in the cabinet.\n");
+                }
+            }
+            else if(choice == "B"){
+                if (p.RM_ObservedSink == 0){
+                    p.RM_ObservedSink = 1;
+                    printout("You carefully inspected the sink, but you failed to find anything useful…\n");
+                }
+                else if (p.RM_ObservedSink == 1){
+                    printout("You inspected the sink before and you failed to find anything useful…\n");
+                }
+            }
+            else if (choice == "C"){
+                if (p.RM_ObservedBathtub == 0){
+                    p.RM_ObservedBathtub = 1;
+                    int SanRed = random()%3+1;
+                    p.san -= SanRed;
+                    printout("You closely inspected the body…\nher ribs are removed, and her lungs are pulled out to form a wing like structure, you felt horrified…\nYou lost ");
+                    cout << SanRed;
+                    printout(" sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                    printout("After you've calmed down, you carefully search the inside of the bathtub, but you failed to find anything useful.\n");
+                }
+                else if (p.RM_ObservedBathtub == 1){
+                    printout("You searched the bathtub again and again, but you failed to find anything useful.\n");
+                }
+            }
+            else if (choice == "D"){
+                p.RM_Searched = 1;
+                p.position = 8;
+                p.SF_FromRm = 1;
+                savedata(p);
+                printout("You left the restroom.\n");
+                cout << endl;
+                goto SecondFloor;
+            }
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
+            cout << endl;
+        }
     }
 
     // 13
     RightCell:{
+        if (p.RC_Searched == 0 && p.RC_OldManDead == 0){
+            printout(RightCellDes1);
+        }
+        else if (p.RC_Searched == 1 && p.RC_OldManDead == 0){
+            printout(RightCellDes2);
+        }
+        else if (p.RC_Searched == 1 && p.RC_OldManDead == 1){
+            printout(RightCellDes3);
+        }
+
+        while(1){
+            printout(WhatToDo);
+            if (p.RC_OldManDead == 0 && p.RC_ChatWithTheOldMan == 0){
+                printout("A. Chat with the old man.\nB. Observe the room.\nC. Go to torture room.\n");
+            }
+            else if (p.RC_OldManDead == 1){
+                printout("A. Observe the room.\nB. Go to torture room.\n");
+            }
+            cout << endl;
+
+            cin >> choice;
+            if (choice == "A"){
+                if (p.RC_OldManDead == 0 && p.RC_ChatWithTheOldMan == 0){
+                    p.RC_OldManDead = 1;
+                    p.RC_ChatWithTheOldMan = 1;
+                    printout("You tried to talk with the old man.\nWho're you?\nWhere're we?\nWhat's happened on me?\nYou asked a few questions, however, he just keep speaking \"burn and forget…burn and forget…burn and forget…\"\nSlowly, you can't hear his voice. You touched him, you found that he was gone.\n");
+                }
+                else if (p.RC_OldManDead == 1 && p.RC_ChatWithTheOldMan == 1 && p.RC_ObservedRoom == 0){
+                    p.RC_ObservedRoom = 1;
+                    printout("You observed the cell carefully, however, you didn't find anything useful.\n");
+                }
+                else if (p.RC_OldManDead == 1 && p.RC_ChatWithTheOldMan == 1 && p.RC_ObservedRoom == 1){
+                    printout("You observed the cell carefully again and again, however, you didn't find anything useful.\nYou thought that you were wasting your time.\n");
+                }
+            }
+            else if (choice == "B"){
+                if (p.RC_OldManDead == 0 && p.RC_ChatWithTheOldMan == 0 && p.RC_ObservedRoom == 0){
+                    p.RC_ObservedRoom = 1;
+                    printout("You observed the cell carefully, however, you didn't find anything useful.\n");
+                }
+                else if (p.RC_OldManDead == 0 && p.RC_ChatWithTheOldMan == 0 && p.RC_ObservedRoom == 1){
+                    printout("You observed the cell carefully again and again, however, you didn't find anything useful.\nYou thought that you were wasting your time.\n");
+                }
+                else if (p.RC_OldManDead == 1 && p.RC_ChatWithTheOldMan == 1){
+                    p.RC_Searched = 1;
+                    p.position = 3;
+                    savedata(p);
+                    printout("You left the cell.\n");
+                    cout << endl;
+                    goto TortureRoom;
+                }
+            }
+            else if (choice == "C"){
+                if (p.RC_ChatWithTheOldMan == 1 && p.RC_OldManDead == 1){
+                    p.RC_Searched = 1;
+                    p.position = 3;
+                    savedata(p);
+                    printout("You left the cell.\n");
+                    cout << endl;
+                    goto TortureRoom;
+                }
+
+            }
+            else if (choice == "I"){
+                CheckInventory(p);
+            }
+            cout << endl;
+        }
 
     }
 
@@ -1865,6 +2500,7 @@ int main(){
     }
     END:{
         printout("As you woke up, the first thing you saw is a plain yet unfamiliar ceiling. \n\"Where am I?\", you thought to yourself, but your brain could hardly gather enough memory to construct an answer.\nAs you stood up, you found yourself in a clean yet seemingly familiar house, a strange yet pleasant aroma filled up the house.\nYou looked to the center of the room, copious and various dishes was set on a dining table,\nsomehow a sudden feeling of disgust rushes up into your mind when you saw the chairs that scattered around the table.\nYou look to the sides of the room, at the extremity of the room, you found a door, that resembles a front door in your memory.\nAs you approach the door, a faint light shines from underneath the door.\nTrembling, you pushed the door opened.\nYour tried to keep your eyes opened, as the brightening light engulfed you.\n");
+        
     }
     
     return (0);
