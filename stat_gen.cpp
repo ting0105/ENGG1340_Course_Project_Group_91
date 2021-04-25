@@ -1,13 +1,15 @@
 #include <iostream>
 #include "main.h"
 #include <random>
+#include <string>
 using namespace std;
 
 //generate the stats and store the 8 stats into an int array
 
 void stat_gen(int arr[10])
 {
-  cout<<"Your total attribute points will be determined by eight 3D6 die roll, and that number multiplied by 5."<<endl;
+  printout("Welcome to Call of Cthulhu (CoC)!!!\nNow, you need to create your own investigator.\nYou can distribute the attribute point to different characteristics which will affect your playing style.\n");
+  printout("Your total attribute points will be determined by eight 3D6 die roll, and that number multiplied by 5.\n");
   int totalpoint=0;
   int temp=0;
   int temptotal=0;
@@ -18,8 +20,9 @@ void stat_gen(int arr[10])
   {
     temptotal=0;
 
-    cout<<"Die roll "<<counter<<": ";
-    cout<<"You rolled ";
+    printout("Die roll ");
+    cout<<counter<<": ";
+    printout("You rolled ");
     temp = rand()%6+1;
     temptotal += temp;
     cout<<temp<<" + ";
@@ -37,9 +40,11 @@ void stat_gen(int arr[10])
     counter++;
   }
 
-  cout<<"Your total attribute points is "<<totalpoint;
+  printout("Your total attribute points is ");
+  cout << totalpoint;
   totalpoint *= 5;
-  cout<<" * 5 = "<<totalpoint<<endl<<endl;
+  printout(" * 5 = ");
+  cout<<totalpoint<<endl<<endl;
 
   int pointleft=totalpoint;
   int str=0;
@@ -54,13 +59,13 @@ void stat_gen(int arr[10])
   int san=0;
   
 
-  cout<<"Now you can distribute your points."<<endl;
-  cout<<"You can use command [attribute name] [value] to distribute your points."<<endl;
-  cout<<"For example, the command \"STR 50\" will add 50 points to STR (strength)"<<endl;
-  cout<<"You may put minimum 15 points and maximum 90 points in each attribute except HP and SAN."<<endl;
-  cout<<"It is because the value of HP is depended on SIZ and CON, while SAN is depended on POW."<<endl;
-  cout<<"HP = (SIZ + CON) / 10 and SAN = POW"<<endl;
-  cout<<"Use the command \"reset\" if you wish to reset all attribute points."<<endl<<endl;
+  printout("Now you can distribute your points.\n");
+  printout("You can use command [attribute name] [value] to distribute your points.\n");
+  printout("For example, the command \"STR 50\" will add 50 points to STR (strength)\n");
+  printout("You may put minimum 15 points and maximum 90 points in each attribute except HP and SAN.\n");
+  printout("It is because the value of HP is depended on SIZ and CON, while SAN is depended on POW.\n");
+  printout("HP = (SIZ + CON) / 10 and SAN = POW\n");
+  printout("Use the command \"reset\" if you wish to reset all attribute points.\n\n");
 
   bool finished=false;
   string input;
@@ -73,19 +78,29 @@ void stat_gen(int arr[10])
     {
       if (str>=15&&str<=90&&con>=15&&con<=90&&dex>=15&&dex<=90&&siz>=15&&siz<=90&&inte>=15&&inte<=90&&pow>=15&&pow<=90&&app>=15&&app<=90&&luck>=15&&luck<=90) 
       {
-        cout<<"Your current stats :"<<endl;
-        cout<<"STR (strength)     :"<<str<<endl;
-        cout<<"CON (constitution) :"<<con<<endl;
-        cout<<"POW (power)        :"<<pow<<endl;
-        cout<<"DEX (Dexterity)    :"<<dex<<endl;
-        cout<<"APP (appearance)   :"<<app<<endl;
-        cout<<"SIZ (size)         :"<<siz<<endl;
-        cout<<"INT (intelligence) :"<<inte<<endl;
-        cout<<"LUC (luck)         :"<<luck<<endl;
-        cout<<"HP  (Hit Points)   :"<<hp<<endl;
-        cout<<"SAN (Sanity)       :"<<san<<endl;
-        cout<<"You have distributed all your attribute points."<<endl;
-        cout<<"use command \"confirm\" to finish character creation or use command \"reset\" to reset."<<endl;
+        printout("\nYour current stats :\n");
+        printout("STR (strength)     :");
+        cout<<str<<endl;
+        printout("CON (constitution) :");
+        cout<<con<<endl;
+        printout("POW (willpower)    :");
+        cout<<pow<<endl;
+        printout("DEX (Dexterity)    :");
+        cout<<dex<<endl;
+        printout("APP (appearance)   :");
+        cout<<app<<endl;
+        printout("SIZ (size)         :");
+        cout<<siz<<endl;
+        printout("INT (intelligence) :");
+        cout<<inte<<endl;
+        printout("LUC (luck)         :");
+        cout<<luck<<endl<<endl;
+        printout("HP  (Hit Points)   :");
+        cout<<hp<<endl;
+        printout("SAN (Sanity)       :");
+        cout<<san<<endl;
+        printout("You have distributed all your attribute points.\n");
+        printout("use command \"confirm\" to finish character creation or use command \"reset\" to reset.\n**Once you confirmed, you cannot change the characteristics until the end of the game or the death of your investigator.**\n");
         
         cin>>input;
         if (input=="confirm")
@@ -120,7 +135,7 @@ void stat_gen(int arr[10])
         }
         else
         {
-          cout<<"invalid input, please try again."<<endl;
+          printout("invalid input, please try again.\n");
           cin.clear();
           cin.ignore(10000,'\n');
           continue;
@@ -129,7 +144,7 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"Some attributes are not in range between 15 and 90, points distribution has been reset, please distribute your points again."<<endl;
+        printout("Some attributes are not in range between 15 and 90, points distribution has been reset, please distribute your points again.\n");
         pointleft=totalpoint;
         str=0;
         con=0;
@@ -144,18 +159,29 @@ void stat_gen(int arr[10])
         
       }
     }
-    cout<<"Your current stats :"<<endl;
-    cout<<"STR (strength)     :"<<str<<endl;
-    cout<<"CON (constitution) :"<<con<<endl;
-    cout<<"POW (power)        :"<<pow<<endl;
-    cout<<"DEX (Dexterity)    :"<<dex<<endl;
-    cout<<"APP (appearance)   :"<<app<<endl;
-    cout<<"SIZ (size)         :"<<siz<<endl;
-    cout<<"INT (intelligence) :"<<inte<<endl;
-    cout<<"LUC (luck)         :"<<luck<<endl;
-    cout<<"HP  (Hit Points)   :"<<hp<<endl;
-    cout<<"SAN (Sanity)       :"<<san<<endl;
-    cout<<"Points left: "<<pointleft<<endl;
+    printout("\nYour current stats :\n");
+    printout("STR (strength)     :");
+    cout<<str<<endl;
+    printout("CON (constitution) :");
+    cout<<con<<endl;
+    printout("POW (willpower)    :");
+    cout<<pow<<endl;
+    printout("DEX (Dexterity)    :");
+    cout<<dex<<endl;
+    printout("APP (appearance)   :");
+    cout<<app<<endl;
+    printout("SIZ (size)         :");
+    cout<<siz<<endl;
+    printout("INT (intelligence) :");
+    cout<<inte<<endl;
+    printout("LUC (luck)         :");
+    cout<<luck<<endl<<endl;
+    printout("HP  (Hit Points)   :");
+    cout<<hp<<endl;
+    printout("SAN (Sanity)       :");
+    cout<<san<<endl;
+    printout("Points left: ");
+    cout<<pointleft<<endl;
 
 //user will input command like "STR 50" to distribute points.
     cin>>input;
@@ -164,7 +190,7 @@ void stat_gen(int arr[10])
       //deal with invalid inputs
       if (cin.fail() ||value<0)
       {
-        cout<<"Invalid input, please try again."<<endl;
+        printout("Invalid input, please try again.\n");
         cin.clear();
         cin.ignore(10000,'\n');
       }
@@ -175,7 +201,7 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+        printout("You do not have enough points, perhaps you want to reset with the \"reset\" command?\n");
       }
     }
 
@@ -183,7 +209,7 @@ void stat_gen(int arr[10])
       cin>>value;
       if (cin.fail() || value<0)
       {
-        cout<<"Invalid input, please try again."<<endl;
+        printout("Invalid input, please try again.\n");
         cin.clear();
         cin.ignore(10000,'\n');
       }
@@ -195,7 +221,7 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+        printout("You do not have enough points, perhaps you want to reset with the \"reset\" command?\n");
       }
     }
 
@@ -203,7 +229,7 @@ void stat_gen(int arr[10])
       cin>>value;
       if (cin.fail() || value<0)
       {
-        cout<<"Invalid input, please try again."<<endl;
+        printout("Invalid input, please try again.\n");
         cin.clear();
         cin.ignore(10000,'\n');
       }
@@ -214,7 +240,7 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+        printout("You do not have enough points, perhaps you want to reset with the \"reset\" command?\n");
       }
     }
 
@@ -222,7 +248,7 @@ void stat_gen(int arr[10])
       cin>>value;
       if (cin.fail() || value<0)
       {
-        cout<<"Invalid input, please try again."<<endl;
+        printout("Invalid input, please try again.\n");
         cin.clear();
         cin.ignore(10000,'\n');
       }
@@ -234,7 +260,7 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+        printout("You do not have enough points, perhaps you want to reset with the \"reset\" command?\n");
       }
     }
 
@@ -242,7 +268,7 @@ void stat_gen(int arr[10])
       cin>>value;
       if (cin.fail() || value<0)
       {
-        cout<<"Invalid input, please try again."<<endl;
+        printout("Invalid input, please try again.\n");
         cin.clear();
         cin.ignore(10000,'\n');
       }
@@ -253,7 +279,7 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+        printout("You do not have enough points, perhaps you want to reset with the \"reset\" command?\n");
       }
     }
 
@@ -261,7 +287,7 @@ void stat_gen(int arr[10])
       cin>>value;
       if (cin.fail() || value<0)
       {
-        cout<<"Invalid input, please try again."<<endl;
+        printout("Invalid input, please try again.\n");
         cin.clear();
         cin.ignore(10000,'\n');
       }
@@ -273,7 +299,7 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+        printout("You do not have enough points, perhaps you want to reset with the \"reset\" command?\n");
       }
     }
 
@@ -281,7 +307,7 @@ void stat_gen(int arr[10])
       cin>>value;
       if (cin.fail() || value<0)
       {
-        cout<<"Invalid input, please try again."<<endl;
+        printout("Invalid input, please try again.\n");
         cin.clear();
         cin.ignore(10000,'\n');
       }
@@ -292,7 +318,7 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+        printout("You do not have enough points, perhaps you want to reset with the \"reset\" command?\n");
       }
     }
 
@@ -300,7 +326,7 @@ void stat_gen(int arr[10])
       cin>>value;
       if (cin.fail() || value<0)
       {
-        cout<<"Invalid input, please try again."<<endl;
+        printout("Invalid input, please try again.\n");
         cin.clear();
         cin.ignore(10000,'\n');
       }
@@ -311,12 +337,8 @@ void stat_gen(int arr[10])
       }
       else
       {
-        cout<<"You do not have enough points, perhaps you want to reset with the \"reset\" command?"<<endl;
+        printout("You do not have enough points, perhaps you want to reset with the \"reset\" command?\n");
       }
-    }
-
-    else if (input == "HP" || input == "SAN"){
-      cout << "You can not put point on HP and SAN as they are calculated by other characteristics.";
     }
 
     else if (input=="reset")
@@ -336,7 +358,7 @@ void stat_gen(int arr[10])
     
     else
     {
-      cout<<"Invalid input, please try again."<<endl;
+      printout("Invalid input, please try again.\n");
       cin.clear();
       cin.ignore(10000,'\n');
     }
