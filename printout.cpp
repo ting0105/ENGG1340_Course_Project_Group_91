@@ -11,4 +11,4 @@ void printout(string paragraph){
         cout.flush();
         usleep(20000); // 10000
     }
-}
+} 
