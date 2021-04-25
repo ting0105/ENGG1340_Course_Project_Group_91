@@ -159,7 +159,9 @@ struct player{
   int M_InitialSTR;
 
 };
-// generate a random no in 1-100
+
+
+
 int GenRand(){
     int x = rand() % 100 +1;
     return x;
@@ -425,7 +427,7 @@ int main(){
     // Rightcell description
     string RightCellDes1 = "As the door opens, you braced yourself for anything that is going to appear,\nbut to your surprise, what unfolds before you appeared to be a old man huddled in the corner of the room.\nHis lightless eyes peeked out between his arms; upon seeing you, he buried his head deep into his arms, trembling.\n";
     string RightCellDes2 = "You entered the cell, the old man huddled in the corner of the room and trembling.\n";
-    string RightCellDes3 = "You entered the cell, what you see is the body of the old man.\n";
+    string RightCellDes3 = "You entered the cell, what you saw is the body of the old man.\n";
 
     //load the game if a save exists
     ifstream fin;
@@ -759,6 +761,8 @@ int main(){
 
     savedata(p);
 
+    printout("**The game will be auto saved when you enter a room**\n");
+
 
     //intro
     cout << endl;
@@ -983,7 +987,7 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
                         else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
                             delete monsterHP;
@@ -995,7 +999,7 @@ int main(){
                     }
                 }
             }
-            else if (choice == " S2"){
+            else if (choice == "S2"){
                 if (p.Stu_GetMysteriousBook == 1){
                     printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                     if (p.S_ForgetMysteriousBook == 1){
@@ -1046,6 +1050,7 @@ int main(){
                         printout("You burned the Note but nothing happened.\n");
                     }
                     else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
                         printout("You burned the Note but nothing happened.\n");
                     }
                 }
@@ -1059,7 +1064,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1071,7 +1076,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1087,7 +1092,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1099,7 +1104,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1160,7 +1165,7 @@ int main(){
                     if (p.Stu_GetDrugGuide == 1){
                         p.S_InjectCorrectly = 1;
                         printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             goto END;
                         }
                         else{
@@ -1411,7 +1416,7 @@ int main(){
                     }
                 }
             }
-            else if (choice == " S2"){
+            else if (choice == "S2"){
                 if (p.Stu_GetMysteriousBook == 1){
                     printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                     if (p.S_ForgetMysteriousBook == 1){
@@ -1462,6 +1467,7 @@ int main(){
                         printout("You burned the Note but nothing happened.\n");
                     }
                     else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
                         printout("You burned the Note but nothing happened.\n");
                     }
                 }
@@ -1475,7 +1481,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1487,7 +1493,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1503,7 +1509,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1515,7 +1521,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1576,7 +1582,7 @@ int main(){
                     if (p.Stu_GetDrugGuide == 1){
                         p.S_InjectCorrectly = 1;
                         printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             goto END;
                         }
                         else{
@@ -1890,7 +1896,7 @@ int main(){
                     }
                 }
             }
-            else if (choice == " S2"){
+            else if (choice == "S2"){
                 if (p.Stu_GetMysteriousBook == 1){
                     printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                     if (p.S_ForgetMysteriousBook == 1){
@@ -1941,6 +1947,7 @@ int main(){
                         printout("You burned the Note but nothing happened.\n");
                     }
                     else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
                         printout("You burned the Note but nothing happened.\n");
                     }
                 }
@@ -1954,7 +1961,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1966,7 +1973,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1982,7 +1989,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -1994,7 +2001,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2055,7 +2062,7 @@ int main(){
                     if (p.Stu_GetDrugGuide == 1){
                         p.S_InjectCorrectly = 1;
                         printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             goto END;
                         }
                         else{
@@ -2308,7 +2315,7 @@ int main(){
                     }
                 }
             }
-            else if (choice == " S2"){
+            else if (choice == "S2"){
                 if (p.Stu_GetMysteriousBook == 1){
                     printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                     if (p.S_ForgetMysteriousBook == 1){
@@ -2359,6 +2366,7 @@ int main(){
                         printout("You burned the Note but nothing happened.\n");
                     }
                     else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
                         printout("You burned the Note but nothing happened.\n");
                     }
                 }
@@ -2372,7 +2380,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2384,7 +2392,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2400,7 +2408,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2412,7 +2420,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2473,7 +2481,7 @@ int main(){
                     if (p.Stu_GetDrugGuide == 1){
                         p.S_InjectCorrectly = 1;
                         printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             goto END;
                         }
                         else{
@@ -2650,7 +2658,7 @@ int main(){
                     }
                 }
             }
-            else if (choice == " S2"){
+            else if (choice == "S2"){
                 if (p.Stu_GetMysteriousBook == 1){
                     printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                     if (p.S_ForgetMysteriousBook == 1){
@@ -2701,6 +2709,7 @@ int main(){
                         printout("You burned the Note but nothing happened.\n");
                     }
                     else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
                         printout("You burned the Note but nothing happened.\n");
                     }
                 }
@@ -2714,7 +2723,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2726,7 +2735,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2742,7 +2751,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2754,7 +2763,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -2815,7 +2824,7 @@ int main(){
                     if (p.Stu_GetDrugGuide == 1){
                         p.S_InjectCorrectly = 1;
                         printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             goto END;
                         }
                         else{
@@ -2893,7 +2902,7 @@ int main(){
                 printout("D. Observe the fireplace.\n");
             }
             printout("E. Go to kitchen.\n");
-            printout("F. Go to Entrance.\n");
+            printout("F. Go to entrance.\n");
 
             // special events
             cout << endl;
@@ -3093,7 +3102,7 @@ int main(){
                     }
                 }
             }
-            else if (choice == " S2"){
+            else if (choice == "S2"){
                 if (p.Stu_GetMysteriousBook == 1){
                     printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                     if (p.S_ForgetMysteriousBook == 1){
@@ -3144,6 +3153,7 @@ int main(){
                         printout("You burned the Note but nothing happened.\n");
                     }
                     else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
                         printout("You burned the Note but nothing happened.\n");
                     }
                 }
@@ -3157,7 +3167,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3169,7 +3179,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3185,7 +3195,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3197,7 +3207,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3258,7 +3268,7 @@ int main(){
                     if (p.Stu_GetDrugGuide == 1){
                         p.S_InjectCorrectly = 1;
                         printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             goto END;
                         }
                         else{
@@ -3478,7 +3488,7 @@ int main(){
                     }
                 }
             }
-            else if (choice == " S2"){
+            else if (choice == "S2"){
                 if (p.Stu_GetMysteriousBook == 1){
                     printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                     if (p.S_ForgetMysteriousBook == 1){
@@ -3529,6 +3539,7 @@ int main(){
                         printout("You burned the Note but nothing happened.\n");
                     }
                     else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
                         printout("You burned the Note but nothing happened.\n");
                     }
                 }
@@ -3542,7 +3553,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3554,7 +3565,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3570,7 +3581,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3582,7 +3593,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3643,7 +3654,7 @@ int main(){
                     if (p.Stu_GetDrugGuide == 1){
                         p.S_InjectCorrectly = 1;
                         printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             goto END;
                         }
                         else{
@@ -3914,7 +3925,7 @@ int main(){
                     }
                 }
             }
-            else if (choice == " S2"){
+            else if (choice == "S2"){
                 if (p.Stu_GetMysteriousBook == 1){
                     printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
                     if (p.S_ForgetMysteriousBook == 1){
@@ -3965,6 +3976,7 @@ int main(){
                         printout("You burned the Note but nothing happened.\n");
                     }
                     else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
                         printout("You burned the Note but nothing happened.\n");
                     }
                 }
@@ -3978,7 +3990,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -3990,7 +4002,7 @@ int main(){
                         printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -4006,7 +4018,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -4018,7 +4030,7 @@ int main(){
                         printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
                             goto END;
                         }
@@ -4079,7 +4091,7 @@ int main(){
                     if (p.Stu_GetDrugGuide == 1){
                         p.S_InjectCorrectly = 1;
                         printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
-                        if (p.S_InjectCorrectly == 1 && p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
                             goto END;
                         }
                         else{
@@ -4224,6 +4236,221 @@ int main(){
                 cout << endl;
                 goto SecondFloor;
             }
+            else if (choice == "S1"){
+                if (p.Stu_GetMysteriousBook == 1 && (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1)){    
+                    if (p.S_ForgetMysteriousBook == 0){
+                        printout("As the word “Hastur” came out of your mouth,\na tentacle with talons penetrated the walls, it stretched its talons, and dashed toward you.\n");
+                        int * monsterHP = new int (p.M_InitialHP);
+                        int * monsterDEX = new int (p.M_InitialDEX);
+                        int * monsterSTR = new int (p.M_InitialSTR);
+                        p.M_InitialHP += 3;
+                        p.M_InitialDEX += 5;
+                        p.M_InitialSTR += 5;
+
+
+                        if(combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 1){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                        }
+                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            goto Dead;
+                        }
+                        
+                    }
+                }
+            }
+            else if (choice == "S2"){
+                if (p.Stu_GetMysteriousBook == 1){
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                    if (p.S_ForgetMysteriousBook == 1){
+                        p.S_ForgetMysteriousBook = 0;
+                        printout("After you reading the notebook, you remembered that you found it in study.\n");
+                    }
+                }  
+            }
+            else if (choice == "S3"){
+                if (p.LR_GetFirstAidKit == 1){
+                    if (p.hp != (p.siz + p.con)/10 && p.hp >= ((p.siz + p.con)/10)-1){
+                        printout("You are quite good now, and you don't need it at this moment.\n");
+                    }
+                    else if (p.hp != (p.siz + p.con)/10 && p.hp < ((p.siz + p.con)/10)-1){
+                        p.hp = p.hp + 2;
+                        p.LR_GetFirstAidKit = 0;
+                        printout("You used the first aid kit and gained 2 hp, you have ");
+                        cout << p.hp;
+                        printout(" hp left.\n");
+                    }
+                }
+            }
+            else if (choice == "S4"){
+                if (p.LR_GetNote == 1){
+                    printout("\"Burns the books that held the truth, and vanishes the men who seek the truth, only then may the mist goes blind on you.\"\n");
+                    if (p.S_ForgetNote == 1){
+                        p.S_ForgetNote = 0;
+                        printout("After reading the note, you remembered that you found it in the living room.\n");
+                    }
+                }
+            }
+            else if (choice == "S5"){
+                if (p.MB_GetDiary == 1){
+                    if (p.S_ForgetDiary == 0){
+                        Diary();
+                    }
+                    else if(p.S_ForgetDiary == 1){
+                        p.S_ForgetDiary = 1;
+                        Diary();
+                        printout("After reading it, you remembered that you found it in the main bedroom.\n");
+                    }
+                }
+            }
+            else if (choice == "S6"){
+                if (p.LR_SetFire == 1 && p.LR_GetNote == 1 && p.position == 6){
+                    if (p.S_ForgetNote == 0){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                    else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                }
+            }
+            else if (choice == "S7"){
+                if (p.LR_SetFire == 1 && p.Stu_GetMysteriousBook == 1 && p.position == 6){
+                    if (p.S_ForgetMysteriousBook == 0){
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        p.san = p.san + 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetMysteriousBook == 1){
+                        p.san = p.san + 1;
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }  
+                }
+            }
+            else if (choice == "S8"){
+                if (p.LR_SetFire == 1 && p.MB_GetDiary == 1 && p.position == 6){
+                    if (p.S_ForgetDiary == 0){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetDiary == 1){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    } 
+                }
+            }
+            else if (choice == "S9"){
+                if (p.MB_GetCozyCoat == 1){
+                    p.MB_GetCozyCoat = 0;
+                    p.san ++;
+                    printout("You felt surrounded by warmth… you gained 1 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+            }
+            else if (choice == "S10"){
+                if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    if (p.Stu_GetDrugGuide == 0){
+                        if (GenRand() <= p.luck){
+                            printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                        else if (GenRand() > p.luck){
+                            int SanRed = random()%10+5;
+                            p.san -= SanRed;
+                            p.str -= 5;
+                            printout ("You ignorantly injected a relatively large dose of chemical into your vein, you collapsed onto the ground as your mind fades out…\nAfter you wake up, you felt that you are weak. You lost ");
+                            cout << SanRed;
+                            printout(" sanity, you have ");
+                            cout << p.san;
+                            printout(" sanity left.\n");
+                            printout("You found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                    if (p.Stu_GetDrugGuide == 1){
+                        p.S_InjectCorrectly = 1;
+                        printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            goto END;
+                        }
+                        else{
+                            printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                }
+            }
             else if (choice == "I"){
                 CheckInventory(p);
             }
@@ -4346,7 +4573,7 @@ int main(){
                     printout(" sanity left.\n");
                 }
                 else if (p.SB_ObservedBed == 1 && p.SB_AddSan == 1){
-                    printout ("After a short break, you realised that you should left this house as soon as possible.\n");
+                    printout ("After a short break, you realised that you should leave this house as soon as possible.\n");
                 }
             }
             else if (choice == "C"){
@@ -4372,6 +4599,221 @@ int main(){
                 printout("You left the second bedroom.\n");
                 cout << endl;
                 goto SecondFloor;
+            }
+            else if (choice == "S1"){
+                if (p.Stu_GetMysteriousBook == 1 && (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1)){    
+                    if (p.S_ForgetMysteriousBook == 0){
+                        printout("As the word “Hastur” came out of your mouth,\na tentacle with talons penetrated the walls, it stretched its talons, and dashed toward you.\n");
+                        int * monsterHP = new int (p.M_InitialHP);
+                        int * monsterDEX = new int (p.M_InitialDEX);
+                        int * monsterSTR = new int (p.M_InitialSTR);
+                        p.M_InitialHP += 3;
+                        p.M_InitialDEX += 5;
+                        p.M_InitialSTR += 5;
+
+
+                        if(combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 1){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                        }
+                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            goto Dead;
+                        }
+                        
+                    }
+                }
+            }
+            else if (choice == "S2"){
+                if (p.Stu_GetMysteriousBook == 1){
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                    if (p.S_ForgetMysteriousBook == 1){
+                        p.S_ForgetMysteriousBook = 0;
+                        printout("After you reading the notebook, you remembered that you found it in study.\n");
+                    }
+                }  
+            }
+            else if (choice == "S3"){
+                if (p.LR_GetFirstAidKit == 1){
+                    if (p.hp != (p.siz + p.con)/10 && p.hp >= ((p.siz + p.con)/10)-1){
+                        printout("You are quite good now, and you don't need it at this moment.\n");
+                    }
+                    else if (p.hp != (p.siz + p.con)/10 && p.hp < ((p.siz + p.con)/10)-1){
+                        p.hp = p.hp + 2;
+                        p.LR_GetFirstAidKit = 0;
+                        printout("You used the first aid kit and gained 2 hp, you have ");
+                        cout << p.hp;
+                        printout(" hp left.\n");
+                    }
+                }
+            }
+            else if (choice == "S4"){
+                if (p.LR_GetNote == 1){
+                    printout("\"Burns the books that held the truth, and vanishes the men who seek the truth, only then may the mist goes blind on you.\"\n");
+                    if (p.S_ForgetNote == 1){
+                        p.S_ForgetNote = 0;
+                        printout("After reading the note, you remembered that you found it in the living room.\n");
+                    }
+                }
+            }
+            else if (choice == "S5"){
+                if (p.MB_GetDiary == 1){
+                    if (p.S_ForgetDiary == 0){
+                        Diary();
+                    }
+                    else if(p.S_ForgetDiary == 1){
+                        p.S_ForgetDiary = 1;
+                        Diary();
+                        printout("After reading it, you remembered that you found it in the main bedroom.\n");
+                    }
+                }
+            }
+            else if (choice == "S6"){
+                if (p.LR_SetFire == 1 && p.LR_GetNote == 1 && p.position == 6){
+                    if (p.S_ForgetNote == 0){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                    else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                }
+            }
+            else if (choice == "S7"){
+                if (p.LR_SetFire == 1 && p.Stu_GetMysteriousBook == 1 && p.position == 6){
+                    if (p.S_ForgetMysteriousBook == 0){
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        p.san = p.san + 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetMysteriousBook == 1){
+                        p.san = p.san + 1;
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }  
+                }
+            }
+            else if (choice == "S8"){
+                if (p.LR_SetFire == 1 && p.MB_GetDiary == 1 && p.position == 6){
+                    if (p.S_ForgetDiary == 0){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetDiary == 1){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    } 
+                }
+            }
+            else if (choice == "S9"){
+                if (p.MB_GetCozyCoat == 1){
+                    p.MB_GetCozyCoat = 0;
+                    p.san ++;
+                    printout("You felt surrounded by warmth… you gained 1 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+            }
+            else if (choice == "S10"){
+                if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    if (p.Stu_GetDrugGuide == 0){
+                        if (GenRand() <= p.luck){
+                            printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                        else if (GenRand() > p.luck){
+                            int SanRed = random()%10+5;
+                            p.san -= SanRed;
+                            p.str -= 5;
+                            printout ("You ignorantly injected a relatively large dose of chemical into your vein, you collapsed onto the ground as your mind fades out…\nAfter you wake up, you felt that you are weak. You lost ");
+                            cout << SanRed;
+                            printout(" sanity, you have ");
+                            cout << p.san;
+                            printout(" sanity left.\n");
+                            printout("You found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                    if (p.Stu_GetDrugGuide == 1){
+                        p.S_InjectCorrectly = 1;
+                        printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            goto END;
+                        }
+                        else{
+                            printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                }
             }
             else if (choice == "I"){
                 CheckInventory(p);
@@ -4540,6 +4982,221 @@ int main(){
                 cout << endl;
                 goto SecondFloor;
             }
+            else if (choice == "S1"){
+                if (p.Stu_GetMysteriousBook == 1 && (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1)){    
+                    if (p.S_ForgetMysteriousBook == 0){
+                        printout("As the word “Hastur” came out of your mouth,\na tentacle with talons penetrated the walls, it stretched its talons, and dashed toward you.\n");
+                        int * monsterHP = new int (p.M_InitialHP);
+                        int * monsterDEX = new int (p.M_InitialDEX);
+                        int * monsterSTR = new int (p.M_InitialSTR);
+                        p.M_InitialHP += 3;
+                        p.M_InitialDEX += 5;
+                        p.M_InitialSTR += 5;
+
+
+                        if(combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 1){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                        }
+                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            goto Dead;
+                        }
+                        
+                    }
+                }
+            }
+            else if (choice == "S2"){
+                if (p.Stu_GetMysteriousBook == 1){
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                    if (p.S_ForgetMysteriousBook == 1){
+                        p.S_ForgetMysteriousBook = 0;
+                        printout("After you reading the notebook, you remembered that you found it in study.\n");
+                    }
+                }  
+            }
+            else if (choice == "S3"){
+                if (p.LR_GetFirstAidKit == 1){
+                    if (p.hp != (p.siz + p.con)/10 && p.hp >= ((p.siz + p.con)/10)-1){
+                        printout("You are quite good now, and you don't need it at this moment.\n");
+                    }
+                    else if (p.hp != (p.siz + p.con)/10 && p.hp < ((p.siz + p.con)/10)-1){
+                        p.hp = p.hp + 2;
+                        p.LR_GetFirstAidKit = 0;
+                        printout("You used the first aid kit and gained 2 hp, you have ");
+                        cout << p.hp;
+                        printout(" hp left.\n");
+                    }
+                }
+            }
+            else if (choice == "S4"){
+                if (p.LR_GetNote == 1){
+                    printout("\"Burns the books that held the truth, and vanishes the men who seek the truth, only then may the mist goes blind on you.\"\n");
+                    if (p.S_ForgetNote == 1){
+                        p.S_ForgetNote = 0;
+                        printout("After reading the note, you remembered that you found it in the living room.\n");
+                    }
+                }
+            }
+            else if (choice == "S5"){
+                if (p.MB_GetDiary == 1){
+                    if (p.S_ForgetDiary == 0){
+                        Diary();
+                    }
+                    else if(p.S_ForgetDiary == 1){
+                        p.S_ForgetDiary = 1;
+                        Diary();
+                        printout("After reading it, you remembered that you found it in the main bedroom.\n");
+                    }
+                }
+            }
+            else if (choice == "S6"){
+                if (p.LR_SetFire == 1 && p.LR_GetNote == 1 && p.position == 6){
+                    if (p.S_ForgetNote == 0){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                    else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                }
+            }
+            else if (choice == "S7"){
+                if (p.LR_SetFire == 1 && p.Stu_GetMysteriousBook == 1 && p.position == 6){
+                    if (p.S_ForgetMysteriousBook == 0){
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        p.san = p.san + 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetMysteriousBook == 1){
+                        p.san = p.san + 1;
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }  
+                }
+            }
+            else if (choice == "S8"){
+                if (p.LR_SetFire == 1 && p.MB_GetDiary == 1 && p.position == 6){
+                    if (p.S_ForgetDiary == 0){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetDiary == 1){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    } 
+                }
+            }
+            else if (choice == "S9"){
+                if (p.MB_GetCozyCoat == 1){
+                    p.MB_GetCozyCoat = 0;
+                    p.san ++;
+                    printout("You felt surrounded by warmth… you gained 1 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+            }
+            else if (choice == "S10"){
+                if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    if (p.Stu_GetDrugGuide == 0){
+                        if (GenRand() <= p.luck){
+                            printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                        else if (GenRand() > p.luck){
+                            int SanRed = random()%10+5;
+                            p.san -= SanRed;
+                            p.str -= 5;
+                            printout ("You ignorantly injected a relatively large dose of chemical into your vein, you collapsed onto the ground as your mind fades out…\nAfter you wake up, you felt that you are weak. You lost ");
+                            cout << SanRed;
+                            printout(" sanity, you have ");
+                            cout << p.san;
+                            printout(" sanity left.\n");
+                            printout("You found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                    if (p.Stu_GetDrugGuide == 1){
+                        p.S_InjectCorrectly = 1;
+                        printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            goto END;
+                        }
+                        else{
+                            printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                }
+            }
             else if (choice == "I"){
                 CheckInventory(p);
             }
@@ -4695,6 +5352,221 @@ int main(){
                 cout << endl;
                 goto SecondFloor;
             }
+            else if (choice == "S1"){
+                if (p.Stu_GetMysteriousBook == 1 && (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1)){    
+                    if (p.S_ForgetMysteriousBook == 0){
+                        printout("As the word “Hastur” came out of your mouth,\na tentacle with talons penetrated the walls, it stretched its talons, and dashed toward you.\n");
+                        int * monsterHP = new int (p.M_InitialHP);
+                        int * monsterDEX = new int (p.M_InitialDEX);
+                        int * monsterSTR = new int (p.M_InitialSTR);
+                        p.M_InitialHP += 3;
+                        p.M_InitialDEX += 5;
+                        p.M_InitialSTR += 5;
+
+
+                        if(combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 1){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                        }
+                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            goto Dead;
+                        }
+                        
+                    }
+                }
+            }
+            else if (choice == "S2"){
+                if (p.Stu_GetMysteriousBook == 1){
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                    if (p.S_ForgetMysteriousBook == 1){
+                        p.S_ForgetMysteriousBook = 0;
+                        printout("After you reading the notebook, you remembered that you found it in study.\n");
+                    }
+                }  
+            }
+            else if (choice == "S3"){
+                if (p.LR_GetFirstAidKit == 1){
+                    if (p.hp != (p.siz + p.con)/10 && p.hp >= ((p.siz + p.con)/10)-1){
+                        printout("You are quite good now, and you don't need it at this moment.\n");
+                    }
+                    else if (p.hp != (p.siz + p.con)/10 && p.hp < ((p.siz + p.con)/10)-1){
+                        p.hp = p.hp + 2;
+                        p.LR_GetFirstAidKit = 0;
+                        printout("You used the first aid kit and gained 2 hp, you have ");
+                        cout << p.hp;
+                        printout(" hp left.\n");
+                    }
+                }
+            }
+            else if (choice == "S4"){
+                if (p.LR_GetNote == 1){
+                    printout("\"Burns the books that held the truth, and vanishes the men who seek the truth, only then may the mist goes blind on you.\"\n");
+                    if (p.S_ForgetNote == 1){
+                        p.S_ForgetNote = 0;
+                        printout("After reading the note, you remembered that you found it in the living room.\n");
+                    }
+                }
+            }
+            else if (choice == "S5"){
+                if (p.MB_GetDiary == 1){
+                    if (p.S_ForgetDiary == 0){
+                        Diary();
+                    }
+                    else if(p.S_ForgetDiary == 1){
+                        p.S_ForgetDiary = 1;
+                        Diary();
+                        printout("After reading it, you remembered that you found it in the main bedroom.\n");
+                    }
+                }
+            }
+            else if (choice == "S6"){
+                if (p.LR_SetFire == 1 && p.LR_GetNote == 1 && p.position == 6){
+                    if (p.S_ForgetNote == 0){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                    else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                }
+            }
+            else if (choice == "S7"){
+                if (p.LR_SetFire == 1 && p.Stu_GetMysteriousBook == 1 && p.position == 6){
+                    if (p.S_ForgetMysteriousBook == 0){
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        p.san = p.san + 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetMysteriousBook == 1){
+                        p.san = p.san + 1;
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }  
+                }
+            }
+            else if (choice == "S8"){
+                if (p.LR_SetFire == 1 && p.MB_GetDiary == 1 && p.position == 6){
+                    if (p.S_ForgetDiary == 0){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetDiary == 1){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    } 
+                }
+            }
+            else if (choice == "S9"){
+                if (p.MB_GetCozyCoat == 1){
+                    p.MB_GetCozyCoat = 0;
+                    p.san ++;
+                    printout("You felt surrounded by warmth… you gained 1 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+            }
+            else if (choice == "S10"){
+                if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    if (p.Stu_GetDrugGuide == 0){
+                        if (GenRand() <= p.luck){
+                            printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                        else if (GenRand() > p.luck){
+                            int SanRed = random()%10+5;
+                            p.san -= SanRed;
+                            p.str -= 5;
+                            printout ("You ignorantly injected a relatively large dose of chemical into your vein, you collapsed onto the ground as your mind fades out…\nAfter you wake up, you felt that you are weak. You lost ");
+                            cout << SanRed;
+                            printout(" sanity, you have ");
+                            cout << p.san;
+                            printout(" sanity left.\n");
+                            printout("You found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                    if (p.Stu_GetDrugGuide == 1){
+                        p.S_InjectCorrectly = 1;
+                        printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            goto END;
+                        }
+                        else{
+                            printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                }
+            }
             else if (choice == "I"){
                 CheckInventory(p);
             }
@@ -4833,6 +5705,221 @@ int main(){
                 }
 
             }
+            else if (choice == "S1"){
+                if (p.Stu_GetMysteriousBook == 1 && (p.Stu_ReadAloud == 1 || p.Stu_ReadInHeart == 1)){    
+                    if (p.S_ForgetMysteriousBook == 0){
+                        printout("As the word “Hastur” came out of your mouth,\na tentacle with talons penetrated the walls, it stretched its talons, and dashed toward you.\n");
+                        int * monsterHP = new int (p.M_InitialHP);
+                        int * monsterDEX = new int (p.M_InitialDEX);
+                        int * monsterSTR = new int (p.M_InitialSTR);
+                        p.M_InitialHP += 3;
+                        p.M_InitialDEX += 5;
+                        p.M_InitialSTR += 5;
+
+
+                        if(combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 1){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                        }
+                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                            delete monsterHP;
+                            delete monsterDEX;
+                            delete monsterSTR;
+                            goto Dead;
+                        }
+                        
+                    }
+                }
+            }
+            else if (choice == "S2"){
+                if (p.Stu_GetMysteriousBook == 1){
+                    printout("\"He who the mortals must not speak the name of the unspeakable, as for his glory.\nThe ignorants who dare would be doomed to the eternal darkness.\nThou shalt never speak his name, for his name is Hastur.\nOnly those who forgot his name would be forgiven…\"\n");
+                    if (p.S_ForgetMysteriousBook == 1){
+                        p.S_ForgetMysteriousBook = 0;
+                        printout("After you reading the notebook, you remembered that you found it in study.\n");
+                    }
+                }  
+            }
+            else if (choice == "S3"){
+                if (p.LR_GetFirstAidKit == 1){
+                    if (p.hp != (p.siz + p.con)/10 && p.hp >= ((p.siz + p.con)/10)-1){
+                        printout("You are quite good now, and you don't need it at this moment.\n");
+                    }
+                    else if (p.hp != (p.siz + p.con)/10 && p.hp < ((p.siz + p.con)/10)-1){
+                        p.hp = p.hp + 2;
+                        p.LR_GetFirstAidKit = 0;
+                        printout("You used the first aid kit and gained 2 hp, you have ");
+                        cout << p.hp;
+                        printout(" hp left.\n");
+                    }
+                }
+            }
+            else if (choice == "S4"){
+                if (p.LR_GetNote == 1){
+                    printout("\"Burns the books that held the truth, and vanishes the men who seek the truth, only then may the mist goes blind on you.\"\n");
+                    if (p.S_ForgetNote == 1){
+                        p.S_ForgetNote = 0;
+                        printout("After reading the note, you remembered that you found it in the living room.\n");
+                    }
+                }
+            }
+            else if (choice == "S5"){
+                if (p.MB_GetDiary == 1){
+                    if (p.S_ForgetDiary == 0){
+                        Diary();
+                    }
+                    else if(p.S_ForgetDiary == 1){
+                        p.S_ForgetDiary = 1;
+                        Diary();
+                        printout("After reading it, you remembered that you found it in the main bedroom.\n");
+                    }
+                }
+            }
+            else if (choice == "S6"){
+                if (p.LR_SetFire == 1 && p.LR_GetNote == 1 && p.position == 6){
+                    if (p.S_ForgetNote == 0){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                    else if (p.S_ForgetNote == 1){
+                        p.LR_GetNote = 0;
+                        printout("You burned the Note but nothing happened.\n");
+                    }
+                }
+            }
+            else if (choice == "S7"){
+                if (p.LR_SetFire == 1 && p.Stu_GetMysteriousBook == 1 && p.position == 6){
+                    if (p.S_ForgetMysteriousBook == 0){
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        p.san = p.san + 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetMysteriousBook == 1){
+                        p.san = p.san + 1;
+                        p.Stu_GetMysteriousBook = 0;
+                        p.S_BurnMysteriousBool = 1;
+                        printout("As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning it.\nYou gained 1 sanity, you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }  
+                }
+            }
+            else if (choice == "S8"){
+                if (p.LR_SetFire == 1 && p.MB_GetDiary == 1 && p.position == 6){
+                    if (p.S_ForgetDiary == 0){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    }
+                    else if (p.S_ForgetDiary == 1){
+                        p.S_BurnDiary = 1;
+                        p.MB_GetDiary = 0;
+                        p.san ++;
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary. You gained 1 sanity you have ");
+                        cout << p.san;
+                        printout(" sanity left.\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            printout("Suddently, you collapsed onto the ground as your mind fades out…\n");
+                            goto END;
+                        }
+                    } 
+                }
+            }
+            else if (choice == "S9"){
+                if (p.MB_GetCozyCoat == 1){
+                    p.MB_GetCozyCoat = 0;
+                    p.san ++;
+                    printout("You felt surrounded by warmth… you gained 1 sanity, you have ");
+                    cout << p.san;
+                    printout(" sanity left.\n");
+                }
+            }
+            else if (choice == "S10"){
+                if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    if (p.Stu_GetDrugGuide == 0){
+                        if (GenRand() <= p.luck){
+                            printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                        else if (GenRand() > p.luck){
+                            int SanRed = random()%10+5;
+                            p.san -= SanRed;
+                            p.str -= 5;
+                            printout ("You ignorantly injected a relatively large dose of chemical into your vein, you collapsed onto the ground as your mind fades out…\nAfter you wake up, you felt that you are weak. You lost ");
+                            cout << SanRed;
+                            printout(" sanity, you have ");
+                            cout << p.san;
+                            printout(" sanity left.\n");
+                            printout("You found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                    if (p.Stu_GetDrugGuide == 1){
+                        p.S_InjectCorrectly = 1;
+                        printout("You strictly followed the concentration and amount that is written in the guide.\nAfter injecting the dose of chemical into your vein, you felt dizzy.\nYou collapsed onto the ground as your mind fades out…\n");
+                        if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
+                            goto END;
+                        }
+                        else{
+                            printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
+                            if (p.MB_GetDiary == 1){
+                                p.S_ForgetDiary = 1;
+                                printout("A Diary\n");
+                            }
+                            if (p.LR_GetNote == 1){
+                                p.S_ForgetNote = 1;
+                                printout("A note\n");
+                            }
+                            if(p.Stu_GetMysteriousBook == 1){
+                                p.S_ForgetMysteriousBook = 1;
+                                printout("A notebook\n");
+                            }
+                        }
+                    }
+                }
+            }
             else if (choice == "I"){
                 CheckInventory(p);
             }
@@ -4857,7 +5944,7 @@ int main(){
             }
             return 0;
         }
-        
+       
         else if (p.hp <= 0){
             printout("Because of receiving too much damage, you dead.\nGAMEOVER\nYour character will be delected.\n");
             if( remove("stats.txt") != 0 ){
@@ -4868,18 +5955,16 @@ int main(){
             }
             return 0;
         }
-
     }
     END:{
         printout("As you woke up, the first thing you saw is a plain yet unfamiliar ceiling. \n\"Where am I?\", you thought to yourself, but your brain could hardly gather enough memory to construct an answer.\nAs you stood up, you found yourself in a clean yet seemingly familiar house, a strange yet pleasant aroma filled up the house.\nYou looked to the center of the room, copious and various dishes was set on a dining table,\nsomehow a sudden feeling of disgust rushes up into your mind when you saw the chairs that scattered around the table.\nYou look to the sides of the room, at the extremity of the room, you found a door, that resembles a front door in your memory.\nAs you approach the door, a faint light shines from underneath the door.\nTrembling, you pushed the door opened.\nYour tried to keep your eyes opened, as the brightening light engulfed you.\n\n");
-        printout("CONGRATULATIONS!! You have finished the game. Your character will be delected.\n");
+        printout("CONGRATULATIONS!!\nYou have finished the game. Your character will be delected.\n");
         if(remove("stats.txt") != 0){
-                perror("Error deleting file.");
-            }
-            else{
-                puts("Character successfully deleted.");
-            }
-            return 0;
+            perror("Error deleting file.");
+        }   
+        else{
+            puts("Character successfully deleted.");
         }
-        
+        return 0;  
     }
+}
