@@ -161,13 +161,13 @@ struct player{
 };
 
 
-
+// get a no. from 1-100 randomly
 int GenRand(){
     int x = rand() % 100 +1;
     return x;
 }
 
-
+// Save the data when the player entered a room
 void savedata(player p)
 {
   ofstream fout;
@@ -175,126 +175,126 @@ void savedata(player p)
 
   if (fout.fail())
   {
-    cout<<"Error in file opening"<<endl;
+    cout << "Error in file opening" << endl;
     exit(1);
   }
 
-  fout<<p.position<<endl
-  <<p.str<<endl
-  <<p.con<<endl
-  <<p.dex<<endl
-  <<p.siz<<endl
-  <<p.inte<<endl
-  <<p.pow<<endl
-  <<p.app<<endl
-  <<p.luck<<endl
-  <<p.hp<<endl
-  <<p.san<<endl
-  <<p.LC_Searched<<endl
-  <<p.LC_BrokenWall<<endl
-  <<p.LC_GetWire<<endl
-  <<p.LC_OpenedDoor<<endl
-  <<p.LC_ObservedWall<<endl
-  <<p.LC_ObservedDoor<<endl
-  <<p.MC_Searched<<endl
-  <<p.MC_SanRed<<endl
-  <<p.MC_FromLC<<endl
-  <<p.MC_FromTR<<endl
-  <<p.MC_ObservedCorpses<<endl
-  <<p.MC_ObservedDoor<<endl
-  <<p.MC_GetMetalKey<<endl
-  <<p.TR_Searched<<endl
-  <<p.TR_SanRed<<endl
-  <<p.TR_ObservedRCDoor<<endl
-  <<p.TR_ObservedPadlock<<endl
-  <<p.TR_ObservedMirror<<endl
-  <<p.TR_ObservedTortureIns<<endl
-  <<p.TR_ObservedDoor<<endl
-  <<p.TR_UnlockedDoor<<endl
-  <<p.TR_UnlockedRCDoor<<endl
-  <<p.Sto_Searched<<endl
-  <<p.Sto_ObservedBag<<endl
-  <<p.Sto_SearchedBag<<endl
-  <<p.Sto_ObservedTable<<endl
-  <<p.Sto_ObservedStew<<endl
-  <<p.Sto_EatStew<<endl
-  <<p.Sto_RealizeStew<<endl
-  <<p.Sto_ObservedStairway<<endl
-  <<p.Ent_Searched<<endl
-  <<p.Ent_ObservedDoor<<endl
-  <<p.LR_Searched<<endl
-  <<p.LR_SanRed<<endl
-  <<p.LR_ObservedCabinet<<endl
-  <<p.LR_SearchedUpperCabinet<<endl
-  <<p.LR_SearchedLowerCabinet<<endl
-  <<p.LR_GetCoal<<endl
-  <<p.LR_GetFirstAidKit<<endl
-  <<p.LR_ObservedDiningTable<<endl
-  <<p.LR_GetNote<<endl
-  <<p.LR_ConsumeDishes<<endl
-  <<p.LR_SearchedBody<<endl
-  <<p.LR_GetCopperKey<<endl
-  <<p.LR_ObservedFireplace<<endl
-  <<p.LR_CleanedFireplace<<endl
-  <<p.LR_SetFire<<endl
-  <<p.Kit_Searched<<endl
-  <<p.Kit_ObservedStove<<endl
-  <<p.Kit_ObservedPot<<endl
-  <<p.Kit_GetKnife<<endl
-  <<p.Kit_ObservedFridge<<endl
-  <<p.Kit_ObservedSink<<endl
-  <<p.Kit_ObservedCupboard<<endl
-  <<p.Kit_GetChemicals<<endl
-  <<p.SF_Searched<<endl
-  <<p.SF_FromFF<<endl
-  <<p.SF_FromRm<<endl
-  <<p.SF_PickUpThePhone<<endl
-  <<p.SF_CallHelp<<endl
-  <<p.MB_Searched<<endl
-  <<p.MB_ObservedCloset<<endl
-  <<p.MB_ObservedBed<<endl
-  <<p.MB_ObservedNightStand<<endl
-  <<p.MB_GetCozyCoat<<endl
-  <<p.MB_GetDiary<<endl
-  <<p.MB_AddSan<<endl
-  <<p.SB_Searched<<endl
-  <<p.SB_ObservedCloset<<endl
-  <<p.SB_SanRed<<endl
-  <<p.SB_ObservedBed<<endl
-  <<p.SB_AddSan<<endl
-  <<p.SB_ObservedNightStand<<endl
-  <<p.SB_OpenedDrawer<<endl
-  <<p.SB_GetMagnetKey<<endl
-  <<p.Stu_Searched<<endl
-  <<p.Stu_ObservedDesk<<endl
-  <<p.Stu_GetMysteriousBook<<endl
-  <<p.Stu_ReadTheNote<<endl
-  <<p.Stu_ReadAloud<<endl
-  <<p.Stu_ReadInHeart<<endl
-  <<p.Stu_ObsevedBookShelves<<endl
-  <<p.Stu_GetDrugGuide<<endl
-  <<p.RM_Searched<<endl
-  <<p.RM_SanRed<<endl
-  <<p.RM_ObservedCabinet<<endl
-  <<p.RM_ObservedMirror<<endl
-  <<p.RM_OpenedCabinet<<endl
-  <<p.RM_GetSyringes<<endl
-  <<p.RM_ObservedSink<<endl
-  <<p.RM_ObservedBathtub<<endl
-  <<p.RC_Searched<<endl
-  <<p.RC_ChatWithTheOldMan<<endl
-  <<p.RC_OldManDead<<endl
-  <<p.RC_ObservedRoom<<endl
-  <<p.S_ForgetNote<<endl
-  <<p.S_ForgetMysteriousBook<<endl
-  <<p.S_ForgetDiary<<endl
-  <<p.S_BurnMysteriousBool<<endl
-  <<p.S_BurnDiary<<endl
-  <<p.S_InjectChemicals<<endl
-  <<p.S_InjectCorrectly<<endl
-  <<p.M_InitialHP<<endl
-  <<p.M_InitialDEX<<endl
-  <<p.M_InitialSTR<<endl;
+  fout << p.position << endl
+  << p.str << endl
+  << p.con << endl
+  << p.dex << endl
+  << p.siz << endl
+  << p.inte << endl
+  << p.pow << endl
+  << p.app << endl
+  << p.luck << endl
+  << p.hp << endl
+  << p.san << endl
+  << p.LC_Searched << endl
+  << p.LC_BrokenWall << endl
+  << p.LC_GetWire << endl
+  << p.LC_OpenedDoor << endl
+  << p.LC_ObservedWall << endl
+  << p.LC_ObservedDoor << endl
+  << p.MC_Searched << endl
+  << p.MC_SanRed << endl
+  << p.MC_FromLC << endl
+  << p.MC_FromTR << endl
+  << p.MC_ObservedCorpses << endl
+  << p.MC_ObservedDoor << endl
+  << p.MC_GetMetalKey << endl
+  << p.TR_Searched << endl
+  << p.TR_SanRed << endl
+  << p.TR_ObservedRCDoor << endl
+  << p.TR_ObservedPadlock << endl
+  << p.TR_ObservedMirror << endl
+  << p.TR_ObservedTortureIns << endl
+  << p.TR_ObservedDoor << endl
+  << p.TR_UnlockedDoor << endl
+  << p.TR_UnlockedRCDoor << endl
+  << p.Sto_Searched << endl
+  << p.Sto_ObservedBag << endl
+  << p.Sto_SearchedBag << endl
+  << p.Sto_ObservedTable << endl
+  << p.Sto_ObservedStew << endl
+  << p.Sto_EatStew << endl
+  << p.Sto_RealizeStew << endl
+  << p.Sto_ObservedStairway << endl
+  << p.Ent_Searched << endl
+  << p.Ent_ObservedDoor << endl
+  << p.LR_Searched << endl
+  << p.LR_SanRed << endl
+  << p.LR_ObservedCabinet << endl
+  << p.LR_SearchedUpperCabinet << endl
+  << p.LR_SearchedLowerCabinet << endl
+  << p.LR_GetCoal << endl
+  << p.LR_GetFirstAidKit << endl
+  << p.LR_ObservedDiningTable << endl
+  << p.LR_GetNote << endl
+  << p.LR_ConsumeDishes << endl
+  << p.LR_SearchedBody << endl
+  << p.LR_GetCopperKey << endl
+  << p.LR_ObservedFireplace << endl
+  << p.LR_CleanedFireplace << endl
+  << p.LR_SetFire << endl
+  << p.Kit_Searched << endl
+  << p.Kit_ObservedStove << endl
+  << p.Kit_ObservedPot << endl
+  << p.Kit_GetKnife << endl
+  << p.Kit_ObservedFridge << endl
+  << p.Kit_ObservedSink << endl
+  << p.Kit_ObservedCupboard << endl
+  << p.Kit_GetChemicals << endl
+  << p.SF_Searched << endl
+  << p.SF_FromFF << endl
+  << p.SF_FromRm << endl
+  << p.SF_PickUpThePhone << endl
+  << p.SF_CallHelp << endl
+  << p.MB_Searched << endl
+  << p.MB_ObservedCloset << endl
+  << p.MB_ObservedBed << endl
+  << p.MB_ObservedNightStand << endl
+  << p.MB_GetCozyCoat << endl
+  << p.MB_GetDiary << endl
+  << p.MB_AddSan << endl
+  << p.SB_Searched << endl
+  << p.SB_ObservedCloset << endl
+  << p.SB_SanRed << endl
+  << p.SB_ObservedBed << endl
+  << p.SB_AddSan << endl
+  << p.SB_ObservedNightStand << endl
+  << p.SB_OpenedDrawer << endl
+  << p.SB_GetMagnetKey << endl
+  << p.Stu_Searched << endl
+  << p.Stu_ObservedDesk << endl
+  << p.Stu_GetMysteriousBook << endl
+  << p.Stu_ReadTheNote << endl
+  << p.Stu_ReadAloud << endl
+  << p.Stu_ReadInHeart << endl
+  << p.Stu_ObsevedBookShelves << endl
+  << p.Stu_GetDrugGuide << endl
+  << p.RM_Searched << endl
+  << p.RM_SanRed << endl
+  << p.RM_ObservedCabinet << endl
+  << p.RM_ObservedMirror << endl
+  << p.RM_OpenedCabinet << endl
+  << p.RM_GetSyringes << endl
+  << p.RM_ObservedSink << endl
+  << p.RM_ObservedBathtub << endl
+  << p.RC_Searched << endl
+  << p.RC_ChatWithTheOldMan << endl
+  << p.RC_OldManDead << endl
+  << p.RC_ObservedRoom << endl
+  << p.S_ForgetNote << endl
+  << p.S_ForgetMysteriousBook << endl
+  << p.S_ForgetDiary << endl
+  << p.S_BurnMysteriousBool << endl
+  << p.S_BurnDiary << endl
+  << p.S_InjectChemicals << endl
+  << p.S_InjectCorrectly << endl
+  << p.M_InitialHP << endl
+  << p.M_InitialDEX << endl
+  << p.M_InitialSTR << endl;
 
   fout.close();
 
@@ -434,123 +434,122 @@ int main(){
     fin.open("stats.txt");
     if (fin.good())
     {
-      fin>>p.position
-      >>p.str
-      >>p.con
-      >>p.dex
-      >>p.siz
-      >>p.inte
-      >>p.pow
-      >>p.app
-      >>p.luck
-      >>p.hp
-      >>p.san
-      >>p.LC_Searched
-      >>p.LC_BrokenWall
-      >>p.LC_GetWire
-      >>p.LC_OpenedDoor
-      >>p.LC_ObservedWall
-      >>p.LC_ObservedDoor
-      >>p.MC_Searched
-      >>p.MC_SanRed
-      >>p.MC_FromLC
-      >>p.MC_FromTR
-      >>p.MC_ObservedCorpses
-      >>p.MC_ObservedDoor
-      >>p.MC_GetMetalKey
-      >>p.TR_Searched
-      >>p.TR_SanRed
-      >>p.TR_ObservedRCDoor
-      >>p.TR_ObservedPadlock
-      >>p.TR_ObservedMirror
-      >>p.TR_ObservedTortureIns
-      >>p.TR_ObservedDoor
-      >>p.TR_UnlockedDoor
-      >>p.TR_UnlockedRCDoor
-      >>p.Sto_Searched
-      >>p.Sto_ObservedBag
-      >>p.Sto_SearchedBag
-      >>p.Sto_ObservedTable
-      >>p.Sto_ObservedStew
-      >>p.Sto_EatStew
-      >>p.Sto_RealizeStew
-      >>p.Sto_ObservedStairway
-      >>p.Ent_Searched
-      >>p.Ent_ObservedDoor
-      >>p.LR_Searched
-      >>p.LR_SanRed
-      >>p.LR_ObservedCabinet
-      >>p.LR_SearchedUpperCabinet
-      >>p.LR_SearchedLowerCabinet
-      >>p.LR_GetCoal
-      >>p.LR_GetFirstAidKit
-      >>p.LR_ObservedDiningTable
-      >>p.LR_GetNote
-      >>p.LR_ConsumeDishes
-      >>p.LR_SearchedBody
-      >>p.LR_GetCopperKey
-      >>p.LR_ObservedFireplace
-      >>p.LR_CleanedFireplace
-      >>p.LR_SetFire
-      >>p.Kit_Searched
-      >>p.Kit_ObservedStove
-      >>p.Kit_ObservedPot
-      >>p.Kit_GetKnife
-      >>p.Kit_ObservedFridge
-      >>p.Kit_ObservedSink
-      >>p.Kit_ObservedCupboard
-      >>p.Kit_GetChemicals
-      >>p.SF_Searched
-      >>p.SF_FromFF
-      >>p.SF_FromRm
-      >>p.SF_PickUpThePhone
-      >>p.SF_CallHelp
-      >>p.MB_Searched
-      >>p.MB_ObservedCloset
-      >>p.MB_ObservedBed
-      >>p.MB_ObservedNightStand
-      >>p.MB_GetCozyCoat
-      >>p.MB_GetDiary
-      >>p.MB_AddSan
-      >>p.SB_Searched
-      >>p.SB_ObservedCloset
-      >>p.SB_SanRed
-      >>p.SB_ObservedBed
-      >>p.SB_AddSan
-      >>p.SB_ObservedNightStand
-      >>p.SB_OpenedDrawer
-      >>p.SB_GetMagnetKey
-      >>p.Stu_Searched
-      >>p.Stu_ObservedDesk
-      >>p.Stu_GetMysteriousBook
-      >>p.Stu_ReadTheNote
-      >>p.Stu_ReadAloud
-      >>p.Stu_ReadInHeart
-      >>p.Stu_ObsevedBookShelves
-      >>p.Stu_GetDrugGuide
-      >>p.RM_Searched
-      >>p.RM_SanRed
-      >>p.RM_ObservedCabinet
-      >>p.RM_ObservedMirror
-      >>p.RM_OpenedCabinet
-      >>p.RM_GetSyringes
-      >>p.RM_ObservedSink
-      >>p.RM_ObservedBathtub
-      >>p.RC_Searched
-      >>p.RC_ChatWithTheOldMan
-      >>p.RC_OldManDead
-      >>p.RC_ObservedRoom
-      >>p.S_ForgetNote
-      >>p.S_ForgetMysteriousBook
-      >>p.S_ForgetDiary
-      >>p.S_BurnMysteriousBool
-      >>p.S_BurnDiary
-      >>p.S_InjectChemicals
-      >>p.S_InjectCorrectly
-      >>p.M_InitialHP
-      >>p.M_InitialDEX
-      >>p.M_InitialSTR;
-      
+      fin >> p.position
+      >> p.str
+      >> p.con
+      >> p.dex
+      >> p.siz
+      >> p.inte
+      >> p.pow
+      >> p.app
+      >> p.luck
+      >> p.hp
+      >> p.san
+      >> p.LC_Searched
+      >> p.LC_BrokenWall
+      >> p.LC_GetWire
+      >> p.LC_OpenedDoor
+      >> p.LC_ObservedWall
+      >> p.LC_ObservedDoor
+      >> p.MC_Searched
+      >> p.MC_SanRed
+      >> p.MC_FromLC
+      >> p.MC_FromTR
+      >> p.MC_ObservedCorpses
+      >> p.MC_ObservedDoor
+      >> p.MC_GetMetalKey
+      >> p.TR_Searched
+      >> p.TR_SanRed
+      >> p.TR_ObservedRCDoor
+      >> p.TR_ObservedPadlock
+      >> p.TR_ObservedMirror
+      >> p.TR_ObservedTortureIns
+      >> p.TR_ObservedDoor
+      >> p.TR_UnlockedDoor
+      >> p.TR_UnlockedRCDoor
+      >> p.Sto_Searched
+      >> p.Sto_ObservedBag
+      >> p.Sto_SearchedBag
+      >> p.Sto_ObservedTable
+      >> p.Sto_ObservedStew
+      >> p.Sto_EatStew
+      >> p.Sto_RealizeStew
+      >> p.Sto_ObservedStairway
+      >> p.Ent_Searched
+      >> p.Ent_ObservedDoor
+      >> p.LR_Searched
+      >> p.LR_SanRed
+      >> p.LR_ObservedCabinet
+      >> p.LR_SearchedUpperCabinet
+      >> p.LR_SearchedLowerCabinet
+      >> p.LR_GetCoal
+      >> p.LR_GetFirstAidKit
+      >> p.LR_ObservedDiningTable
+      >> p.LR_GetNote
+      >> p.LR_ConsumeDishes
+      >> p.LR_SearchedBody
+      >> p.LR_GetCopperKey
+      >> p.LR_ObservedFireplace
+      >> p.LR_CleanedFireplace
+      >> p.LR_SetFire
+      >> p.Kit_Searched
+      >> p.Kit_ObservedStove
+      >> p.Kit_ObservedPot
+      >> p.Kit_GetKnife
+      >> p.Kit_ObservedFridge
+      >> p.Kit_ObservedSink
+      >> p.Kit_ObservedCupboard
+      >> p.Kit_GetChemicals
+      >> p.SF_Searched
+      >> p.SF_FromFF
+      >> p.SF_FromRm
+      >> p.SF_PickUpThePhone
+      >> p.SF_CallHelp
+      >> p.MB_Searched
+      >> p.MB_ObservedCloset
+      >> p.MB_ObservedBed
+      >> p.MB_ObservedNightStand
+      >> p.MB_GetCozyCoat
+      >> p.MB_GetDiary
+      >> p.MB_AddSan
+      >> p.SB_Searched
+      >> p.SB_ObservedCloset
+      >> p.SB_SanRed
+      >> p.SB_ObservedBed
+      >> p.SB_AddSan
+      >> p.SB_ObservedNightStand
+      >> p.SB_OpenedDrawer
+      >> p.SB_GetMagnetKey
+      >> p.Stu_Searched
+      >> p.Stu_ObservedDesk
+      >> p.Stu_GetMysteriousBook
+      >> p.Stu_ReadTheNote
+      >> p.Stu_ReadAloud
+      >> p.Stu_ReadInHeart
+      >> p.Stu_ObsevedBookShelves
+      >> p.Stu_GetDrugGuide
+      >> p.RM_Searched
+      >> p.RM_SanRed
+      >> p.RM_ObservedCabinet
+      >> p.RM_ObservedMirror
+      >> p.RM_OpenedCabinet
+      >> p.RM_GetSyringes
+      >> p.RM_ObservedSink
+      >> p.RM_ObservedBathtub
+      >> p.RC_Searched
+      >> p.RC_ChatWithTheOldMan
+      >> p.RC_OldManDead
+      >> p.RC_ObservedRoom
+      >> p.S_ForgetNote
+      >> p.S_ForgetMysteriousBook
+      >> p.S_ForgetDiary
+      >> p.S_BurnMysteriousBool
+      >> p.S_BurnDiary
+      >> p.S_InjectChemicals
+      >> p.S_InjectCorrectly
+      >> p.M_InitialHP
+      >> p.M_InitialDEX
+      >> p.M_InitialSTR;
 
       fin.close();
 
@@ -787,7 +786,7 @@ int main(){
         else if (p.LC_Searched == 1 && p.LC_OpenedDoor == 1 && p.LC_BrokenWall == 1){
             printout(LeftCellDes3);
         }
-        else if (p.LC_Searched ==1 && p.LC_OpenedDoor == 0 && p.LC_BrokenWall == 1){
+        else if (p.LC_Searched == 1 && p.LC_OpenedDoor == 0 && p.LC_BrokenWall == 1){
             printout(LeftCellDes4);
         }
 
@@ -989,7 +988,7 @@ int main(){
                             delete monsterSTR;
                             printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -1404,9 +1403,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -1827,7 +1826,7 @@ int main(){
                     printout("The padlock is cold to touch, a layer of reinforced metal enveloped the lock.\nMade of sturdy metal, the shackle is reinforced, partially covered in another layer of steel.\nOn the side of the padlock, it writes the word \"Squire\".\n");
                 }
                 else if (p.TR_ObservedPadlock == 1 && p.MC_GetMetalKey == 1 && p.SB_GetMagnetKey == 0 && p.TR_UnlockedRCDoor == 0){
-                    printout("You inserted the metal key you found in the middle cell and turned; However, it seems that this isn't the correct key.\n");
+                    printout("You inserted the metal key you found in the middle cell and turned; However, it seems that this wasn't the correct key.\n");
                 }
                 else if (p.TR_ObservedPadlock ==1 && p.SB_GetMagnetKey == 1 && p.TR_UnlockedRCDoor == 0){
                     p.TR_UnlockedRCDoor = 1;
@@ -1884,9 +1883,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -2303,9 +2302,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -2646,9 +2645,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -3090,9 +3089,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -3476,9 +3475,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -3847,7 +3846,7 @@ int main(){
                     p.SF_Searched = 1;
                     p.position = 10;
                     savedata(p);
-                    printout("You entered the seconc bedroom.\n");
+                    printout("You entered the second bedroom.\n");
                     cout << endl;
                 }
                 goto SecondBedroom;
@@ -3913,9 +3912,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -4252,9 +4251,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -4616,9 +4615,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -4942,12 +4941,11 @@ int main(){
                     p.M_InitialDEX += 5;
                     p.M_InitialSTR += 5;
 
-                    bool result = combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife);
+                    if(combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 1){
                         delete monsterHP;
                         delete monsterDEX;
                         delete monsterSTR;
-                    if(result == 1){
-                        printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                        printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                     }
                     else if (result == 0){
                         goto Dead;
@@ -4998,9 +4996,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -5368,9 +5366,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
@@ -5721,9 +5719,9 @@ int main(){
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
-                            printout("After the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
+                            printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                         }
-                        else if (combat(monsterHP, monsterDEX, monsterSTR, p.hp, p.dex, p.str, p.siz, p.Kit_GetKnife) == 0){
+                        else{
                             delete monsterHP;
                             delete monsterDEX;
                             delete monsterSTR;
