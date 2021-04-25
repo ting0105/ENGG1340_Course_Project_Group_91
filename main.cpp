@@ -4947,7 +4947,7 @@ int main(){
                         delete monsterSTR;
                         printout("After your last attack, the tentacle left the room.\nAfter the fierce battle, you sat down exhausted, but the situation didn't allow you to rest for long.\n");
                     }
-                    else if (result == 0){
+                    else {
                         goto Dead;
                     }
                 }
