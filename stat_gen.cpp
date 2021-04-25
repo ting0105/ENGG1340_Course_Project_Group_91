@@ -3,7 +3,6 @@
 #include <random>
 #include <string>
 
-#include <unistd.h>
 using namespace std;
 
 //Generate player stats and store the 8 stats into an int array
@@ -22,15 +21,6 @@ using namespace std;
 //luck = statarray[7];
 //hp = statarray[8];
 //san = statarray[9];
-
-void printout(string paragraph){
-    int x = 0;
-    while (paragraph[x] != '\0'){
-        cout << paragraph[x++];
-        cout.flush();
-        usleep(20000); // 10000
-    }
-}
 
 void stat_gen(int arr[10])
 {
@@ -648,17 +638,5 @@ void stat_gen(int arr[10])
       hp = 0;
       san = 0;
     }
-
-
   }
-}
-
-
-
-
-int main()
-{
-  int statarray[10];
-  stat_gen(statarray);
-  return 0;
 }
