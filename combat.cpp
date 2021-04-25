@@ -211,9 +211,9 @@ bool combat(int * monsterHP, int * monsterDEX, int * monsterSTR, int &playerHP, 
       <<"A. Dodge"<<endl
       <<"B. Counter attack"<<endl;
 
-      while (choice!="A"||choice!="B"){
+      while (choice!="A"&&choice!="B"){
         cin>>choice;
-        if (choice!="A"||choice!="B"){
+        if (choice!="A"&&choice!="B"){
           cout<<"Invalid input. Please try again"<<endl;
         }
       }
