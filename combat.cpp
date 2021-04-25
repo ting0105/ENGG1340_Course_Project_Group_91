@@ -1,10 +1,19 @@
 #include <iostream>
-#include <random>
+#include <random> //for random damage
 #include "main.h"
 using namespace std;
 
+//The function is to handle combat between player and enemy
+
+//The function take 7 inputs
+//*monsterHP, *monsterDEX, *monsterSTR are int pointers and they mean HP, DEX, STR of monster respectively
+//playerHP is the HP of player which is passed by reference so it can directly modify player's HP
+//playerDEX, playerSTR, playerSIZ are DEX, STR, DEX of player respectively
+//kit_getknife is a bool that show if player got the knife weapon, if player has the knife weapon, the player deal more damage
+
+//The function will return 0 if player died, return 1 if player won
+
 //Monster's stats are stored using pointers because the data will be deleted to free up memory after battle
-//Return 0 if player died, return 1 if player won
 bool combat(int * monsterHP, int * monsterDEX, int * monsterSTR, int &playerHP, int playerDEX, int playerSTR, int playerSIZ, bool kit_getknife){
   bool ended = 0;
   string choice;
