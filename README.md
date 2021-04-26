@@ -6,6 +6,8 @@
 
 ## Introduction: CoC is a tabletop role playing game. Every choices the player make will affect the plot of the game. The player can achieve different endings based on the choices that he/ she made.
 
+## Problem statement: We chose this topic because we have always loved CoC and think implementing CoC with a game program will be fun and challenging.
+
 
 ## Game rules:
 ### 1. Avoid entering invalid inputs, all valid inputs are shown on screen for you. The plot will not advance if invalid inputs are received.
