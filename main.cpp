@@ -5855,7 +5855,7 @@ int main(){
     Dead:{
         cout << endl;
         if (p.san <= 0){
-            printout("Because of lossing too mush sanity, you lost your mind and killed yourself.\nGAMEOVER\nYour character will be delected.\n");
+            printout("Because of lossing too mush sanity, you lost your mind and killed yourself.\nGAMEOVER\nYour character will be deleted.\n");
             if( remove( "stats.txt" ) != 0 ){
                 perror( "Error deleting file" );
             }
@@ -5866,7 +5866,7 @@ int main(){
         }
        
         else if (p.hp <= 0){
-            printout("Because of receiving too much damage, you dead.\nGAMEOVER\nYour character will be delected.\n");
+            printout("Because of receiving too much damage, you dead.\nGAMEOVER\nYour character will be deleted.\n");
             if( remove("stats.txt") != 0 ){
                 perror("Error deleting file.");
             }
@@ -5879,7 +5879,7 @@ int main(){
     END:{
         bool End_Hastur = 0;
         printout("As you woke up, the first thing you saw is a plain yet unfamiliar ceiling. \n\"Where am I?\", you thought to yourself, but your brain could hardly gather enough memory to construct an answer.\nAs you stood up, you found yourself in a clean yet seemingly familiar house, a strange yet pleasant aroma filled up the house.\nYou looked to the center of the room, copious and various dishes was set on a dining table,\nsomehow a sudden feeling of disgust rushes up into your mind when you saw the chairs that scattered around the table.\nYou look to the sides of the room, at the extremity of the room, you found a door, that resembles a front door in your memory.\nAs you approach the door, a faint light shines from underneath the door.\nTrembling, you pushed the door opened.\nYour tried to keep your eyes opened, as the brightening light engulfed you.\n\n");
-        printout("CONGRATULATIONS!!\nYou have finished the game. Your character will be delected.\n");
+        printout("CONGRATULATIONS!!\nYou have finished the game. Your character will be deleted.\n");
         if(remove("stats.txt") != 0){
             perror("Error deleting file.");
         }   
