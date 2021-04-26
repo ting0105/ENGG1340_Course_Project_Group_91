@@ -1,0 +1,790 @@
+./main
+Welcome to Call of Cthulhu (CoC)!!!
+Now, you need to create your own investigator.
+You can distribute the attribute point to different characteristics which will affect your playing style.
+Your total attribute points will be determined by eight 3D6 die roll, and that number multiplied by 5.
+Die roll 1: You rolled 3 + 6 + 5 = 14
+Die roll 2: You rolled 6 + 4 + 5 = 15
+Die roll 3: You rolled 4 + 5 + 2 = 11
+Die roll 4: You rolled 1 + 1 + 2 = 4
+Die roll 5: You rolled 5 + 3 + 6 = 14
+Die roll 6: You rolled 3 + 6 + 1 = 10
+Die roll 7: You rolled 3 + 5 + 6 = 14
+Die roll 8: You rolled 1 + 4 + 1 = 6
+Your total attribute points is 88 * 5 = 440
+
+Now you can distribute your points.
+You can use command [attribute name] [value] to distribute your points.
+For example, the command "STR 50" will add 50 points to STR (strength)
+You may put minimum 15 points and maximum 90 points in each attribute except HP and SAN.
+It is because the value of HP is depended on SIZ and CON, while SAN is depended on POW.
+HP = (SIZ + CON) / 10 and SAN = POW
+Use the command "reset" if you wish to reset all attribute points.
+Use the command "random" if you wish to distribute the remaining points randomly
+
+Your current stats :
+STR (strength)     :0
+CON (constitution) :0
+POW (willpower)    :0
+DEX (Dexterity)    :0
+APP (appearance)   :0
+SIZ (size)         :0
+INT (intelligence) :0
+LUC (luck)         :0
+
+HP  (Hit Points)   :0
+SAN (Sanity)       :0
+Points left: 440
+random
+
+Your current stats :
+STR (strength)     :76
+CON (constitution) :18
+POW (willpower)    :62
+DEX (Dexterity)    :22
+APP (appearance)   :16
+SIZ (size)         :90
+INT (intelligence) :76
+LUC (luck)         :80
+
+HP  (Hit Points)   :10
+SAN (Sanity)       :62
+You have distributed all your attribute points.
+use command "confirm" to finish character creation or use command "reset" to reset.
+**Once you confirmed, you cannot change the characteristics until the end of the game or the death of your investigator.**
+confirm
+**The game will be auto saved when you enter a room**
+
+In the mist, under the darkness, you see a figure in yellow, standing afar, staring at you.
+Your eyes scan through the figure, as your sight stopped on his face, you did not see anything,
+but a chill strikes your spine, from the very bottom, up till the back of your head,
+it is the emotion of fear, the feeling of certain death, and the desire to run.
+And so did you, you started running, running into the abyss, as the darkness slowly engulfs you, swallowing you whole.
+
+
+You wake up in a cell, packed with cushioned interior, a sturdy metal door blocks your path to freedom,
+as a tiny gap on the door gives you a glimpse of the outside, a plain concrete room.
+At the meantime, you found all your personal items gone.
+What do you want to do next?
+A. Observe the door.
+B. Observe the wall.
+
+Special event:
+I. Check your inventory.
+
+A
+You carefully inspect the door, it is a sturdy and heavy door,
+there’s also a tiny gap on the door that allows you to peek on the other side of the room, or vice versa.
+It would be impossible to open this door by force, but you cannot see any sort of lock or handle,
+this door must be operated from the other side.
+
+What do you want to do next?
+A. Observe the door.
+B. Observe the wall.
+
+Special event:
+I. Check your inventory.
+
+B
+Underneath the cushion,you found the concrete wall underneath to be fragile,
+however it would still cost a lot to brute force through the wall, maybe you should attempt finding another way out first.
+Also, you found a long piece of wire under the cushion.
+
+What do you want to do next?
+A. Try to open the door with the wire.
+B. Attack the cushion and try to break the wall.
+
+Special event:
+I. Check your inventory.
+
+I
+Inventory:
+Wire
+
+What do you want to do next?
+A. Try to open the door with the wire.
+B. Attack the cushion and try to break the wall.
+
+Special event:
+I. Check your inventory.
+
+A
+You stretched your hands the very best you could, carefully hooking the twisted end of the wire onto the handle outside,
+as you feel the wire is fixed in its position, you slowly pulled the wire in, the handle gradually lifted upward,
+on the very urge of the wire from being ruptured, "click" the metal door opened
+
+
+What do you want to do next?
+A. Leave the cell through the door.
+B. Attack the cushion and try to break the wall.
+
+Special event:
+I. Check your inventory.
+
+A
+You left the cell through the door.
+
+As you break free from the cell, you noticed you are in a plain room
+with white concrete walls, with no windows, a couple of torture instruments was set in the middle of room,
+some of them have stains and some remains on them.
+There’s also a large mirror on the other side of the room.
+You look behind you, there are a total of 3 cells,
+the left one, where you woke up, the middle one and the right one. While you see another door at the other end of the room.
+Because of seeing those instruments, you lost 3 sanity, you have 59 sanity left.
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Observe the door of the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+D
+As you pushed onto the door, the door slid open, someone must have forgot to lock the door.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+D
+You enter the middle cell.
+
+As you lift the handle and pull on the door, a strong scent rushes into your nose, you lost 1 sanity. As the content fully disclosed,
+you found the cell to be filled up with flesh, blood, and human remains,
+you lost 1 sanity, you have 57 sanity left.
+
+What do you want to do next?
+A. Observe the corpses.
+B. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+A
+As you carefully inspected the corpses, you find noticed a shining spot, upon close inspection, you found it to be a metal key.
+
+What do you want to do next?
+A. Observe the corpses.
+B. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+B
+You left the cell and went to the torture room.
+
+You enter the torture room and there is no different,
+a couple of torture instruments was set in the middle of room, some of them have stains and some remains on them.
+There are three cells in the room
+There’s also a large mirror on the other side of the room.
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+A
+You closely inspected the instruments, you realize the cruelty of the instruments,
+you lost 2 sanity, you have 55 sanity left.
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+B
+You stared into the mirror, you see yourself, nothing special, nothing worthy. You felt worthless,
+you lost 1 sanity, you have 54 sanity left.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+E
+Different from the other two cells, a solid metal door bar, stretched to both side of the frame, was used to prevent to door from opening.
+You see a padlock locking the metal bar onto the door.
+It is merely impossible for any animals or human, that can fit into this cell, to physically break through this door
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Observe the padlock on the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+E
+The padlock is cold to touch, a layer of reinforced metal enveloped the lock.
+Made of sturdy metal, the shackle is reinforced, partially covered in another layer of steel.
+On the side of the padlock, it writes the word "Squire".
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Try to open the door of the right cell by the metal key.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+E
+You inserted the metal key you found in the middle cell and turned; However, it seems that this wasn't the correct key.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Try to open the door of the right cell by the metal key.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+C
+This is a metal door, it seems less bulky than the cell door, but it is still vain to open it by force.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Try to open the metal door with the metal key.
+D. Go into the middle cell.
+E. Try to open the door of the right cell by the metal key.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+C
+You inserted the key and turned it; the door opened with a "click".
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Leave the torture room through the metal door.
+D. Go into the middle cell.
+E. Try to open the door of the right cell by the metal key.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+C
+You leave the torture room.
+
+You finally escaped from the torture room, what waiting for you is another concealed area which looks like a storage room.
+In this new room, you see a pile of bags of different types, color and size; a table with pots on it.
+On the other side of the room, there is also a stairway leading upward.
+What do you want to do next?
+A. Observe the bags.
+B. Observe the table.
+C. Observer the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+A
+This is a pile of bags, perhaps you can find your lost belongings in here?
+
+What do you want to do next?
+A. Search the bags.
+B. Observe the table.
+C. Observer the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+B
+On the table there is a few pots lying on it. There’s mysterious stew in them.
+
+What do you want to do next?
+A. Search the bags.
+B. Observe the mysterious stew.
+C. Observer the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+A
+Unluckly, you found that all the bags are empty, it seems that your belongings were thrown away.
+
+What do you want to do next?
+A. Search the bags.
+B. Observe the mysterious stew.
+C. Observer the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+B
+The mysterious stew are blood red in colour, it doesn't look good.
+
+What do you want to do next?
+A. Search the bags.
+B. Eat the stew.
+C. Observer the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+B
+You found this stew tastes particularly awful,
+you lost 1 sanity, you have 53 sanity left.
+Suddently, You realize the mysterious stew are made of human parts, you lost 2 sanity,you have 51 sanity left.
+
+What do you want to do next?
+A. Search the bags.
+B. Eat the stew.
+C. Observer the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+C
+This stairway leads upstairs. This seems to be the only way out.
+
+What do you want to do next?
+A. Search the bags.
+B. Eat the stew.
+C. Leave the room through the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+C
+You left the room through the stairway.
+
+At the entrance of the house, you see a stairway leadind down to the store room, a staircase leading up to the second floor of the house,
+a door that seems to lead to the outside, a doorway to the living room.
+What do you want to do next?
+A. Observe the door.
+B. Move to the second floor.
+C. Go to the living room.
+D. Go to the storage room.
+
+Special event:
+I. Check your inventory.
+
+A
+Through the peephole, you found that outside the door is only endless mist and eternal darkness,
+as you gaze into the abyss, the abyss gaze back,
+you lost 2 sanity, you have 49 sanity left.
+
+What do you want to do next?
+A. Observe the door.
+B. Move to the second floor.
+C. Go to the living room.
+D. Go to the storage room.
+
+Special event:
+I. Check your inventory.
+
+A
+Because of fear, you are afraid to look through the peephole again.
+
+What do you want to do next?
+A. Observe the door.
+B. Move to the second floor.
+C. Go to the living room.
+D. Go to the storage room.
+
+Special event:
+I. Check your inventory.
+
+B
+You left the entrance and reached second floor.
+
+Stepping onto the second floor, you found nothing special, just a couple of rooms and a telephone next to the stairs,
+judging on the signs on the doors, you can tell these rooms are
+main bedroom, second bedroom, study, restroom.
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+I. Check your inventory.
+
+A
+You picked up the phone, as expected, there’s no response…
+
+What do you want to do next?
+A1. Dial a number.
+A2. Put down the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+I. Check your inventory.
+
+A1
+You dialed a number hopefully and hope the other side would pick up, but nobody came…
+
+What do you want to do next?
+A1. Dial a number.
+A2. Put down the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+I. Check your inventory.
+
+A2
+You put down the telephone.
+
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+I. Check your inventory.
+
+B
+You entered the main bed room.
+
+You entered the main bedroom, in this bedroom you found a closet, a bed, and a nightstand beside it.
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+I. Check your inventory.
+
+A
+In the closet there are a few smelly clothes, you found a brand-new cozy coat as well.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+S9. Wear the cozy coat.
+I. Check your inventory.
+
+B
+The bed does not have any mattress, it’s just a plank of wood.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+S9. Wear the cozy coat.
+I. Check your inventory.
+
+S9
+You felt surrounded by warmth… you gained 1 sanity, you have 50 sanity left.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+I. Check your inventory.
+
+C
+On the nightstand, you found a diary.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+S5
+25th August 1993
+After weeks of investigation, we’ve successfully located the coordinates of the ruins.
+It’s only a matter of time for us to fully unfold the truth.
+
+2nd November 1993
+Unbelievable... we’ve found it, the ruin is more than two kilometers buried into the earth…
+It is impossible for humans to build structure in such scale in this depth.
+The ruin is old, it’s created even before the start of mankind…
+
+5th November 1993
+It has been three days into exploration,
+but as we go further and deeper, this ruin only seems to be expanding endlessly…
+We’ve suffered personnel losses, over the course of three days,
+seven had vanished, it’s not going to be long until people start losing their mind from stress.
+
+13th November 1993
+We’ve found something noticeable, in the center of a large hall, a coffin,
+but the coffin seems to be locked by some mechanism, my assistant is now working.
+
+20th November 1993
+I’ve been in coma for a week since we encountered that… that humanoid thing.
+It killed half of the team within the blink of a eye…
+We are lucky to even be here, and miraculously, it fell unconscious, for some unknown reason.
+Suffered from major loss, we are now evacuating with our captured subject.
+
+5th December 1993
+It has been two weeks after we’ve arrived back to our facility, but that thing is still unconscious…
+
+7th December 1993
+That thing woke up, but did not appears to be aggressive, we are still uncertain of its identity and awareness.
+
+21st January 1994
+A researcher responsible for feeding
+and mental assessment had been discovered to be showing sympathy and is obsessed with its humanoid appearance.
+I ordered to execute him. The council did not approve this.
+
+23rd January 1994
+The subject had demonstrated emotion of concern and trepidation after the executed researcher was removed from the laboratory.
+
+8th September 2008
+We’ve discovered crucial clues that can help us identify the subject with an important artifact the expedition team found in the ruin…
+It’s been 15 years for another icebreaking discovery…
+
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+C
+You found a diary here before and it's empty now.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+D
+You left the main bedroom.
+
+You left the room and you are now at the corridor of the second floor.
+There is a telephone, main bedroom, second bedroom, study, restroom.
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+C
+You entered the second bedroom.
+
+You entered the second bedroom, in this bedroom you found a closet, a bed, and a nightstand beside it.
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the second bedroom.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+B
+The bed has a mattress on it.
+
+What do you want to do next?
+A. Observe the closet.
+B. Lie on the bed.
+C. Observe the nightstand.
+D. Leave the second bedroom.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+B
+Lying on the bed, you felt relieved from the stress. You gained 1 sanity, you have 51 sanity left.
+
+What do you want to do next?
+A. Observe the closet.
+B. Lie on the bed.
+C. Observe the nightstand.
+D. Leave the second bedroom.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+C
+On the nightstand you found a functional lamp. There also appear to have a drawer in the nightstand.
+
+What do you want to do next?
+A. Observe the closet.
+B. Lie on the bed.
+C. Observe the drawer.
+D. Leave the second bedroom.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+C
+You opened the drawer, in the drawer you found a magnet key with the name, "Squire". It appears to be some sort of brand.
+
+What do you want to do next?
+A. Observe the closet.
+B. Lie on the bed.
+C. Observe the drawer.
+D. Leave the second bedroom.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+D
+You left the second bedroom.
+
+You left the room and you are now at the corridor of the second floor.
+There is a telephone, main bedroom, second bedroom, study, restroom.
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+D
+You entered the study.
+
+In the study, you found a desk and some bookshelves.
+What do you want to do next?
+A. Observe the desk.
+B. Observe those bookshelves.
+C. Leave the study.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A
+On the desk, you found a notebook written in an unknown language. Some force beyonded your control and made you picked up the notebook.
+
+What do you want to do next?
+A. Read the notebook.
+B. Observe those bookshelves.
+C. Leave the study.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A
+It is a very very old book covered in dusts, you opened the book but find yourself unfamiliar with the language that is used to write this book.
+But in the book, you found a piece of note wrote in English.
+
+What do you want to do next?
+A1. Read the note out softly.
+A2. Read the note silently in your mind.
+B. Observe those bookshelves.
+C. Leave the study.
+
+Special event:
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A1
+"He who the mortals must not speak the name of the unspeakable, as for his glory.
+The ignorants who dare would be doomed to the eternal darkness.
+Thou shalt never speak his name, for his name is Hastur.
+Only those who forgot his name would be forgiven…"
+As the word “Hastur” came out of your mouth,
+a tentacle with talons penetrated the walls, it stretched its talons, and dashed toward you.
+What do you want to do next?
+A. Attack
+
+A
+The enemy dodged your attack and received no damage!
+The enemy attacks you!
+What do you want to do in response?
+A. Dodge
+B. Counter attack
+
+B
+You failed to counter attack and exposed your weak spot to the enemy.
+You took 11 damage.
+You have -1 HP left.
+
+Because of receiving too much damage, you dead.
+GAMEOVER
+Your character will be delected.
+Character successfully deleted.
