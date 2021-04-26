@@ -253,9 +253,9 @@ bool combat(int * monsterHP, int * monsterDEX, int * monsterSTR, int &playerHP, 
       printout("A. Dodge\n");
       printout("B. Counter attack\n");
 
-      while (choice != "A" || choice != "B"){
+      while (choice != "A" && choice != "B"){
         cin >> choice;
-        if (choice != "A" || choice != "B"){
+        if (choice != "A" && choice != "B"){
           printout("Invalid input. Please try again\n");
         }
       }
@@ -435,4 +435,5 @@ bool combat(int * monsterHP, int * monsterDEX, int * monsterSTR, int &playerHP, 
       }
     }
   }
+  return 0;
 }
