@@ -15,6 +15,9 @@ main: main.o combat.o stat_gen.o printout.o
 
 clean:
 	rm -f main main.o stat_gen.o combat.o printout.o stats.txt
+	
+restart:
+	rm -f stats.txt
 
 .PHONY:
-	clean
+	clean restart
