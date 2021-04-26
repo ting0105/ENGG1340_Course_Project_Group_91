@@ -35,7 +35,7 @@
 ### 3. Use the command './main' to launch the game
 
 ### To resume previous game, simply use command './main' to launch the game again and the game will resume at the point of you last time entering a new room.
-### To delete your previous investigator and start the game all over again, use command 'make restart' before launching the game with './main'.
+### To delete your previous investigator and start the game all over again, use command 'make restart' when the game is not running, then launch the game with './main'.
 
 
 The program has been tested in academy21 server
