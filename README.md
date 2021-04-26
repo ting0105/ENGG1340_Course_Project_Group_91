@@ -6,7 +6,11 @@
 
 ## Introduction: CoC is a tabletop role playing game. Every choices the player make will affect the plot of the game. The player can achieve different endings based on the choices that he/ she made.
 
-## Problem statement: We chose this topic because we have always loved CoC and think implementing CoC with a game program will be fun and challenging.
+## Problem statement: 
+### We chose this topic because we have always loved CoC and think implementing CoC with a game program will be fun and challenging.
+### CoC is a tabletop role playing game. The player can do anything he/ she want in the game, however, it is very difficult to make it happened in our project. So, we can only provide more options for the player to choose as many as possible and try to provide more freedom to the players.
+### Also, in a real tabletop role play game, the same action may give different results under different situations, so, we used many flags in the main.cpp to make the results of the same action being different under different situations, it can make the game being more interesting.
+### As different people have different playing style, we allowed the player to arrtibute the points freely, such that they can have different playing style( eg. being more passive/active.)
 
 
 ## Game rules:
