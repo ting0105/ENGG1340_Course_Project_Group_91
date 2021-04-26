@@ -1088,7 +1088,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -1100,7 +1100,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -1499,7 +1499,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -1511,7 +1511,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -1973,7 +1973,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -1985,7 +1985,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -2386,7 +2386,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -2398,7 +2398,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -2723,7 +2723,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -2735,7 +2735,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -3161,7 +3161,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -3173,7 +3173,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -3541,7 +3541,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -3553,7 +3553,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -3972,7 +3972,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -3984,7 +3984,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -4305,7 +4305,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -4317,7 +4317,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -4663,7 +4663,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -4675,7 +4675,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -5038,7 +5038,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -5050,7 +5050,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -5402,7 +5402,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -5414,7 +5414,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -5749,7 +5749,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
@@ -5761,7 +5761,7 @@ int main(){
                         p.S_BurnDiary = 1;
                         p.MB_GetDiary = 0;
                         p.san ++;
-                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity you have ");
+                        printout("As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.\nYou somehow felt relieved after burning the diary.\nYou gained 1 sanity, you have ");
                         cout << p.san;
                         printout(" sanity left.\n");
                         if (p.S_BurnDiary == 1 && p.S_BurnMysteriousBool == 1 && p.S_ForgetDiary == 1 && p.S_ForgetMysteriousBook == 1){
