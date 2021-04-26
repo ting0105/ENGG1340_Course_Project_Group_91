@@ -1,0 +1,1654 @@
+./main
+Welcome to Call of Cthulhu (CoC)!!!
+Now, you need to create your own investigator.
+You can distribute the attribute point to different characteristics which will affect your playing style.
+Your total attribute points will be determined by eight 3D6 die roll, and that number multiplied by 5.
+Die roll 1: You rolled 5 + 6 + 6 = 17
+Die roll 2: You rolled 5 + 3 + 3 = 11
+Die roll 3: You rolled 1 + 5 + 4 = 10
+Die roll 4: You rolled 1 + 1 + 4 = 6
+Die roll 5: You rolled 2 + 4 + 2 = 8
+Die roll 6: You rolled 1 + 5 + 6 = 12
+Die roll 7: You rolled 4 + 3 + 6 = 13
+Die roll 8: You rolled 6 + 1 + 5 = 12
+Your total attribute points is 89 * 5 = 445
+
+Now you can distribute your points.
+You can use command [attribute name] [value] to distribute your points.
+For example, the command "STR 50" will add 50 points to STR (strength)
+You may put minimum 15 points and maximum 90 points in each attribute except HP and SAN.
+It is because the value of HP is depended on SIZ and CON, while SAN is depended on POW.
+HP = (SIZ + CON) / 10 and SAN = POW
+Use the command "reset" if you wish to reset all attribute points.
+Use the command "random" if you wish to distribute the remaining points randomly
+
+Your current stats :
+STR (strength)     :0
+CON (constitution) :0
+POW (willpower)    :0
+DEX (Dexterity)    :0
+APP (appearance)   :0
+SIZ (size)         :0
+INT (intelligence) :0
+LUC (luck)         :0
+
+HP  (Hit Points)   :0
+SAN (Sanity)       :0
+Points left: 445
+random
+
+Your current stats :
+STR (strength)     :75
+CON (constitution) :83
+POW (willpower)    :90
+DEX (Dexterity)    :15
+APP (appearance)   :18
+SIZ (size)         :15
+INT (intelligence) :83
+LUC (luck)         :66
+
+HP  (Hit Points)   :9
+SAN (Sanity)       :90
+You have distributed all your attribute points.
+use command "confirm" to finish character creation or use command "reset" to reset.
+**Once you confirmed, you cannot change the characteristics until the end of the game or the death of your investigator.**
+reset
+
+Your current stats :
+STR (strength)     :0
+CON (constitution) :0
+POW (willpower)    :0
+DEX (Dexterity)    :0
+APP (appearance)   :0
+SIZ (size)         :0
+INT (intelligence) :0
+LUC (luck)         :0
+
+HP  (Hit Points)   :0
+SAN (Sanity)       :0
+Points left: 445
+random
+
+Your current stats :
+STR (strength)     :47
+CON (constitution) :50
+POW (willpower)    :47
+DEX (Dexterity)    :25
+APP (appearance)   :89
+SIZ (size)         :89
+INT (intelligence) :82
+LUC (luck)         :16
+
+HP  (Hit Points)   :13
+SAN (Sanity)       :47
+You have distributed all your attribute points.
+use command "confirm" to finish character creation or use command "reset" to reset.
+**Once you confirmed, you cannot change the characteristics until the end of the game or the death of your investigator.**
+reset
+
+Your current stats :
+STR (strength)     :0
+CON (constitution) :0
+POW (willpower)    :0
+DEX (Dexterity)    :0
+APP (appearance)   :0
+SIZ (size)         :0
+INT (intelligence) :0
+LUC (luck)         :0
+
+HP  (Hit Points)   :0
+SAN (Sanity)       :0
+Points left: 445
+random
+
+Your current stats :
+STR (strength)     :75
+CON (constitution) :87
+POW (willpower)    :80
+DEX (Dexterity)    :15
+APP (appearance)   :15
+SIZ (size)         :76
+INT (intelligence) :15
+LUC (luck)         :82
+
+HP  (Hit Points)   :16
+SAN (Sanity)       :80
+You have distributed all your attribute points.
+use command "confirm" to finish character creation or use command "reset" to reset.
+**Once you confirmed, you cannot change the characteristics until the end of the game or the death of your investigator.**
+confirm
+**The game will be auto saved when you enter a room**
+
+In the mist, under the darkness, you see a figure in yellow, standing afar, staring at you.
+Your eyes scan through the figure, as your sight stopped on his face, you did not see anything,
+but a chill strikes your spine, from the very bottom, up till the back of your head,
+it is the emotion of fear, the feeling of certain death, and the desire to run.
+And so did you, you started running, running into the abyss, as the darkness slowly engulfs you, swallowing you whole.
+
+
+You wake up in a cell, packed with cushioned interior, a sturdy metal door blocks your path to freedom,
+as a tiny gap on the door gives you a glimpse of the outside, a plain concrete room.
+At the meantime, you found all your personal items gone.
+What do you want to do next?
+A. Observe the door.
+B. Observe the wall.
+
+Special event:
+I. Check your inventory.
+
+A
+You carefully inspect the door, it is a sturdy and heavy door,
+there’s also a tiny gap on the door that allows you to peek on the other side of the room, or vice versa.
+It would be impossible to open this door by force, but you cannot see any sort of lock or handle,
+this door must be operated from the other side.
+
+What do you want to do next?
+A. Observe the door.
+B. Observe the wall.
+
+Special event:
+I. Check your inventory.
+
+B
+Underneath the cushion,you found the concrete wall underneath to be fragile,
+however it would still cost a lot to brute force through the wall, maybe you should attempt finding another way out first.
+Also, you found a long piece of wire under the cushion.
+
+What do you want to do next?
+A. Try to open the door with the wire.
+B. Attack the cushion and try to break the wall.
+
+Special event:
+I. Check your inventory.
+
+A                                                                                 
+You stretched your hands the very best you could, carefully hooking the twisted end of the wire onto the handle outside,
+as you feel the wire is fixed in its position, you slowly pulled the wire in, the handle gradually lifted upward,
+on the very urge of the wire from being ruptured, "click" the metal door opened
+
+
+What do you want to do next?
+A. Leave the cell through the door.
+B. Attack the cushion and try to break the wall.
+
+Special event:
+I. Check your inventory.
+
+B
+As you forcefully smash your body into the wall, the wall shattered and crumbled, yet you falled into another cell.
+you received 1 damages, you still have 15 HP.
+
+As you fell into the middle cell along with the crumbling concretes, you fell into a puddle of sticky and smelly liquids.
+As you get up, you found yourself covered in flesh and blood,
+you lost 3 sanity, you have 77 sanity left.
+
+What do you want to do next?
+A. Observe the corpses.
+B. Observe the door.
+C. Go to the cell nearby.
+
+Special event:
+I. Check your inventory.
+
+A
+As you carefully inspected the corpses, you find noticed a shining spot, upon close inspection, you found it to be a metal key.
+
+What do you want to do next?
+A. Observe the corpses.
+B. Observe the door.
+C. Go to the cell nearby.
+
+Special event:
+I. Check your inventory.
+
+B
+As you pushed onto the door, the door slid open, someone must have forgot to lock the door.
+
+What do you want to do next?
+A. Observe the corpses.
+B. Leave the cell through the door.
+C. Go to the cell nearby.
+
+Special event:
+I. Check your inventory.
+
+B
+You left the cell.
+
+As you break free from the cell, you noticed you are in a plain room
+with white concrete walls, with no windows, a couple of torture instruments was set in the middle of room,
+some of them have stains and some remains on them.
+There’s also a large mirror on the other side of the room.
+You look behind you, there are a total of 3 cells,
+the left one, where you woke up, the middle one and the right one. While you see another door at the other end of the room.
+Because of seeing those instruments, you lost 1 sanity, you have 76 sanity left.
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+A
+You closely inspected the instruments, you realize the cruelty of the instruments,
+you lost 2 sanity, you have 74 sanity left.
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+B
+You stared into the mirror, you see yourself, nothing special, nothing worthy. You felt worthless,
+you lost 1 sanity, you have 73 sanity left.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Observe the metal door.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+C
+This is a metal door, it seems less bulky than the cell door, but it is still vain to open it by force.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Try to open the metal door with the metal key.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+C
+You inserted the key and turned it; the door opened with a "click".
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Leave the torture room through the metal door.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+I. Check your inventory.
+
+C
+You leave the torture room.
+
+You finally escaped from the torture room, what waiting for you is another concealed area which looks like a storage room.
+In this new room, you see a pile of bags of different types, color and size; a table with pots on it.
+On the other side of the room, there is also a stairway leading upward.
+What do you want to do next?
+A. Observe the bags.
+B. Observe the table.
+C. Observer the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+C
+This stairway leads upstairs. This seems to be the only way out.
+
+What do you want to do next?
+A. Observe the bags.
+B. Observe the table.
+C. Leave the room through the stairway.
+D. Go to the torture room.
+
+Special event:
+I. Check your inventory.
+
+C
+You left the room through the stairway.
+
+
+At the entrance of the house, you see a stairway leadind down to the store room, a staircase leading up to the second floor of the house,
+a door that seems to lead to the outside, a doorway to the living room.
+What do you want to do next?
+A. Observe the door.
+B. Move to the second floor.
+C. Go to the living room.
+D. Go to the storage room.
+
+Special event:
+I. Check your inventory.
+
+C
+You left the entrance and entered the living room.
+
+When entering the living room, a horrific scene came into your eyes, next to a dining table,
+several dead bodies, both males and females, was sitting on chairs.
+Apart from the dining table, you also see several furniture in the living room, a cabinet, a fireplace.
+What do you want to do next?
+A. Observe the cabinet.
+B. Observe the dining table.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+I. Check your inventory.
+
+A
+The display cabinet is divided into two compartments,
+the upper one with a glass door, filled with display dishes, the lower one with a wooden door.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Observe the dining table.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+I. Check your inventory.
+
+C
+You carefully inspected the bodies,on a body, you found a copper key.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Observe the dining table.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+I. Check your inventory.
+
+A2
+You opened the door with ease with the copper key, inside you found several bags of coal, and a first aid kit.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Observe the dining table.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+I. Check your inventory.
+
+A1
+You rummaged through the cabinet, but you cannot find anything besides the dishes.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Observe the dining table.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+I. Check your inventory.
+
+C
+You carefully inspected the bodies again, but you didn't find anything special.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Observe the dining table.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+I. Check your inventory.
+
+B
+As you closely inspect the table, you found various kind of dishes are set on the table.
+There also appears to be a note on the table.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+S4
+"Burns the books that held the truth, and vanishes the men who seek the truth, only then may the mist goes blind on you."
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+D
+The fireplace is filled with ashes and remains of coals. It would take a bit of effort to clear it but wouldn’t be too long.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Clean the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+D
+The fireplace was cleaned and it is able to set fire in it now.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Set Fire in fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+D
+After you set the fire in the fireplace, warmth surrounds you, you felt much better than what you were,
+you gained 1 sanity, you have 72 sanity left.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S6. Burn the note that you found in the living room.
+I. Check your inventory.
+
+E
+You entered the kitchen.
+
+In the kitchen you found a stove, a fridge, a sink and a cupboard.
+What do you want to do next?
+A. Observe the stove.
+B. Observe the fridge.
+C. Observe the sink.
+D. Observe the cupboard.
+E. Go to living room.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+S3
+You are quite good now, and you don't need it at this moment.
+
+What do you want to do next?
+A. Observe the stove.
+B. Observe the fridge.
+C. Observe the sink.
+D. Observe the cupboard.
+E. Go to living room.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+A
+On the stove there’s a frying pan, a pot with lid on and a few other cooking instruments.
+Also, there are some knifes, they seems good to be a weapon.
+
+What do you want to do next?
+A1. Observe the pot.
+A2. Take a knife.
+B. Observe the fridge.
+C. Observe the sink.
+D. Observe the cupboard.
+E. Go to living room.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+A2
+You took a knife as a weapon.
+
+What do you want to do next?
+A1. Observe the pot.
+A2. Take a knife.
+B. Observe the fridge.
+C. Observe the sink.
+D. Observe the cupboard.
+E. Go to living room.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+A1
+You opened the pot, only to discover human remains and flesh within. You lost 1 sanity, you have 71 sanity left.
+
+What do you want to do next?
+A1. Observe the pot.
+A2. Take a knife.
+B. Observe the fridge.
+C. Observe the sink.
+D. Observe the cupboard.
+E. Go to living room.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+D
+In the cupboard, you found a few box of cereals and a storage box of mircotubes, inside the tubes are greenish fluid,
+on the side of the boxes there’s a skull & crossbones symbol, on the cover of the box a small label wrote “αCaMKII Inducer”,
+it would not be wise to take a sip out of these tubes.
+
+What do you want to do next?
+A1. Observe the pot.
+A2. Take a knife.
+B. Observe the fridge.
+C. Observe the sink.
+D. Take the box of mysterious chemicals.
+E. Go to living room.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+D
+You took the box of mysterious chemicals.
+
+What do you want to do next?
+A1. Observe the pot.
+A2. Take a knife.
+B. Observe the fridge.
+C. Observe the sink.
+D. Observe the cupboard.
+E. Go to living room.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+E
+You left the kitchen and went back to the living room.
+
+When entering the living room, a horrific scene came into your eyes, next to a dining table,
+several dead bodies, both males and females, was sitting on chairs.
+Apart from the dining table, you also see several furniture in the living room, a cabinet, a fireplace.
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S6. Burn the note that you found in the living room.
+I. Check your inventory.
+
+D
+You looked at the fire in the fireplace, you felt warm.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S6. Burn the note that you found in the living room.
+I. Check your inventory.
+
+F
+You entered the entrance.
+
+At the entrance of the house, you see a stairway leadind down to the store room, a staircase leading up to the second floor of the house,
+a door that seems to lead to the outside, a doorway to the living room.
+What do you want to do next?
+A. Observe the door.
+B. Move to the second floor.
+C. Go to the living room.
+D. Go to the storage room.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+B
+You left the entrance and reached second floor.
+
+Stepping onto the second floor, you found nothing special, just a couple of rooms and a telephone next to the stairs,
+judging on the signs on the doors, you can tell these rooms are
+main bedroom, second bedroom, study, restroom.
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+B
+You entered the main bed room.
+
+You entered the main bedroom, in this bedroom you found a closet, a bed, and a nightstand beside it.
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+I. Check your inventory.
+
+C
+On the nightstand, you found a diary.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+S5
+25th August 1993
+After weeks of investigation, we’ve successfully located the coordinates of the ruins.
+It’s only a matter of time for us to fully unfold the truth.
+
+2nd November 1993
+Unbelievable... we’ve found it, the ruin is more than two kilometers buried into the earth…
+It is impossible for humans to build structure in such scale in this depth.
+The ruin is old, it’s created even before the start of mankind…
+
+5th November 1993
+It has been three days into exploration,
+but as we go further and deeper, this ruin only seems to be expanding endlessly…
+We’ve suffered personnel losses, over the course of three days,
+seven had vanished, it’s not going to be long until people start losing their mind from stress.
+
+13th November 1993
+We’ve found something noticeable, in the center of a large hall, a coffin,
+but the coffin seems to be locked by some mechanism, my assistant is now working.
+
+20th November 1993
+I’ve been in coma for a week since we encountered that… that humanoid thing.
+It killed half of the team within the blink of a eye…
+We are lucky to even be here, and miraculously, it fell unconscious, for some unknown reason.
+Suffered from major loss, we are now evacuating with our captured subject.
+
+5th December 1993
+It has been two weeks after we’ve arrived back to our facility, but that thing is still unconscious…
+
+7th December 1993
+That thing woke up, but did not appears to be aggressive, we are still uncertain of its identity and awareness.
+
+21st January 1994
+A researcher responsible for feeding
+and mental assessment had been discovered to be showing sympathy and is obsessed with its humanoid appearance.
+I ordered to execute him. The council did not approve this.
+
+23rd January 1994
+The subject had demonstrated emotion of concern and trepidation after the executed researcher was removed from the laboratory.
+
+8th September 2008
+We’ve discovered crucial clues that can help us identify the subject with an important artifact the expedition team found in the ruin…
+It’s been 15 years for another icebreaking discovery…
+
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the main bedroom.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+D
+You left the main bedroom.
+
+You left the room and you are now at the corridor of the second floor.
+There is a telephone, main bedroom, second bedroom, study, restroom.
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+C
+You entered the second bedroom.
+
+You entered the second bedroom, in this bedroom you found a closet, a bed, and a nightstand beside it.
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the second bedroom.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A
+Opening the closet, a few pieces of human body fell out, you lost 1 sanity, you have 70 sanity left.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the nightstand.
+D. Leave the second bedroom.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+C
+On the nightstand you found a functional lamp. There also appear to have a drawer in the nightstand.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the drawer.
+D. Leave the second bedroom.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+C
+You opened the drawer, in the drawer you found a magnet key with the name, "Squire". It appears to be some sort of brand.
+
+What do you want to do next?
+A. Observe the closet.
+B. Observe the bed.
+C. Observe the drawer.
+D. Leave the second bedroom.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+D
+You left the second bedroom.
+
+You left the room and you are now at the corridor of the second floor.
+There is a telephone, main bedroom, second bedroom, study, restroom.
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+D
+You entered the study.
+
+In the study, you found a desk and some bookshelves.
+What do you want to do next?
+A. Observe the desk.
+B. Observe those bookshelves.
+C. Leave the study.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A
+On the desk, you found a notebook written in an unknown language. Some force beyonded your control and made you picked up the notebook.
+
+What do you want to do next?
+A. Read the notebook.
+B. Observe those bookshelves.
+C. Leave the study.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A
+It is a very very old book covered in dusts, you opened the book but find yourself unfamiliar with the language that is used to write this book.
+But in the book, you found a piece of note wrote in English.
+
+What do you want to do next?
+A1. Read the note out softly.
+A2. Read the note silently in your mind.
+B. Observe those bookshelves.
+C. Leave the study.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A2
+"He who the mortals must not speak the name of the unspeakable, as for his glory.
+The ignorants who dare would be doomed to the eternal darkness.
+Thou shalt never speak his name, for his name is Hastur.
+Only those who forgot his name would be forgiven…"
+
+What do you want to do next?
+A. Observe the desk.
+B. Observe those bookshelves.
+C. Leave the study.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+S2
+"He who the mortals must not speak the name of the unspeakable, as for his glory.
+The ignorants who dare would be doomed to the eternal darkness.
+Thou shalt never speak his name, for his name is Hastur.
+Only those who forgot his name would be forgiven…"
+
+What do you want to do next?
+A. Observe the desk.
+B. Observe those bookshelves.
+C. Leave the study.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+B
+On the shelves, there are quite a number of books that are listed.
+
+What do you want to do next?
+A. Observe the desk.
+B. Observe the books.
+C. Leave the study.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+B
+You carefully observed the names on the spines of the books, you found a book titled "Usage of αCaMKII Inducer".
+
+What do you want to do next?
+A. Observe the desk.
+B. Observe the books.
+C. Leave the study.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+C
+You left the study.
+
+You left the room and you are now at the corridor of the second floor.
+There is a telephone, main bedroom, second bedroom, study, restroom.
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+I
+Inventory:
+Wire
+Metal Key
+First Aid Kit
+Note
+Copper Key
+Knife
+αCaMKII Inducer
+Diary
+Magnet Key
+Notebook
+"Usage of αCaMKII Inducer"
+
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+E
+You entered the restroom.
+
+Upon entering the restroom, you saw a few things that’s standing out of the place, a cabinet, the sink and the bathtub.
+In the bathtub there’s a naked female body lying in there…
+What do you want to do next?
+A. Observe the cabinet.
+B. Observe the sink.
+C. Observe the bathtub.
+D. Leave the restroom.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A
+The cabinet has a pair of mirrors as its door.
+What do you want to do next?
+A1. Observe the mirror.
+A2. Open the cabinet.
+B. Observe the sink.
+C. Observe the bathtub.
+D. Leave the restroom.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+I. Check your inventory.
+
+A2
+You opened the cabinet. In the cabinet you found a few unused syringes.
+
+What do you want to do next?
+A1. Observe the mirror.
+A2. Open the cabinet.
+B. Observe the sink.
+C. Observe the bathtub.
+D. Leave the restroom.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+D
+You left the restroom.
+
+You left the room and you are now at the corridor of the second floor.
+There is a telephone, main bedroom, second bedroom, study, restroom.
+What do you want to do next?
+A. Pick up the telephone.
+B. Enter the main bedroom.
+C. Enter the second bedroom.
+D. Enter the study.
+E. Enter the restroom.
+F. Go back to the first floor.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+F
+You left the second floor and went back to entrance through the stairway.
+
+At the entrance of the house, you see a stairway leadind down to the store room, a staircase leading up to the second floor of the house,
+a door that seems to lead to the outside, a doorway to the living room.
+What do you want to do next?
+A. Observe the door.
+B. Move to the second floor.
+C. Go to the living room.
+D. Go to the storage room.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+D
+You left the entrance and entered the storage room.
+
+You are now in the storage room, there is a pile of bags of different types, color and size; a table with pots on it.
+On the other side of the room, there is also a stairway leading upward.
+What do you want to do next?
+A. Observe the bags.
+B. Observe the table.
+C. Leave the room through the stairway.
+D. Go to the torture room.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+D
+You left the room.
+
+You enter the torture room and there is no different,
+a couple of torture instruments was set in the middle of room, some of them have stains and some remains on them.
+There are three cells in the room
+There’s also a large mirror on the other side of the room.
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E. Observe the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+E
+Different from the other two cells, a solid metal door bar, stretched to both side of the frame, was used to prevent to door from opening.
+You see a padlock locking the metal bar onto the door.
+It is merely impossible for any animals or human, that can fit into this cell, to physically break through this door
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E. Observe the padlock on the door of the right cell.
+F. Enter the left cell.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+E
+The padlock is cold to touch, a layer of reinforced metal enveloped the lock.
+Made of sturdy metal, the shackle is reinforced, partially covered in another layer of steel.
+On the side of the padlock, it writes the word "Squire".
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E1. Try to open the door of the right cell by the metal key.
+E2. Try to open the door of the right cell by the magnet key.
+F. Enter the left cell.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+E2
+You inserted the key you found in the main bedroom and turned; the padlock opened with ease.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E. Enter the right cell.
+F. Enter the left cell.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+E
+You entered the right cell.
+
+As the door opens, you braced yourself for anything that is going to appear,
+but to your surprise, what unfolds before you appeared to be a old man huddled in the corner of the room.
+His lightless eyes peeked out between his arms; upon seeing you, he buried his head deep into his arms, trembling.
+What do you want to do next?
+A. Chat with the old man.
+B. Observe the room.
+C. Go to torture room.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+A
+You tried to talk with the old man.
+Who're you?
+Where're we?
+What's happened on me?
+You asked a few questions, however, he just keep speaking "burn and forget…burn and forget…burn and forget…"
+Slowly, you can't hear his voice. You touched him, you found that he was gone.
+
+What do you want to do next?
+A. Observe the room.
+B. Go to torture room.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+A
+You observed the cell carefully, however, you didn't find anything useful.
+
+What do you want to do next?
+A. Observe the room.
+B. Go to torture room.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+B
+You left the cell.
+
+You enter the torture room and there is no different,
+a couple of torture instruments was set in the middle of room, some of them have stains and some remains on them.
+There are three cells in the room
+There’s also a large mirror on the other side of the room.
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E. Enter the right cell.
+F. Enter the left cell.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+S10
+You strictly followed the concentration and amount that is written in the guide.
+After injecting the dose of chemical into your vein, you felt dizzy.
+You collapsed onto the ground as your mind fades out…
+After you wake up,you found something that you haven't seen before in you inventory, they are:
+A Diary
+A note
+A notebook
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E. Enter the right cell.
+F. Enter the left cell.
+
+Special event:
+S2. Read the notebook that you haven't seen before.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you haven't seen before.
+S5. Read the diary that you haven't seen before.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+S2
+"He who the mortals must not speak the name of the unspeakable, as for his glory.
+The ignorants who dare would be doomed to the eternal darkness.
+Thou shalt never speak his name, for his name is Hastur.
+Only those who forgot his name would be forgiven…"
+After you reading the notebook, you remembered that you found it in study.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E. Enter the right cell.
+F. Enter the left cell.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you haven't seen before.
+S5. Read the diary that you haven't seen before.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+S4
+"Burns the books that held the truth, and vanishes the men who seek the truth, only then may the mist goes blind on you."
+After reading the note, you remembered that you found it in the living room.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E. Enter the right cell.
+F. Enter the left cell.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you haven't seen before.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+S5
+25th August 1993
+After weeks of investigation, we’ve successfully located the coordinates of the ruins.
+It’s only a matter of time for us to fully unfold the truth.
+
+2nd November 1993
+Unbelievable... we’ve found it, the ruin is more than two kilometers buried into the earth…
+It is impossible for humans to build structure in such scale in this depth.
+The ruin is old, it’s created even before the start of mankind…
+
+5th November 1993
+It has been three days into exploration,
+but as we go further and deeper, this ruin only seems to be expanding endlessly…
+We’ve suffered personnel losses, over the course of three days,
+seven had vanished, it’s not going to be long until people start losing their mind from stress.
+
+13th November 1993
+We’ve found something noticeable, in the center of a large hall, a coffin,
+but the coffin seems to be locked by some mechanism, my assistant is now working.
+
+20th November 1993
+I’ve been in coma for a week since we encountered that… that humanoid thing.
+It killed half of the team within the blink of a eye…
+We are lucky to even be here, and miraculously, it fell unconscious, for some unknown reason.
+Suffered from major loss, we are now evacuating with our captured subject.
+
+5th December 1993
+It has been two weeks after we’ve arrived back to our facility, but that thing is still unconscious…
+
+7th December 1993
+That thing woke up, but did not appears to be aggressive, we are still uncertain of its identity and awareness.
+
+21st January 1994
+A researcher responsible for feeding
+and mental assessment had been discovered to be showing sympathy and is obsessed with its humanoid appearance.
+I ordered to execute him. The council did not approve this.
+
+23rd January 1994
+The subject had demonstrated emotion of concern and trepidation after the executed researcher was removed from the laboratory.
+
+8th September 2008
+We’ve discovered crucial clues that can help us identify the subject with an important artifact the expedition team found in the ruin…
+It’s been 15 years for another icebreaking discovery…
+
+After reading it, you remembered that you found it in the main bedroom.
+
+What do you want to do next?
+A. Observe the torture instruments.
+B. Observe the large mirror.
+C. Go to storage room.
+D. Go into the middle cell.
+E. Enter the right cell.
+F. Enter the left cell.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+C
+You leave the torture room.
+
+You are now in the storage room, there is a pile of bags of different types, color and size; a table with pots on it.
+On the other side of the room, there is also a stairway leading upward.
+What do you want to do next?
+A. Observe the bags.
+B. Observe the table.
+C. Leave the room through the stairway.
+D. Go to the torture room.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+C
+You left the room through the stairway.
+
+
+At the entrance of the house, you see a stairway leadind down to the store room, a staircase leading up to the second floor of the house,
+a door that seems to lead to the outside, a doorway to the living room.
+What do you want to do next?
+A. Observe the door.
+B. Move to the second floor.
+C. Go to the living room.
+D. Go to the storage room.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+C
+You left the entrance and entered the living room.
+
+When entering the living room, a horrific scene came into your eyes, next to a dining table,
+several dead bodies, both males and females, was sitting on chairs.
+Apart from the dining table, you also see several furniture in the living room, a cabinet, a fireplace.
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S1. Hastur!
+S2. Read the notebook silently in your mind.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you found in the living room.
+S5. Read the diary that you found in main bedroom.
+S6. Burn the note that you found in the living room.
+S7. Burn the notebook that you found in the study.
+S8. Burn the diary that you found in the main bedroom.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+S10
+You strictly followed the concentration and amount that is written in the guide.
+After injecting the dose of chemical into your vein, you felt dizzy.
+You collapsed onto the ground as your mind fades out…
+After you wake up,you found something that you haven't seen before in you inventory, they are:
+A Diary
+A note
+A notebook
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S2. Read the notebook that you haven't seen before.
+S3. Heal yourself by first aid kit.
+S4. Read the note that you haven't seen before.
+S5. Read the diary that you haven't seen before.
+S6. Burn the note that you haven't seen before.
+S7. Burn the notebook that you haven't seen before.
+S8. Burn the diary that you haven't seen before.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+S6
+You burned the Note but nothing happened.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S2. Read the notebook that you haven't seen before.
+S3. Heal yourself by first aid kit.
+S5. Read the diary that you haven't seen before.
+S7. Burn the notebook that you haven't seen before.
+S8. Burn the diary that you haven't seen before.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+S7
+As the notebook was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.
+You somehow felt relieved after burning it.
+You gained 1 sanity, you have 69 sanity left.
+
+What do you want to do next?
+A1. Search the upper compartment.
+A2. Search the lower compartment.
+B. Consume the dishes.
+C. Observe the dead bodies.
+D. Observe the fireplace.
+E. Go to kitchen.
+F. Go to entrance.
+
+Special event:
+S3. Heal yourself by first aid kit.
+S5. Read the diary that you haven't seen before.
+S8. Burn the diary that you haven't seen before.
+S10. Inject the αCaMKII Inducer.
+I. Check your inventory.
+
+S8
+As the diary was set on fire, it was slowly engulfed in fire, and turns into ashes bits by bits.
+You somehow felt relieved after burning the diary.
+You gained 1 sanity, you have 70 sanity left.
+Suddently, you collapsed onto the ground as your mind fades out…
+As you woke up, the first thing you saw is a plain yet unfamiliar ceiling. 
+"Where am I?", you thought to yourself, but your brain could hardly gather enough memory to construct an answer.
+As you stood up, you found yourself in a clean yet seemingly familiar house, a strange yet pleasant aroma filled up the house.
+You looked to the center of the room, copious and various dishes was set on a dining table,
+somehow a sudden feeling of disgust rushes up into your mind when you saw the chairs that scattered around the table.
+You look to the sides of the room, at the extremity of the room, you found a door, that resembles a front door in your memory.
+As you approach the door, a faint light shines from underneath the door.
+Trembling, you pushed the door opened.
+Your tried to keep your eyes opened, as the brightening light engulfed you.
+
+CONGRATULATIONS!!
+You have finished the game. Your character will be delected.
+Character successfully deleted.
+
+If you want to know more about "Hastur", type "Hastur!!".
+If you want to end the game, type "END".
+
+Hastur!!
+As the word “Hastur” came out of your mouth, you felt a shiver, from the bottom of your spine, up to the top of your cranium.
+He knows what you did… And he is now gazing upon you…
+Suddenly you feel a headache, some sentences appear in front of you.
+"The Unspeakable One, the Yellow King, he has various names, only for one common purpose, not reading out his name…
+One of the Great Old Ones imprisoned by the Elder Gods, even though imprisoned, he seeks to regain his former glory."
+
+If you want to end the game, type "END".
+
+Hastur!!
+Because of fears, you are not willing to read the word out.
+
+If you want to end the game, type "END".
+
+END
