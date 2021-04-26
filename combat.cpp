@@ -52,7 +52,7 @@ bool combat(int * monsterHP, int * monsterDEX, int * monsterSTR, int &playerHP, 
       //clear choice
       choice = "0";
       printout("What do you want to do next?\n");
-      printout("A. Attack\n");
+      printout("A. Attack\n\n");
 
       while (choice != "A"){
         cin >> choice;
@@ -151,7 +151,7 @@ bool combat(int * monsterHP, int * monsterDEX, int * monsterSTR, int &playerHP, 
       printout("The enemy attacks you!\n");
       printout("What do you want to do in response?\n");
       printout("A. Dodge\n");
-      printout("B. Counter attack\n");
+      printout("B. Counter attack\n\n");
 
       while (choice != "A" && choice != "B"){
         cin >> choice;
@@ -251,7 +251,7 @@ bool combat(int * monsterHP, int * monsterDEX, int * monsterSTR, int &playerHP, 
       printout("The enemy attacks you!\n");
       printout("What do you want to do in response?\n");
       printout("A. Dodge\n");
-      printout("B. Counter attack\n");
+      printout("B. Counter attack\n\n");
 
       while (choice != "A" && choice != "B"){
         cin >> choice;
@@ -347,7 +347,7 @@ bool combat(int * monsterHP, int * monsterDEX, int * monsterSTR, int &playerHP, 
       //clear choice
       choice = "0";
       printout("What do you want to do next?\n");
-      printout("A. Attack\n");
+      printout("A. Attack\n\n");
 
       while (choice != "A"){
         cin >> choice;
