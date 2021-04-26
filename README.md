@@ -26,16 +26,16 @@
 
 
 ## list of non-standard C/C++ libraries:
-# <unistd.h> is used for the typrewriter effect to display text charcter by character using the sleep function.
+### <unistd.h> is used for the typrewriter effect to display text charcter by character using the sleep function.
 
 
 ## Compilation and execution instructions:
-# 1. Download all the files and store them in 1 directory
-# 2. Use the command 'make main' under that directory to to compile the program
-# 3. Use the command './main' to launch the game
+### 1. Download all the files and store them in 1 directory
+### 2. Use the command 'make main' under that directory to to compile the program
+### 3. Use the command './main' to launch the game
 
-# To resume previous game, simply use command './main' to launch the game again and the game will resume at the point of you last time entering a new room.
-# To delete your previous investigator and start the game all over again, use command 'make restart' before launching the game with './main'.
+### To resume previous game, simply use command './main' to launch the game again and the game will resume at the point of you last time entering a new room.
+### To delete your previous investigator and start the game all over again, use command 'make restart' before launching the game with './main'.
 
 
 The program has been tested in academy21 server
