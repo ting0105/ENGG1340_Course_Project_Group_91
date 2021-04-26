@@ -31,7 +31,7 @@
 
 ## Compilation and execution instructions:
 ### 1. Download all the files and store them in 1 directory
-### 2. Use the command 'make main' under that directory to to compile the program
+### 2. Use the command 'make main' under that directory to compile the program
 ### 3. Use the command './main' to launch the game
 
 ### To resume previous game, simply use command './main' to launch the game again and the game will resume at the point of you last time entering a new room.
