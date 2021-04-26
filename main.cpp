@@ -1036,7 +1036,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -1121,19 +1121,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -1148,15 +1148,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -1170,15 +1167,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -1453,7 +1447,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -1538,19 +1532,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -1565,15 +1559,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -1587,15 +1578,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -1933,7 +1921,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -2018,19 +2006,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -2045,15 +2033,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -2067,15 +2052,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -2352,7 +2334,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -2437,19 +2419,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -2464,15 +2446,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -2486,15 +2465,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -2695,7 +2671,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -2780,19 +2756,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -2807,15 +2783,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -2829,15 +2802,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -3139,7 +3109,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -3224,19 +3194,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -3251,15 +3221,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -3273,15 +3240,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -3525,7 +3489,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -3610,19 +3574,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -3637,15 +3601,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -3659,15 +3620,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -3962,7 +3920,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -4047,19 +4005,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -4074,15 +4032,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -4096,15 +4051,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -4301,7 +4253,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -4386,19 +4338,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -4413,15 +4365,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -4435,15 +4384,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -4665,7 +4611,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -4750,19 +4696,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -4777,15 +4723,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -4799,15 +4742,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5046,7 +4986,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -5131,19 +5071,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5158,15 +5098,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5180,15 +5117,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5416,7 +5350,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -5501,19 +5435,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5528,15 +5462,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5550,15 +5481,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5742,7 +5670,7 @@ int main(){
             }
             else if (choice == "S3"){
                 if (p.LR_GetFirstAidKit == 1){
-                    if (p.hp != (p.siz + p.con)/10 && p.hp >= ((p.siz + p.con)/10)-1){
+                    if (p.hp == (p.siz + p.con)/10 || p.hp >= ((p.siz + p.con)/10)-1){
                         printout("You are quite good now, and you don't need it at this moment.\n");
                     }
                     else if (p.hp != (p.siz + p.con)/10 && p.hp < ((p.siz + p.con)/10)-1){
@@ -5769,7 +5697,7 @@ int main(){
                         Diary();
                     }
                     else if(p.S_ForgetDiary == 1){
-                        p.S_ForgetDiary = 1;
+                        p.S_ForgetDiary = 0;
                         Diary();
                         printout("After reading it, you remembered that you found it in the main bedroom.\n");
                     }
@@ -5854,19 +5782,19 @@ int main(){
             }
             else if (choice == "S10"){
                 if (p.RM_GetSyringes == 1 && p.Kit_GetChemicals == 1){
+                    p.S_ForgetDiary = 1;
+                    p.S_ForgetNote = 1;
+                    p.S_ForgetMysteriousBook = 1;
                     if (p.Stu_GetDrugGuide == 0){
                         if (GenRand() <= p.luck){
                             printout("You ignorantly injected a relatively small dose of chemical into your vein, you collapsed onto the floor as your mind fades.\nAfter you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5881,15 +5809,12 @@ int main(){
                             printout(" sanity left.\n");
                             printout("You found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
@@ -5903,15 +5828,12 @@ int main(){
                         else{
                             printout("After you wake up,you found something that you haven't seen before in you inventory, they are:\n");
                             if (p.MB_GetDiary == 1){
-                                p.S_ForgetDiary = 1;
                                 printout("A Diary\n");
                             }
                             if (p.LR_GetNote == 1){
-                                p.S_ForgetNote = 1;
                                 printout("A note\n");
                             }
                             if(p.Stu_GetMysteriousBook == 1){
-                                p.S_ForgetMysteriousBook = 1;
                                 printout("A notebook\n");
                             }
                         }
